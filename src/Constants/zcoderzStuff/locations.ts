@@ -1,0 +1,2 @@
+export const UAELocation = "https://www.google.com/maps/place/Dubai+-+United+Arab+Emirates/@25.0757595,54.9472954,10z/data=!3m1!4b1!4m5!3m4!1s0x3e5f43496ad9c645:0xbde66e5084295162!8m2!3d25.2048493!4d55.2707828"
+export const AustraliaLocation = "https://www.google.com/maps/place/Perth+WA,+Australia/@-32.0397559,115.681346,10z/data=!3m1!4b1!4m5!3m4!1s0x2a32966cdb47733d:0x304f0b535df55d0!8m2!3d-31.9523123!4d115.861309"

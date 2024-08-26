@@ -1,0 +1,86 @@
+.loading-indicator {
+  position: relative;
+  width: 163px;
+  height: 141px;
+  margin: 0;
+  transform: translate(-50%, -50%);
+  top: calc((100vh - 141px) / 2);
+  left: 50%;
+
+  > img {
+    position: absolute;
+    -webkit-animation-duration: 3000ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-duration: 3000ms;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-duration: 3000ms;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+    animation-duration: 3000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    &:first-child {
+      //margin: 20px;
+      //width: 60px;
+      //height: 60px;
+      //background: #f00;
+      left: 0;
+      bottom: 17px;
+      -webkit-animation-name: spin;
+      -moz-animation-name: spin;
+      -ms-animation-name: spin;
+      animation-name: spin;
+
+    }
+
+    &:nth-child(2) {
+      left: 22px;
+      top: 0;
+
+      -webkit-animation-name: spin-right;
+      -moz-animation-name: spin-right;
+      -ms-animation-name: spin-right;
+      animation-name: spin-right;
+    }
+
+    &:nth-child(3) {
+      right: 12px;
+      bottom: 8px;
+      -webkit-animation-name: spin;
+      -moz-animation-name: spin;
+      -ms-animation-name: spin;
+      animation-name: spin;
+
+    }
+  }
+}
+
+
+@-moz-keyframes spin {
+  from { -moz-transform: rotate(0deg); }
+  to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+  from { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(360deg);}
+}
+
+@-moz-keyframes spin-right {
+  from { -moz-transform: rotate(0deg); }
+  to { -moz-transform: rotate(-360deg); }
+}
+@-webkit-keyframes spin-right {
+  from { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(-360deg); }
+}
+@keyframes spin-right {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(-360deg);}
+}

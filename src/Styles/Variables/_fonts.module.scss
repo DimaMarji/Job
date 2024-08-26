@@ -1,0 +1,19 @@
+$font-family-regular: plus-jakarta-sans-regular;
+$font-family-semi-bold: plus-jakarta-sans-semi-bold;
+$font-family-bold: plus-jakarta-sans-bold;
+
+@font-face {
+  font-family: "plus-jakarta-sans-regular";
+  src: url("../Fonts/PlusJakartaSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: "plus-jakarta-sans-semi-bold";
+  src: url("../Fonts/PlusJakartaSans-Medium.ttf");
+}
+
+@font-face {
+  font-family: "plus-jakarta-sans-bold";
+  src: url("../Fonts/PlusJakartaSans-Bold.ttf");
+}
+

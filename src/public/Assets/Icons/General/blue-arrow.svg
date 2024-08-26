@@ -1,0 +1,12 @@
+<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g id="Icon" clip-path="url(#clip0_2511_5086)">
+        <path id="Vector"
+              d="M11.5708 5.93321L6.07235 11.4316L5.62713 10.9976L10.3798 6.24486H0.0507812V5.62155H10.3798L5.62713 0.868857L6.07235 0.434771L11.5708 5.93321Z"
+              fill="#1F83F4" stroke="#1F83F4" stroke-width="0.5"/>
+    </g>
+    <defs>
+        <clipPath id="clip0_2511_5086">
+            <rect width="11.9026" height="11.1304" fill="white" transform="matrix(1 0 0 -1 0.048584 11.5645)"/>
+        </clipPath>
+    </defs>
+</svg>
