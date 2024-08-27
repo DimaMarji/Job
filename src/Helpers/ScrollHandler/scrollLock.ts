@@ -5,10 +5,10 @@ export const formatImageEncoder = (mime: string, data: string): string => {
 
 export const disableBodyScroll = (from: any = "") => {
     document.body.style.overflow = "hidden";
-   //   console.log("hidden");
+    //   console.log("hidden");
 }
 
 export const enableBodyScroll1 = (from: any = "") => {
-    document.body.style.overflow = "auto"; 
+    document.body.style.overflow = "auto";
     // console.log("auto");
 }

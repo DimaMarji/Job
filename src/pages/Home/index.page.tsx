@@ -1,8 +1,11 @@
 import React from 'react';
 import {homeProps} from "./interface";
 import HeroSection from "./HeroSection/heroSectionContainer";
-import {AboutUsSection} from "./AboutUsSection";
 import "./style.scss"
+import {BestPlaceToWorkSection} from "./BestPlaceToWorkSection";
+import {TopCompanies} from "./TopCompaniesSection";
+import {JobsOfTheDaySection} from "./JobsOfTheDaySection";
+import {BrowseByCategorySection} from "./BrowseByCategorySection";
 
 
 const HomeContainer: React.FC<homeProps> = () => {
@@ -12,7 +15,10 @@ const HomeContainer: React.FC<homeProps> = () => {
         <>
             <div className={"home"}>
                 <HeroSection/>
-                <AboutUsSection/>
+                <BestPlaceToWorkSection/>
+                <TopCompanies/>
+                <JobsOfTheDaySection/>
+                <BrowseByCategorySection/>
             </div>
         </>
     );

@@ -7,6 +7,7 @@ import {Text} from "../../../Components/Atoms/Typography/Text";
 import Image from "next/image";
 import HeroSectionImage from "../../../public/Assets/Images/page/homepage1/banner1.png"
 import SearchIcon from "../../../public/Assets/Images/page/homepage1/search-icon.svg"
+import {Button} from "../../../Components/Atoms/Button";
 
 
 const {Search} =Input
@@ -33,7 +34,7 @@ const HeroSection: React.FC = () => {
                         </Title>
 
                         {!isMobileOrTablet && <>
-                            <Search enterButton={<><Image width={16} src={SearchIcon} alt={"search-icon"}/>Search</>}/>
+                            <Search  placeholder="Job ID... " enterButton={<><Image width={16} src={SearchIcon} alt={"search-icon"}/>Search</>}/>
                         </>}
                     </div>
                 </Col>
@@ -48,6 +49,20 @@ const HeroSection: React.FC = () => {
                         description
                     </Text>
                 </Col>}
+
+                <div className="box-we-hiring">
+                    <div className="text-1"><span className="text-we-are">We are</span><span
+                        className="text-hiring">Hiring</span></div>
+                    <div className="text-2">Let&rsquo;s <span className="color-brand-1">Work</span> Together<br/> &amp;
+                        <span className="color-brand-1">Explore</span> Opportunities</div>
+                    <div className="text-3">
+                        <Button type={"primary"}>
+                        {/*<div className="btn btn-apply btn-apply-icon" data-bs-toggle="modal"*/}
+                        {/*     data-bs-target="#ModalApplyJobForm">*/}
+                            Apply now</Button>
+                        {/*</div>*/}
+                    </div>
+                </div>
 
             </Row>
         </div>

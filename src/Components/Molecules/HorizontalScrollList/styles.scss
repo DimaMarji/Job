@@ -1,0 +1,85 @@
+@import "../../../Styles/Helpers/mixins";
+
+.horizontal-list-section {
+  text-align: left;
+  position: relative;
+
+  > div {
+    display: flex;
+  }
+
+  .list-cards-container {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-auto-flow: column;
+    overflow-x: scroll;
+    gap: 24px;
+    &::before{
+      display: none;
+    }
+
+    //margin-top: 16px;
+
+    scrollbar-width: none;
+
+    &:before {
+      content:"";
+      flex-basis:100%;
+      order:1
+    }
+
+    *:nth-child(even) {
+      order:2;
+    }
+
+    &::-webkit-scrollbar {
+      display: none !important;
+      width: 0 !important;
+
+    }
+
+    @include media-query(mobile) {
+      max-width: 100%;
+      gap: 8px;
+    }
+  }
+
+  .right-button-trigger, .left-button-trigger {
+    padding: 0 !important;
+    background: #e6ecff !important;
+    width: 40px !important;
+    height: 40px !important;
+    border: none !important;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+      width: 7px !important;
+      height: auto !important;
+      filter: brightness(0.8) invert(38%);
+    }
+
+    &:hover:not(:disabled) {
+      img {
+        filter: none;
+      }
+    }
+
+    &:disabled {
+      opacity: 50%;
+    }
+  }
+
+
+  .arrow-buttons-container {
+    gap: 16px;
+    display: flex;
+    justify-content: space-between;
+    width: fit-content;
+    margin-top: 24px;
+    position: absolute;
+    right: 0;
+    top:0;
+  }
+}

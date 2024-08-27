@@ -1,0 +1,30 @@
+@import "../../../Styles/Helpers/mixins";
+@import "../../../Styles/Variables/variables";
+@import "../../../Styles/Helpers/mixins";
+
+
+.companies-title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  margin-top: 110px;
+}
+
+.companies-item-logo {
+  border: 1px solid rgba(6, 18, 36, 0.1);
+  padding: 22px 18px;
+  display: flex;
+  text-align: left;
+  border-radius: 12px;
+  background-color: #ffffff;
+  flex-wrap: wrap;
+  float: left;
+  width: 100%;
+}
+
+
+@include media-query(tablet-and-mobile) {
+
+}

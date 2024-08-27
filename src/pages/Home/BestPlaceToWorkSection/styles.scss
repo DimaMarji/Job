@@ -1,0 +1,39 @@
+@import "../../../Styles/Helpers/mixins";
+@import "../../../Styles/Variables/variables";
+@import "../../../Styles/Helpers/mixins";
+
+
+
+.best-place-title{
+  margin-bottom: 40px !important;
+}
+.best-place-title-list{
+  margin-top: 50px;
+}
+.work-best-card{
+  padding: 22px;
+  margin-bottom: 0px;
+  border: 1px solid #E0E6F7;
+  border-radius: 16px;
+  text-align: left;
+  .ant-card-head-title,.ant-card-head{
+    padding: 0 !important;
+    min-height: unset;
+  }
+  .ant-card-head{
+    border-bottom: 1px solid #dee2e6 !important;
+    padding-bottom: 10px !important;
+  }
+
+  .ant-card-body{
+    padding: 0 !important;
+    padding-top: 10px !important;
+    .ant-list-item{
+      margin-bottom: 10px !important ;
+    }
+  }
+}
+
+@include media-query(tablet-and-mobile) {
+
+}

@@ -24,7 +24,6 @@ const SharedFooter = () => {
         phone: "tel"
     }
 
-
     const router = useRouter()
     const {push, query, asPath} = router
     const handleRedirect = (to: any) => {
@@ -33,7 +32,6 @@ const SharedFooter = () => {
 
     const currentYear = new Date().getFullYear()
 
-
     const blogsFooterItems = []?.map((item: any) => {
         return {
             label: item?.title,
@@ -41,80 +39,67 @@ const SharedFooter = () => {
         }
     })
 
+    const LogoButton = <Button onClick={() => {
+        push("/")
+    }} className={"company-logo-button"} type={'link'} href={"/"} target={"_blank"}>
+        <Image
+            width={191}
+            height={54}
+            alt={"company-logo-image"} className={"company-logo-image"} src={LogoImage}
+
+        />
+    </Button>
+
+    const isSelected = (item) => {
+        return item.key === '/'
+            ? asPath === item.key
+            : Array.isArray(item.key)
+                ? item.key.some(key => asPath.startsWith(key))
+                : asPath.startsWith(item.key)
+    }
+
+    const footerColumns = [{
+        title: "Pages",
+        items: pagesFooterItemsData
+    }, {
+        title: "Blogs",
+        items: blogsFooterItems
+    },]
+    const FooterList = footerColumns?.map((item, key) => {
+        return <div key={key} className={`${item?.title?.toLowerCase()}-container`}>
+            <Title typographyType={{size: "20px-20px-20px", type: "semi-bold-semi-bold-semi-bold"}}
+                   className={"title-text"}
+                   level={3}
+                   typographyFontColor={"#509DD0"}>
+                {item?.title}
+            </Title>
+            <div className={"footer-list"}>
+                {item?.items?.map((item, index) => {
+                    return <Text key={index}
+                                 onClick={(event) => {
+                                     push(item?.key[0], item?.key[1], {scroll: true})
+                                 }}
+                                 typographyFontColor={"#FFFFFF"}
+                                 className={`footer-link ${isSelected(item) ? "footer-link-selected" : ""}`}
+                                 typographyType={{
+                                     size: "16px-16px-16px",
+                                     type: "regular-regular-regular"
+                                 }}
+                    >{item?.label}</Text>
+                })}
+            </div>
+        </div>
+    })
+
+
+
     return (
         <>
             <Footer className={"website-footer"}>
                 <div className={"footer-content"}>
-                    <Button onClick={() => {
-                        push("/")
-                    }} className={"company-logo-button"} type={'link'} href={"/"} target={"_blank"}>
-                        <Image
-                            width={191}
-                            height={54}
-                            alt={"company-logo-image"} className={"company-logo-image"} src={LogoImage}
+                    {LogoButton}
 
-                        />
-                    </Button>
-
-                    <div className={"pages-container"}>
-                        <Title typographyType={{size: "20px-20px-20px", type: "semi-bold-semi-bold-semi-bold"}}
-                               className={"title-text"}
-                               level={3}
-                               typographyFontColor={"#509DD0"}>
-                            Pages
-                        </Title>
-                        <div className={"footer-list"}>
-                            {pagesFooterItemsData?.map((item, index) => {
-                                const isSelected =
-                                    item.key === '/'
-                                        ? asPath === item.key
-                                        : Array.isArray(item.key)
-                                        ? item.key.some(key => asPath.startsWith(key))
-                                        : asPath.startsWith(item.key);
-                                return <Text key={index}
-                                             onClick={(event) => {
-                                                 push(item?.key[0], item?.key[1], {scroll: true})
-                                             }}
-                                             typographyFontColor={"#FFFFFF"}
-                                             className={`footer-link ${isSelected ? "footer-link-selected" : ""}`}
-                                             typographyType={{
-                                                 size: "16px-16px-16px",
-                                                 type: "regular-regular-regular"
-                                             }}
-                                >{item?.label}</Text>
-                            })}
-                        </div>
-                    </div>
-
-                    <div className={"blogs-container"}>
-                        <Title typographyType={{size: "20px-20px-20px", type: "semi-bold-semi-bold-semi-bold"}}
-                               className={"title-text"}
-                               level={3}
-                               typographyFontColor={"#509DD0"}>
-                            Blogs
-                        </Title>
-                        <div className={"footer-list"}>
-                            {blogsFooterItems?.map((item, index) => {
-                                const isSelected =
-                                    Array.isArray(item.key)
-                                        ? item.key.some(key => asPath.startsWith(key))
-                                        : asPath.startsWith(item.key);
-                                return <Text key={index}
-                                             ellipsis={{tooltip: item?.label}}
-                                             onClick={(event) => {
-                                                 push(item?.key[0], item?.key[1], {scroll: true})
-                                             }}
-                                             typographyFontColor={"#FFFFFF"}
-                                             className={`footer-link ${isSelected ? "footer-link-selected" : ""}`}
-                                             typographyType={{
-                                                 size: "16px-16px-16px",
-                                                 type: "regular-regular-regular"
-                                             }}
-                                >{item?.label}</Text>
-                            })}
-                        </div>
-                    </div>
-
+                    {FooterList}
 
                     <div className={"contact-container"}>
                         <Title typographyType={{size: "20px-20px-20px", type: "semi-bold-semi-bold-semi-bold"}}
@@ -195,7 +180,6 @@ const SharedFooter = () => {
                         </Text>
                     </span>
                 </div>
-                {/*</div>*/}
             </Footer>
         </>
     );

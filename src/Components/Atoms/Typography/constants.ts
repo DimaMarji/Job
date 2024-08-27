@@ -21,6 +21,7 @@ export const fontSizes = [
     "28px",
     "30px",
     "32px",
+    "36px",
     "38px",
     "40px",
     "48px",
@@ -53,7 +54,10 @@ export const colors = [
     "#253747",
     "#201A2D",
     "#1F3A55",
-    "#F89B35"
+    "#F89B35",
+    "#4F5E64",
+    "#66789C",
+    "#A0ABB8"
 ] as const
 
 export const languagesWithFontFamilies = {

@@ -233,7 +233,7 @@ const SharedNavBar: FunctionComponent<SharedNavBarProps> = ({setToggleMenu, togg
                   }
                 `}</style>
             <Header
-                id="zcoderz-nav"
+                id="job-nav"
                 className={!toggleMenu || !isMobileOrTablet ? "header-container" : "header-container-menu-opened"}
             >
 
@@ -244,7 +244,7 @@ const SharedNavBar: FunctionComponent<SharedNavBarProps> = ({setToggleMenu, togg
                         toggleNav(false, event)
                     }} className={"logo-button"}
                     >
-                        <Image alt={"zcoderz-logo"} width={153}
+                        <Image alt={"job-logo"} width={153}
                             className={"logo-image"} src={LogoImage}/>
                     </Button>
                     {isMobileOrTablet && (!toggleMenu ? openMenu : closeMenu)}
