@@ -1,5 +1,4 @@
 import { FormInstance } from "antd";
-  import { CustomMessage } from "../../Components/Molecules";
 import { errorCodes } from "./constants";
 import { useRouter } from "next/router";
 import { setFormErrors } from "../../Helpers/FormElements";
@@ -18,13 +17,7 @@ export const UseHandle = () => {
 
     const ErrorMessage = (res: any) => {
 
-        CustomMessage(
-            {
-                message:res?.response?.data?.meta?.message ??   res.message ??    "error",
-                type: "error",
-                closable: true
-            }
-        )
+
     }
 
     const handleError = (error: any, formInstance?: FormInstance) => {

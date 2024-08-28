@@ -2,7 +2,30 @@
 @import "../../../Styles/Variables/variables";
 @import "../../../Styles/Helpers/mixins";
 
+.category-container{
+  margin-top: 80px;
+  margin-bottom: 100px;
+.category-column-list{
+  padding-left: 32px;
+  margin-top: 50px;
+  li{
+    padding: 6.4px 0 !important;
+    *{
+      font-size: 13px;
+      font-weight: normal;
+      &:hover {
+        color: #3C65F5 !important;
+      }
+    }
+  }
+}
+.ant-row .ant-col:not(:first-child) {
+  .category-column-list {
+    border-left: 1px solid #dee2e6;
 
+  }
+}
+}
 
 @include media-query(tablet-and-mobile) {
 

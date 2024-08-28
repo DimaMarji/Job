@@ -1,4 +1,4 @@
-import {Text} from "../Components";
+import { Text } from "../Components/Atoms/Typography/Text";
 import React from "react";
 
 interface IPaginationObject {

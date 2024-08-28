@@ -8,8 +8,11 @@ import Image from "next/image";
 import LogoImage from "../../../public/Assets/Images/template/bg-newsletter.svg";
 import LocationIcon from "../../../public/Assets/Images/template/icons/location.svg";
 import FlashIcon from "../../../public/Assets/Images/template/icons/flash.svg";
+import {IJobsOfTheDayAndTraining} from "./interface";
 
-const JobsOfTheDaySection: React.FC = () => {
+const JobsOfTheDayAndTrainingSection: React.FC<IJobsOfTheDayAndTraining> = ({title,
+                                                                            subTitle,
+                                                                            data}) => {
     const {isMobileOrTablet} = useAppMediaQuery()
 
     const JobsOfTheDayData = [1, 2, 3, 4, 5, 43634, 634, 463, 4, 5, 43634, 634, 463, 34634, 6]
@@ -19,14 +22,14 @@ const JobsOfTheDaySection: React.FC = () => {
                 className={"jobs-of-day-title animate__ animate__fadeInUp animated"}
                 typographyFontColor={"#05264E"}
                 typographyType={{type: "bold-bold-bold", size: "36px-20px-20px"}} level={2}>
-                Jobs of the day
+                {title}
             </Title>
 
             <Text
                 className={"animate__ animate__fadeInUp animated"}
                 typographyFontColor={"#66789C"}
                 typographyType={{type: "semi-bold-semi-bold-semi-bold", size: "18px-18px-18px"}}>
-                Search and connect with the right candidates faster.
+                {subTitle}
             </Text>
         </div>
         <List className={"jobs-of-day-list"} grid={{
@@ -108,4 +111,4 @@ const JobsOfTheDaySection: React.FC = () => {
 
 }
 
-export default JobsOfTheDaySection
+export default JobsOfTheDayAndTrainingSection

@@ -18,6 +18,7 @@ export const fontSizes = [
     "20px",
     "22px",
     "24px",
+    "25px",
     "28px",
     "30px",
     "32px",

@@ -5,12 +5,11 @@
 // @use "./Vendor/index" as *;
 
 
-
 @keyframes fadeInDown {
   0% {
     opacity: 0;
-    -webkit-transform: translate3d(0,-100%,0);
-    transform: translate3d(0,-100%,0)
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0)
   }
 
   to {
@@ -29,8 +28,8 @@
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    -webkit-transform: translate3d(0,100%,0);
-    transform: translate3d(0,100%,0)
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0)
   }
 
   to {
@@ -49,8 +48,17 @@
   color: #05264E !important;
 }
 
-.animated{animation-duration:1.25s;animation-fill-mode:both}
+.animated {
+  animation-duration: 1.25s;
+  animation-fill-mode: both
+}
 
 .hover-up {
   transition: all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
+}
+
+.hover-up:hover {
+  transform: translateY(-3px);
+  transition: all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
+  box-shadow: 0px 10px 20px -5px rgba(10, 42, 105, 0.06);
 }
