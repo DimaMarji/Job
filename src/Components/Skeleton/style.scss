@@ -1,0 +1,8 @@
+
+.skeleton-custom-style .ant-skeleton-paragraph > li:after, .skeleton-custom-style .ant-skeleton-title:after {
+  -webkit-animation: ant-skeleton-loading 1.4s ease infinite;
+  animation: ant-skeleton-loading 1.4s ease infinite;
+  content: "";
+  background: linear-gradient(90deg, #F4F7FA 25%, #EBF1F7 37%, #F4F7FA 63%) !important;
+  //background: linear-gradient(90deg, #af1b96 25%, #9f48b0 37%, #0b69c4 63%) !important;
+}

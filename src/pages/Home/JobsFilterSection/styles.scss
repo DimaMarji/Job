@@ -1,0 +1,35 @@
+.jobs-filter-section {
+  margin-top: 50px;
+  margin-bottom: 100px;
+  .jobs-filter-list {
+    margin-top: 50px;
+  }
+
+  .jobs-filter-card {
+    border: 1px solid #E0E6F7;
+    padding: 8px 12px 10px 12px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+
+    .ant-card-body {
+      padding: 0 6px !important;
+      text-align: left;
+
+      .ant-typography {
+        margin-bottom: 4px;
+      }
+
+      .card-title {
+        margin-bottom: 6px;
+        margin-top: 2px;
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+      .card-title{
+        color: #3C65F5 !important;
+      }
+    }
+  }
+}
