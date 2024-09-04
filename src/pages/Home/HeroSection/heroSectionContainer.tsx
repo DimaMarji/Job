@@ -1,12 +1,13 @@
 import React from "react";
 import "./styles.scss"
 import {Title} from "../../../Components/Atoms/Typography/Title";
-import {Col, Input, Row} from "antd";
+import {Col, Input, Row, Space} from "antd";
 import {useAppMediaQuery} from "../../../Hooks/MediaQuery/use-app-media-query";
 import {Text} from "../../../Components/Atoms/Typography/Text";
 import Image from "next/image";
 import HeroSectionImage from "../../../public/Assets/Images/page/homepage1/banner1.png"
 import SearchIcon from "../../../public/Assets/Images/page/homepage1/search-icon.svg"
+import SearchMenuIcon from "../../../public/Assets/Icons/Home/search-menu.svg"
 import {Button} from "../../../Components/Atoms/Button";
 
 
@@ -33,22 +34,15 @@ const HeroSection: React.FC = () => {
                             Your New Job
                         </Title>
 
-                        {!isMobileOrTablet && <>
-                            <Search  placeholder="Job ID... " enterButton={<><Image width={16} src={SearchIcon} alt={"search-icon"}/>Search</>}/>
-                        </>}
+                         <>
+                            <Search prefix={<Image width={14} alt="search" src={SearchMenuIcon}/>} placeholder="Job ID... " enterButton={<Space><Image style={{display:"block"}} width={14} src={SearchIcon} alt={"search-icon"}/><span>Search</span></Space>}/>
+                        </>
                     </div>
                 </Col>
-                <Col lg={12} sm={24} xs={24}>
+               { !isMobileOrTablet && <Col lg={12} sm={24} xs={24}>
                     <Image className={"hero-section-header-image"} src={HeroSectionImage} alt={"hero-section"}/>
-                </Col>
-                {isMobileOrTablet && <Col lg={12} sm={24} xs={24}>
-                    <Text
-                        typographyFontColor={"#757575"}
-                        className={"hero-section-description"}
-                        typographyType={{type: "regular-regular-regular", size: "16px-14px-14px"}}>
-                        description
-                    </Text>
                 </Col>}
+                
 
                 <div className="box-we-hiring">
                     <div className="text-1"><span className="text-we-are">We are</span><span
@@ -56,11 +50,9 @@ const HeroSection: React.FC = () => {
                     <div className="text-2">Let&rsquo;s <span className="color-brand-1">Work</span> Together<br/> &amp;
                         <span className="color-brand-1">Explore</span> Opportunities</div>
                     <div className="text-3">
-                        <Button type={"primary"}>
-                        {/*<div className="btn btn-apply btn-apply-icon" data-bs-toggle="modal"*/}
-                        {/*     data-bs-target="#ModalApplyJobForm">*/}
-                            Apply now</Button>
-                        {/*</div>*/}
+                        <Button className="btn-apply-icon" type={"primary"}>
+                             Apply{`\n`}now</Button>
+                  
                     </div>
                 </div>
 

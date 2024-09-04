@@ -51,7 +51,6 @@
 
   .ant-affix{
     animation: 700ms ease-in-out 0s normal none 1 running fadeInDown;
-    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.05);
     position: fixed;
     top: 0;
     width: 100%;
@@ -60,9 +59,13 @@
     transition: all 0.3s ease 0s;
     border-bottom: 1px solid #E0E6F6;
     background: #fff !important;
-
+    .ant-layout-header.header-container {
+      background-color: transparent;
+      height: 77px;
+    }
     .layout-header-parent-container{
-      background-color:#fff
+      background-color:#fff;
+      box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.05);
     }
   }
 
@@ -94,8 +97,8 @@
   }
 
   @include media-query(laptop) {
-    margin-left: 8% !important;
-    margin-right: 8% !important;
+    margin-left: 8.5% !important;
+    margin-right: 8.5% !important;
   }
 
   @include media-query(tablet) {
