@@ -17,6 +17,9 @@ const HeroSection: React.FC = () => {
 
     const {isMobileOrTablet} = useAppMediaQuery()
 
+    const handleSearch=(value:string)=>{
+
+    }
 
     return <div className={"hero-section-container"}>
 
@@ -35,7 +38,12 @@ const HeroSection: React.FC = () => {
                         </Title>
 
                          <>
-                            <Search prefix={<Image width={14} alt="search" src={SearchMenuIcon}/>} placeholder="Job ID... " enterButton={<Space><Image style={{display:"block"}} width={14} src={SearchIcon} alt={"search-icon"}/><span>Search</span></Space>}/>
+                            <Search prefix={<Image width={14} alt="search" src={SearchMenuIcon}/>}
+                                    onSearch={handleSearch}
+                                    placeholder="Job ID... "
+                                    enterButton={<Space><Image style={{display:"block"}} width={14} src={SearchIcon} alt={"search-icon"}/>
+                                        <span>Search</span></Space>}/>
+
                         </>
                     </div>
                 </Col>

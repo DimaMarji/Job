@@ -7,6 +7,7 @@ import {TopCompanies} from "./TopCompaniesSection";
 import {JobsOfTheDayAndTrainingSection} from "./JobsOfTheDayAndTrainingSection";
 import {BrowseByCategorySection} from "./BrowseByCategorySection";
 import {JobsFilterSection} from "./JobsFilterSection";
+import {OurBlogsSection} from "./OurBlogsSection";
 
 
 const HomeContainer: React.FC<homeProps> = () => {
@@ -23,6 +24,7 @@ const HomeContainer: React.FC<homeProps> = () => {
                 <JobsFilterSection title={"Jobs In Syria"} subTitle={"Find your favourite jobs and get the benefits of yourself"}/>
             <JobsFilterSection title={"Jobs by Country"} subTitle={"Find your favourite jobs and get the benefits of yourself"}/>
                 <JobsOfTheDayAndTrainingSection title={"Training Course"} subTitle={"Search and connect with the right course faster."}/>
+                <OurBlogsSection/>
             </div>
         </>
     );

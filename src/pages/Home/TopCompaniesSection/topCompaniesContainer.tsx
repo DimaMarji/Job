@@ -5,11 +5,16 @@ import {Text} from "../../../Components/Atoms/Typography/Text";
 import HorizontalScrollList from "../../../Components/Molecules/HorizontalScrollList/horizontalScrollListContainer";
 import {Card} from "antd";
 import {useAppMediaQuery} from "../../../Hooks/MediaQuery/use-app-media-query";
+import {useDataFetching} from "../../../ReactQuery/ApiCrud/useDataFetching";
 
 const TopCompaniesSection: React.FC = () => {
     const {isMobileOrTablet} = useAppMediaQuery()
 
-    const TopCompaniesData = [1, 2, 3, 4, 5, 43634, 634, 463, 34634, 1, 2, 3, 4, 5, 43634, 634, 463, 34634,1, 2, 3, 4, 5, 43634, 634, 463, 34634, 1, 2, 3, 4, 5, 43634, 634, 463, 34634, 6]
+    const {data, error, isLoading, isError} = useDataFetching(
+        "home_page/best_place",          // Key and params combined as query key
+    );
+
+    const TopCompaniesData = data?.data
     return <div>
 
         <HorizontalScrollList data={TopCompaniesData}

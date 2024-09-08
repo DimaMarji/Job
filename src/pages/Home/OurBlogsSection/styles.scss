@@ -1,0 +1,55 @@
+@import "../../../Styles/Helpers/mixins";
+
+.our-blogs-container {
+  .blog-list {
+    margin-top: 48px;
+  }
+
+  .our-blogs-header {
+    > .our-blogs-title {
+      width: 350px;
+    }
+
+    display: flex;
+    justify-content: space-between;
+    width: calc(50% + 175px);
+    margin-left: auto;
+
+    .our-blogs-button {
+      cursor: pointer;
+
+      img {
+        filter: invert(38%) sepia(43%) saturate(3940%) hue-rotate(199deg) brightness(102%) contrast(91%);
+      }
+    }
+  }
+}
+
+@include media-query(tablet-and-mobile) {
+  .our-blogs-container {
+    .blog-list {
+      margin-top: 24px;
+    }
+
+    .our-blogs-header {
+      padding-top: 32px;
+      justify-content: center;
+
+      > .our-blogs-title {
+        width: auto;
+      }
+
+      width: auto;
+      margin-left: unset;
+    }
+
+    .our-blogs-button {
+      cursor: pointer;
+      height: 54px;
+
+      img {
+        filter: invert(38%) sepia(43%) saturate(3940%) hue-rotate(199deg) brightness(102%) contrast(91%);
+      }
+    }
+  }
+}

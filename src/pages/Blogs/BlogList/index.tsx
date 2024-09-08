@@ -3,7 +3,6 @@ import './style.scss'
 import {List} from 'antd';
 import {IBlogListProps} from './interface';
 import BlogCard from './BlogCard';
-import {useBlog} from "../../../ReactQuery/Blog/blogsALL";
 import useUrl from "../../../Hooks/window/Url";
 import {checkIfArrayEmpty} from "../../../Helpers";
 import {BlogSearchNotFoundContainer} from "../BlogSearchNotFound";
@@ -12,6 +11,7 @@ import {useAppMediaQuery} from "../../../Hooks/MediaQuery/use-app-media-query";
 import {paginationObject} from "../../../Constants/paginationObject";
 import {generateEmptyArray} from "../../../Helpers/arrays/arrayHeleprs";
 import {noBlogsInCategory} from "../BlogSearchNotFound/emptyCategoryContainer";
+import {useDataFetching} from "../../../ReactQuery/ApiCrud/useDataFetching";
 
 
 const BlogListContainer: React.FC<IBlogListProps> = ({
@@ -30,52 +30,57 @@ const BlogListContainer: React.FC<IBlogListProps> = ({
 
     const numOfItemsInPage = numOfItems ? 3 : isMobileOrTablet ? 4 : 6
 
-    const {
-        getAllEntities
-    } = useBlog({
-        getAllParams: {
-            category: tagSelected,
-            num_item_in_page: numOfItemsInPage,
-            page: page,
-            state: "PUB",
-            title: searchKeyword ?? null
-        },
-        getAllOptions: {
-            enabled: !blogsData,
-            onSuccess: (data) => {
-                setPage(page)
-                setTotal(data?.data?.total)
-                setTotalPages(data?.data?.total_pages)
-            }
-        }
-    })
+    // const {
+    //     getAllEntities
+    // } = useBlog({
+    //     getAllParams: {
+    //         category: tagSelected,
+    //         num_item_in_page: numOfItemsInPage,
+    //         page: page,
+    //         state: "PUB",
+    //         title: searchKeyword ?? null
+    //     },
+    //     getAllOptions: {
+    //         enabled: !blogsData,
+    //         onSuccess: (data) => {
+    //             setPage(page)
+    //             setTotal(data?.data?.total)
+    //             setTotalPages(data?.data?.total_pages)
+    //         }
+    //     }
+    // })
+    const {data, error, isLoading, isError} = useDataFetching(
+        "home_page/blogs",          // Key and params combined as query key
+    );
 
-    let dateFiltered: any[] | undefined = [];
-    if (!!blogsData) {
-        dateFiltered = blogsData
-    } else if (getAllEntities.isSuccess) {
-        dateFiltered = getAllEntities?.data?.data?.items
-    }
-
-    const {isLoading} = getAllEntities
+    let dateFiltered: any | undefined = (data as any)?.data;
+    // if (!!blogsData) {
+    //     dateFiltered = blogsData
+    // } else if (getAllEntities.isSuccess) {
+    //     dateFiltered = getAllEntities?.data?.data?.items
+    // }
+    //
+    // const {isLoading} = getAllEntities
 
     useEffect(() => {
         setPage(1)
     }, [tagSelected])
 
- useEffect(() => {
-     setPage(page)
-     setTotal(getAllEntities?.data?.data?.total)
-     setTotalPages(getAllEntities?.data?.data?.total_pages)
-    }, [getAllEntities.isSuccess])
+    //
+    // useEffect(() => {
+    //     setPage(page)
+    //     setTotal(getAllEntities?.data?.data?.total)
+    //     setTotalPages(getAllEntities?.data?.data?.total_pages)
+    //    }, [getAllEntities.isSuccess])
 
     const emptyArray = generateEmptyArray(numOfItemsInPage)
 
-     return (
+    return (
         <>
-            {(checkIfArrayEmpty(dateFiltered) && !!searchKeyword && !isLoading)
-                ? <BlogSearchNotFoundContainer/>
-                : <List
+            {/*{(checkIfArrayEmpty(dateFiltered) && !!searchKeyword && !isLoading)*/}
+            {/*    ? <BlogSearchNotFoundContainer/>*/}
+            {/*    :*/}
+                <List
                     className={"blog-list"}
                     grid={{
                         gutter: 40,
@@ -95,7 +100,8 @@ const BlogListContainer: React.FC<IBlogListProps> = ({
                     )}
                     pagination={!!numOfItems ? undefined : totalPages && (totalPages > 1) && !blogsData ? paginationObject(numOfItemsInPage, page, setPage, total) : undefined}
                 >
-                </List>}
+                </List>
+            {/*}*/}
         </>
 
 
