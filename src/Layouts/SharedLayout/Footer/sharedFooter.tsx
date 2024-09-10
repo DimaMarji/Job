@@ -1,16 +1,14 @@
 import React from 'react';
 import "./style.scss"
-import LogoImage from "../../../public/Assets/Icons/menu.svg";
-import LocationIcon from "../../../public/Assets/Icons/SocialMedia/linkedIn.svg";
-import EmailIcon from "../../../public/Assets/Icons/SocialMedia/linkedIn.svg";
-import PhoneIcon from "../../../public/Assets/Icons/SocialMedia/linkedIn.svg";
+import LogoImage from "../../../public/Assets/Images/template/jobhub-logo.svg";
+
 import Image from 'next/image'
 import {useRouter} from 'next/router';
 import {pagesFooterItemsData} from "./constant";
 import {Button} from "../../../Components/Atoms/Button";
-import {Divider, Layout, Space} from "antd";
 import {Title} from "../../../Components/Atoms/Typography/Title";
 import {Text} from "../../../Components/Atoms/Typography/Text";
+import {Divider, Layout, Space} from "antd";
 
 const {Footer} = Layout
 
@@ -18,11 +16,12 @@ const SharedFooter = () => {
     //TODO from api
     const contactInfo = {
         office: {
-            address: "Canada."
+            address: "PO Box 16122 Collins Street\n" +
+                " West Victoria 8007 Canada.", link: "PO Box 16122 Collins Street\n" +
+                " West Victoria 8007 Canada."
         },
-        email: "mail",
-        phone: "tel"
     }
+
 
     const router = useRouter()
     const {push, query, asPath} = router
@@ -32,16 +31,10 @@ const SharedFooter = () => {
 
     const currentYear = new Date().getFullYear()
 
-    const blogsFooterItems = []?.map((item: any) => {
-        return {
-            label: item?.title,
-            key: [`/Blogs/${item?.title}`, `/blogs/${item?.title}`],
-        }
-    })
 
-    const LogoButton = <Button onClick={() => {
+    const LogoButton = <div className={"company-logo-button"}><Button onClick={() => {
         push("/")
-    }} className={"company-logo-button"} type={'link'} href={"/"} target={"_blank"}>
+    }} className={""} type={'link'} href={"/"} target={"_blank"}>
         <Image
             width={191}
             height={54}
@@ -49,6 +42,16 @@ const SharedFooter = () => {
 
         />
     </Button>
+        <Text
+            typographyType={{
+                size: "14px-14px-14px",
+                type: "regular-regular-regular"
+            }}
+        >
+            JobBox is the heart of the design community and the best resource to discover and connect with designers and
+            jobs worldwide.JobBox is the heart of the design community.
+        </Text>
+    </div>
 
     const isSelected = (item) => {
         return item.key === '/'
@@ -63,26 +66,26 @@ const SharedFooter = () => {
         items: pagesFooterItemsData
     }, {
         title: "Blogs",
-        items: blogsFooterItems
+        items: pagesFooterItemsData
     },]
     const FooterList = footerColumns?.map((item, key) => {
         return <div key={key} className={`${item?.title?.toLowerCase()}-container`}>
-            <Title typographyType={{size: "20px-20px-20px", type: "semi-bold-semi-bold-semi-bold"}}
+            <Title typographyType={{size: "16px-16px-16px", type: "semi-bold-semi-bold-semi-bold"}}
                    className={"title-text"}
-                   level={3}
-                   typographyFontColor={"#509DD0"}>
+                   level={3}>
                 {item?.title}
             </Title>
             <div className={"footer-list"}>
                 {item?.items?.map((item, index) => {
                     return <Text key={index}
+                                 ellipsis={{tooltip: item?.label}}
                                  onClick={(event) => {
                                      push(item?.key[0], item?.key[1], {scroll: true})
                                  }}
-                                 typographyFontColor={"#FFFFFF"}
+
                                  className={`footer-link ${isSelected(item) ? "footer-link-selected" : ""}`}
                                  typographyType={{
-                                     size: "16px-16px-16px",
+                                     size: "14px-14px-14px",
                                      type: "regular-regular-regular"
                                  }}
                     >{item?.label}</Text>
@@ -91,6 +94,38 @@ const SharedFooter = () => {
         </div>
     })
 
+    const contactList: any[] = [{
+        label: contactInfo?.office?.address,
+        //TODO
+        onClick: () => {
+        }
+    }, {
+        label: "Phone",
+        onClick: () => handleRedirect(`tel:963`)
+    }, {
+        label: "email",
+        onClick: () => handleRedirect(`mailto:email.com`)
+    },]
+
+    const ContactUsContainer = (item: any, index: number) => <Space key={index} align={"start"}>
+        <Image
+            width={24}
+            alt={"contact"} src={item?.icon}
+
+        />
+        <Title
+            level={4}
+            onClick={item?.onClick}
+            typographyType={{
+                size: "16px-16px-16px",
+                type: "regular-regular-regular"
+            }}
+
+            className={"address-text footer-link"}
+        >
+            {item?.label}
+        </Title>
+    </Space>
 
 
     return (
@@ -101,72 +136,25 @@ const SharedFooter = () => {
 
                     {FooterList}
 
+
                     <div className={"contact-container"}>
-                        <Title typographyType={{size: "20px-20px-20px", type: "semi-bold-semi-bold-semi-bold"}}
+                        <Title typographyType={{size: "16px-16px-16px", type: "semi-bold-semi-bold-semi-bold"}}
                                className={"title-text"}
                                level={3}
                                typographyFontColor={"#509DD0"}>
                             Contact Us
                         </Title>
 
-                        <div className={"our-offices"}>
 
-                            <div>
-                                <Space align={"start"}>
-                                    <Image
-                                        width={24}
-                                        alt={"contact"} src={LocationIcon}
-
-                                    />
-                                    <Title
-                                        level={4}
-                                        typographyType={{
-                                            size: "16px-16px-16px",
-                                            type: "regular-regular-regular"
-                                        }}
-                                        typographyFontColor={"#FFFFFF"}
-                                        className={"address-text footer-link"}
-                                    >
-                                        {contactInfo?.office?.address}
-                                    </Title>
-                                </Space>
-                                <div className={"info-details"}>
-                                    <Space align={"start"}>
-                                        <Image
-                                            width={24}
-                                            alt={"contact"} src={PhoneIcon}
-
-                                        /> <Text
-                                        typographyFontColor={"#FFFFFF"}
-                                        onClick={() => handleRedirect(`tel:${contactInfo?.phone}`)}
-                                        className={"footer-link"}
-                                        typographyType={{
-                                            size: "16px-16px-16px",
-                                            type: "regular-regular-regular"
-                                        }}
-                                    >{contactInfo?.phone}</Text>
-                                    </Space>
-
-                                    <Space align={"start"}>
-                                        <Image
-                                            width={24}
-                                            alt={"contact"} src={EmailIcon}
-
-                                        />
-                                        <Text typographyType={{
-                                            size: "16px-16px-16px",
-                                            type: "regular-regular-regular"
-                                        }} typographyFontColor={"#FFFFFF"}
-                                              onClick={() => handleRedirect(`mailto:${contactInfo?.email}`)}
-                                              className={"footer-link"}>{contactInfo?.email}</Text>
-                                    </Space>
-                                </div>
-                            </div>
-
+                        <div className={"info-details"}>
+                            {contactList?.map((item, index) => {
+                                return ContactUsContainer(item, index)
+                            })}
                         </div>
                     </div>
 
                 </div>
+
                 <div className={"divider-div"}>
                     <Divider className={"tenmil-footer-divider"}/>
                 </div>

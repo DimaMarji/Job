@@ -21,7 +21,7 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 1fr;
-    grid-template-areas: "logo logo .  pages pages .  blogs blogs blogs . about about";
+    grid-template-areas: "logo logo logo logo  pages .  blogs . about about about";
     //column-gap: 1.38%;
     padding-top: 48px;
     padding-bottom: 48px;
@@ -31,10 +31,19 @@
 
   .company-logo-button {
     grid-area: logo;
-    width: fit-content;
-    height: auto;
-    img{
+    display: flex;
+    flex-direction: column;
+    *{
+      white-space: break-spaces;
+      text-align: left;
+    }
+    button {
+      width: fit-content;
       height: auto;
+
+      img {
+        height: auto;
+      }
     }
 
   }
@@ -45,6 +54,7 @@
 
     .footer-list {
       display: grid;
+      text-align: left;
       gap: 16px;
     }
   }
@@ -134,12 +144,14 @@
   }
 
   .pages-container {
+    text-align: left;
 
     grid-area: pages;
 
     .footer-list {
       display: grid;
       gap: 16px;
+      text-align: left;
     }
 
     .contact-container .footer-icons-div > * {
@@ -266,6 +278,7 @@
     }
 
     .blogs-container {
+      text-align: left;
       padding-top: 48px;
     }
 

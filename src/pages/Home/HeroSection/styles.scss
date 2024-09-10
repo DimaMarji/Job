@@ -3,8 +3,7 @@
 @import "../../../Styles/Helpers/mixins";
 
 
-
-.hero-section-subtitle{
+.hero-section-subtitle {
   margin-top: 0 !important;
 }
 
@@ -41,23 +40,21 @@
   }
 
 
-    .hero-section-header {
-      //flex-direction: row-reverse;
+  .hero-section-header {
+    //flex-direction: row-reverse;
 
-      .hero-section-header-image {
-        // margin-left: auto;
-        // margin-right: auto;
+    .hero-section-header-image {
+      // margin-left: auto;
+      // margin-right: auto;
 
-      }
+    }
 
   }
 }
 
 
-
-
-.hero-section-container{
-@include fullWidthSection;
+.hero-section-container {
+  @include fullWidthSection;
   padding-top: 108px;
   // margin-left:0 !important;
   // margin-right:0 !important;
@@ -87,45 +84,48 @@
   //right: 0;
   .heading-banner {
     color: $color-brand;
-    
+
     padding-bottom: 80px;
     //font-size: 48px;
     font-family: plus-jakarta-sans-extra-bold !important;
-  
-   
+
+
     line-height: 60px;
-    br{
+
+    br {
       display: block;
     }
   }
+
   .color-brand-2,
-  .card-grid-2 .card-block-info .card-text-price{
-    color:#f8c80d
+  .card-grid-2 .card-block-info .card-text-price {
+    color: #f8c80d
 
   }
 
 
-
-  .hero-section-header-image{
+  .hero-section-header-image {
     animation: hero-thumb-animation 2s linear infinite alternate;
     margin-top: 10%;
   }
 
-  .color-brand-2{
+  .color-brand-2 {
     position: relative;
-    &::after {
-    content: "";
-    background-color: #3C65F5;
-    height: 25px;
-    position: absolute;
-    width: 100%;
-    left: 0;
-    bottom: -6px;
-    z-index: -1;
-    opacity: 0.1;
-  }}
 
-  .ant-input-search-with-button{
+    &::after {
+      content: "";
+      background-color: #3C65F5;
+      height: 25px;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: -6px;
+      z-index: -1;
+      opacity: 0.1;
+    }
+  }
+
+  .ant-input-search-with-button {
     background: #ffffff;
     box-shadow: 0px 18px 40px rgba(25, 15, 9, 0.1);
     border-radius: 8px;
@@ -133,22 +133,27 @@
     display: inline-block;
     width: 100%;
     padding: 10px 10px;
-    .ant-input-wrapper{
+
+    .ant-input-wrapper {
       height: 100%;
-      .ant-space{
+
+      .ant-space {
         gap: 12px !important
       }
     }
-    input,.ant-input-affix-wrapper{
+
+    input, .ant-input-affix-wrapper {
       border: none;
       height: 100%;
       box-shadow: none !important;
-      img{
+
+      img {
         margin-right: 6px;
       }
     }
-    button{
-     font-family: plus-jakarta-sans-semi-bold;
+
+    button {
+      font-family: plus-jakarta-sans-semi-bold;
       padding: 10px 23px !important;
       width: 122px;
       height: 50px !important;
@@ -161,15 +166,19 @@
     background-position: 15px 11px;
     background-repeat: no-repeat;
     padding-left: 40px;
-    &:hover{
-    transform: none !important;
-   } *{
+
+    &:hover {
+      transform: none !important;
+    }
+
+    * {
       font-size: 14px;
       font-family: plus-jakarta-sans-regular !important;
       white-space: pre;
       line-height: 1;
     }
-}
+  }
+
   .box-we-hiring {
     width: 100%;
     margin-top: 70px;
@@ -181,7 +190,7 @@
     border-radius: 4px;
     overflow: hidden;
 
-    &:before{
+    &:before {
       content: "";
       position: absolute;
       bottom: 15px;
@@ -193,15 +202,16 @@
     }
 
     &::after {
-         content: "";
-         position: absolute;
-         bottom: 15px;
-         right: -5px;
-         height: 120px;
-         width: 250px;
-         background: url(../../../public/Assets/Images/page/homepage1/bg-right-hiring.svg) no-repeat 0px 0px;
-         background-size: cover;
-       }
+      content: "";
+      position: absolute;
+      bottom: 15px;
+      right: -5px;
+      height: 120px;
+      width: 250px;
+      background: url(../../../public/Assets/Images/page/homepage1/bg-right-hiring.svg) no-repeat 0px 0px;
+      background-size: cover;
+    }
+
     .text-we-are {
       font-size: 16px;
       line-height: 20px;
@@ -209,10 +219,11 @@
       letter-spacing: 2px;
       text-transform: uppercase;
       display: block;
-      
+
       text-align: left;
     }
-   .text-hiring {
+
+    .text-hiring {
       font-size: 49px;
       line-height: 51px;
       color: #05264E;
@@ -220,25 +231,28 @@
       letter-spacing: 1px;
       text-transform: uppercase;
       font-family: plus-jakarta-sans-extra-bold !important;
-      
+
       text-align: left;
     }
+
     .text-2 {
       font-size: 18px;
       line-height: 23px;
       color: #66789C;
       font-weight: 500;
       padding: 29px 20px 0px 20px;
-      
+
       text-align: left;
     }
-     .text-3 {
+
+    .text-3 {
       padding: 34px 0px 0px 20px;
       text-align: left;
     }
+
     .color-brand-1 {
       color: #f8c80d !important;
-  }
+    }
   }
 }
 
@@ -252,7 +266,6 @@
 }
 
 
-
 .hero-image {
   -webkit-animation: hero-thumb-animation 2s linear infinite alternate;
   -moz-animation: hero-thumb-animation 2s linear infinite alternate;
@@ -261,14 +274,10 @@
 }
 
 
-
-
-
-
-@media screen and (max-width: 1300px) and  (min-width:992px ){
+@media screen and (max-width: 1300px) and (min-width: 992px) {
   .hero-section-title {
 
-    &, *{
+    &, * {
       //font-size: 32px !important;
     }
   }
@@ -292,10 +301,12 @@
         text-align: center;
         white-space: normal !important;
         width: 100%;
+        max-width: unset;
+        text-align: left;
 
         * {
           margin-bottom: 0 !important;
-          line-height: 24px;
+          line-height: unset;
         }
 
 
@@ -309,6 +320,41 @@
           width: 90%;
           height: auto;
         }
+      }
+    }
+
+    .box-we-hiring {
+      padding: 20px 25px;
+      z-index: 435;
+      flex-wrap: wrap;
+      button *{
+        white-space: nowrap;
+      }
+
+      .text-1 {
+        height: fit-content;
+        display: flex;
+        align-items: center;
+        line-height: unset;
+
+        * {
+          white-space: nowrap;
+        }
+      }
+
+      .text-we-are {
+        display: unset;
+      }
+
+      &:before, &:after {
+        display: none;
+      }
+
+      .text-2 {
+        display: block !important;
+      }
+      .text-3{
+        margin-left: auto;
       }
     }
   }

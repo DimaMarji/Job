@@ -2,6 +2,7 @@ import React from "react";
 import "./styles.scss"
 import {useDataFetching} from "../../ReactQuery/ApiCrud/useDataFetching";
 import JobCard from "../../SharedComponent/JobCard/jobCardContainer";
+import {Title} from "../../Components/Atoms/Typography/Title";
 
 const JobList: React.FC = () => {
 
@@ -10,11 +11,14 @@ const JobList: React.FC = () => {
     );
 
     console.log(data)
-    return <div>
-        <JobCard jobId={"3534"} jobTitle={"Title"} tags={["ASFs", "fdgfsd"]}
-                 views={24} jobType={"type"} companyName={"Company"}
-                 educationLevel={"level"} location={"location"}
-                 postedDate={"date"}/>
+    return <div className={"job-list-conatiner"}>
+        <Title
+            className={"animate__ animate__fadeInUp animated"}
+            typographyFontColor={"#05264E"}
+            typographyType={{type: "bold-bold-bold", size: "48px-52px-38px"}} level={1}>
+            <span
+            className="color-brand-2">22 Jobs</span><br/> Available Now
+        </Title>
     </div>
 }
 
