@@ -27,7 +27,7 @@ const BestPlaceToWorkSection: React.FC = () => {
             sm: 1,
             xs: 1
         }} dataSource={[1, 2, 3, 4]} renderItem={(item, index) =>
-            <List.Item key={index}><Card className={"work-best-card"} title={<Title
+            <List.Item key={index}><Card className={"work-best-card hover-up"} title={<Title
                 typographyType={{type: "semi-bold-semi-bold-semi-bold", size: "16px-14px-14px"}}>Products</Title>}>
                 <List grid={{
                     column: 1

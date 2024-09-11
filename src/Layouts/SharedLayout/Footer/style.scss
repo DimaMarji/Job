@@ -33,6 +33,9 @@
     grid-area: logo;
     display: flex;
     flex-direction: column;
+    .ant-typography{
+      max-width: 90%;
+    }
     *{
       white-space: break-spaces;
       text-align: left;
