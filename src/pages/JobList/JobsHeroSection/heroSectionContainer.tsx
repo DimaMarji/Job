@@ -39,11 +39,12 @@ const JobsHeroSection: React.FC = () => {
             Lorem ipsum dolor
         </Text>
         <div className={"jobs-search-container"}>
-            <Select options={fakeOptions}/>
-            <Select options={fakeOptions}/>
+            <Select placeholder={"Industry"} className={"industry-select"} options={fakeOptions}/>
+            <Select placeholder={"Location"} className={"location-select"} options={fakeOptions}/>
         <Search prefix={<Image width={14} alt="search" src={SearchMenuIcon}/>}
                 onSearch={handleSearch}
-                placeholder="Job ID... "
+                className={"search-input"}
+                placeholder="Your keyword... "
                 enterButton={<Space><Image style={{display:"block"}} width={14} src={SearchIcon} alt={"search-icon"}/>
                     <span>Search</span></Space>}/>
         </div>

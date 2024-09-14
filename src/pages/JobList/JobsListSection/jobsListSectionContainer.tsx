@@ -8,6 +8,7 @@ import {Text} from "../../../Components/Atoms/Typography/Text";
 import JobCard from "../../../SharedComponent/JobCard/jobCardContainer";
 import Image from "next/image";
 import SingleGridIcon from "../../../public/Assets/Images/template/icons/icon-list.svg"
+import GridIcon from "../../../public/Assets/Images/template/icons/icon-grid-hover.svg"
 
 
 const JobsListSection: React.FC<IJobsListSectionProps> = ({data}) => {
@@ -28,12 +29,11 @@ const JobsListSection: React.FC<IJobsListSectionProps> = ({data}) => {
             setViewType("single")
         }} src={SingleGridIcon} alt={"single"}/>
 
-        <Button onClick={() => {
+
+            <Image onClick={() => {
             setViewType("grid")
-        }
-        }>
-            Grid
-        </Button>
+        }} src={GridIcon} alt={"GridIcon"}/>
+
         </div>
 
         {viewType == "grid" ? <List

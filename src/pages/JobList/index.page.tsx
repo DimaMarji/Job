@@ -20,7 +20,6 @@ const JobList: React.FC = () => {
 
             </Col>
             <Col lg={16}>
-
                 <JobsListSection  data={[1,2,3,5
                 ]}/>
             </Col>
