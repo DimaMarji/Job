@@ -9,8 +9,9 @@ import CloseIcon from "../../../public/Assets/Icons/General/close-icon.png";
 import LogoImage from "../../../public/Assets/Images/template/jobhub-logo.svg";
 import { Button } from "../../../Components/Atoms/Button";
 import { Text } from "../../../Components/Atoms/Typography/Text";
-import { Dropdown, Space } from "antd";
+import { Dropdown, Select, Space } from "antd";
 import { Layout } from "antd";
+import { useTranslation } from "next-i18next";
 
 interface SharedNavBarProps {
   setToggleMenu?: any;
@@ -22,7 +23,12 @@ const SharedNavBar: FunctionComponent<SharedNavBarProps> = ({
   toggleMenu,
 }) => {
   const router = useRouter();
-  const { push, asPath: selected } = useRouter();
+  const { push, asPath: selected ,locale} = useRouter();
+  const { t } = useTranslation('common');
+
+  const switchLanguage = (lang) => {
+    router.push(router.pathname, router.asPath, { locale: lang });
+  };
 
   const { isMobileOrTablet } = useAppMediaQuery();
 
@@ -137,7 +143,13 @@ const SharedNavBar: FunctionComponent<SharedNavBarProps> = ({
         >
           Sign In
         </Button>
-      
+        <Select
+        value={locale}
+        options={[{ value:"en",label:"English"},{ value:"ar",label:"العربية"}]}
+        onSelect={(value) =>switchLanguage(value)}
+        style={{ padding: '8px', fontSize: '16px' }}
+      />
+       
     </>
   );
 

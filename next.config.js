@@ -1,49 +1,25 @@
 const withCSS = require("@zeit/next-css");
-module.exports = withCSS();
-/** @type {import('next').NextConfig} */
 const path = require("path");
+
+const { i18n } = require('./next-i18next.config'); 
+
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: false,
+  i18n, // Add i18n configuration here
   async rewrites() {
     return [
-      // { source: "/ggg", destination: "/Home" },
+      // Rewrites
       { source: "/", destination: "/Home" },
-      { source: "/about-us", destination: "/AboutUs" },
-      { source: "/blogs", destination: "/Blogs" },
-      {
-        source: "/services/:serviceName/:subServiceName",
-        destination: "/Services/:serviceName/:subServiceName",
-      },
-      { source: "/contact-us", destination: "/ContactUs" },
-      {
-        source: "/our-process/agile-development",
-        destination: "/OurProcess/AgileDevelopment",
-      },
-      {
-        source: "/our-process/ui-ux-process",
-        destination: "/OurProcess/UIUXProcess",
-      },
-      // Errors
-      {
-        source: "/error",
-        destination: "/GeneralError",
-      }
+      { source: "/error", destination: "/GeneralError" }
     ];
   },
   devIndicators: {
     buildActivity: false,
   },
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "websiteback.zcoderz.com",
-      },
-    ],
+   
   },
-  // devIndicators: {
-  //   buildActivity: false,
-  // },
   pageExtensions: ['page.tsx', 'page.ts', 'page.jsx', 'page.js'],
   experimental: { appDir: true },
 
@@ -61,4 +37,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+module.exports = nextConfig; 
