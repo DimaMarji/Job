@@ -16,8 +16,8 @@ const nextConfig = {
       },
       { source: "/contact-us", destination: "/ContactUs" },
       {
-        source: "/our-process/agile-development",
-        destination: "/OurProcess/AgileDevelopment",
+        source: "/jobs-list",
+        destination: "/JobList",
       },
       {
         source: "/our-process/ui-ux-process",

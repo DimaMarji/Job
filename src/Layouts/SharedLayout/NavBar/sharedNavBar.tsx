@@ -56,25 +56,25 @@ const SharedNavBar: FunctionComponent<SharedNavBarProps> = ({
       label: "Home",
     },
     {
-      key: ["/FindAJob", "/find-a-job"],
+      key:  "/jobs-list",
       label: "Find a Job",
     }, {
-      key: ["/Recruiters", "/recruiters"],
+      key: "/recruiters",
       label: "Recruiters",
     },  {
-      key: ["/AboutUs", "/about-us"],
+      key: "/about-us",
       label: "About Us"
   },
     {
-      key: ["/Pricing", "/pricing"],
+      key: "/pricing",
       label: "Pricing",
     },
     {
-      key: ["/ContactUs", "/contact-us"],
+      key: "/contact-us",
       label: "Contact Us",
     }, 
       {
-        key: ["/Blogs", "/blogs"],
+        key: "/blogs",
         label: "Blog",
       },
   ];
@@ -83,8 +83,6 @@ const SharedNavBar: FunctionComponent<SharedNavBarProps> = ({
     const isSelected =
       item.key === "/"
         ? selected === item.key
-        : Array.isArray(item.key)
-        ? item.key.some((key) => selected.startsWith(key))
         : selected.startsWith(item.key);
 
     return (
@@ -98,7 +96,7 @@ const SharedNavBar: FunctionComponent<SharedNavBarProps> = ({
                 : "header-menu-item navbar-not-selected-item"
             }
             onClick={(event) => {
-              push(item.key[0], item.key[1], { scroll: true });
+              push(item.key);
               toggleNav(false, event);
             }}
             typographyFontColor={"#05264E"}
