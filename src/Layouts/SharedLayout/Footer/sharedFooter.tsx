@@ -16,9 +16,7 @@ const SharedFooter = () => {
     //TODO from api
     const contactInfo = {
         office: {
-            address: "PO Box 16122 Collins Street\n" +
-                " West Victoria 8007 Canada.", link: "PO Box 16122 Collins Street\n" +
-                " West Victoria 8007 Canada."
+            address: "Damascus"
         },
     }
 

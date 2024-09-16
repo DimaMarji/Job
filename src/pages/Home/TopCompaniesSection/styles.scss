@@ -16,12 +16,18 @@
   border: 1px solid rgba(6, 18, 36, 0.1);
   padding: 22px 18px;
   display: flex;
+  justify-content: center;
   text-align: left;
   border-radius: 12px;
   background-color: #ffffff;
   flex-wrap: wrap;
   float: left;
   width: 100%;
+
+   img {
+    width: 90px;
+    border-radius: 10%;
+  }
 }
 
 

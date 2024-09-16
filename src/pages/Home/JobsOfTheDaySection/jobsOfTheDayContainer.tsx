@@ -9,13 +9,20 @@ import LogoImage from "../../../public/Assets/Images/template/bg-newsletter.svg"
 import LocationIcon from "../../../public/Assets/Images/template/icons/location.svg";
 import FlashIcon from "../../../public/Assets/Images/template/icons/flash.svg";
 import {IJobsOfTheDayAndTraining} from "./interface";
+import {useDataFetching} from "../../../ReactQuery/ApiCrud/useDataFetching";
+import {ServicesNames} from "../../../Constants/servicesNames";
 
-const JobsOfTheDayAndTrainingSection: React.FC<IJobsOfTheDayAndTraining> = ({title,
+const JobsOfTheDaySection: React.FC<IJobsOfTheDayAndTraining> = ({title,
                                                                             subTitle,
-                                                                            data}) => {
+                                                                            }) => {
     const {isMobileOrTablet} = useAppMediaQuery()
 
-    const JobsOfTheDayData = [1, 2, 3, 4, 5, 43634, 634, 463, 4, 5, 43634, 634, 463, 34634, 6]
+    const {data, error, isLoading, isError} = useDataFetching(
+        ServicesNames.HomeTodayJob,
+    );
+
+    const JobsOfTheDayData:any = data?.data
+
     return <div>
         <div className={"jobs-of-day-title-container"}>
             <Title
@@ -41,7 +48,12 @@ const JobsOfTheDayAndTrainingSection: React.FC<IJobsOfTheDayAndTraining> = ({tit
             sm: 2,
             xs: 1
         }} dataSource={JobsOfTheDayData} renderItem={(item, index) =>
-            <List.Item key={index}><Card className={"jobs-of-day-card hover-up"}
+            <List.Item key={index}>
+
+
+
+
+                <Card className={"jobs-of-day-card hover-up"}
                                          title={<><Space>
                                              <Image alt={"company-logo"}
                                                     className={"company-logo-image"} src={LogoImage}/>
@@ -111,4 +123,4 @@ const JobsOfTheDayAndTrainingSection: React.FC<IJobsOfTheDayAndTraining> = ({tit
 
 }
 
-export default JobsOfTheDayAndTrainingSection
+export default JobsOfTheDaySection

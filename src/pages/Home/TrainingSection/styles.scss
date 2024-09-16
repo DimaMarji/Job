@@ -1,0 +1,75 @@
+@import "../../../Styles/Helpers/mixins";
+@import "../../../Styles/Variables/variables";
+@import "../../../Styles/Helpers/mixins";
+
+
+.jobs-of-day-title-container {
+  margin-top: 50px;
+  margin-bottom: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.jobs-of-day-card {
+  text-align: left;
+  border-radius: 8px;
+  border: 1px solid #E0E6F7;
+  overflow: hidden;
+  margin-bottom: 24px;
+  position: relative;
+  background: #F8FAFF;
+
+
+
+  .ant-card-head {
+    padding: 30px 20px 15px 20px;
+    position: relative;
+    border-bottom: none;
+    display: flex;
+
+    .ant-space-vertical{
+      gap: 5px !important;
+    }
+
+    .ant-card-head-title {
+      padding: 0;
+      >   .ant-space-horizontal{
+        gap: 15px !important;
+      }
+    }
+  }
+
+  .company-logo-image {
+    width: 52px;
+    height: 52px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+
+  .job-info {
+    display: flex;
+    gap: 15px;
+    margin-top: 8px;
+  }
+  .job-details-text{
+    margin-top: 15px;
+    display: block;
+  }
+
+  .flash-icon{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    height: 25px;
+    width: 25px;
+  }
+}
+
+@include media-query(tablet-and-mobile) {
+
+}

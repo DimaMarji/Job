@@ -10,6 +10,9 @@ const JobsFilterSection: React.FC<IJobsFilterSection> = ({
                                                              subTitle,
                                                              data
                                                          }) => {
+
+
+    console.log(data)
     return <div className={"jobs-filter-section"}>
         <div className={"jobs-filter-title-container"}>
             <Title
@@ -35,7 +38,7 @@ const JobsFilterSection: React.FC<IJobsFilterSection> = ({
             md: 3,
             sm: 2,
             xs: 1
-        }} dataSource={[1, 2, 3]} renderItem={(item, index) =>
+        }} dataSource={data} renderItem={(item, index) =>
             <List.Item key={index}>
                 <Card className={"jobs-filter-card hover-up"}>
 
@@ -44,12 +47,12 @@ const JobsFilterSection: React.FC<IJobsFilterSection> = ({
                         typographyType={{
                             type: "bold-bold-bold",
                             size: "14px-14px-14px"
-                        }}>Designer</Title>
+                        }}>{item?.name}</Title>
                     <Text
                         typographyType={{
                             type: "regular-regular-regular",
                             size: "14px-14px-14px"
-                        }}>13 Designer</Text>
+                        }}>{item?.vacancies_count}</Text>
                 </Card>
             </List.Item>}/>
 

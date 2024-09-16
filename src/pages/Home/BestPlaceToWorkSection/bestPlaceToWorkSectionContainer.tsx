@@ -3,13 +3,23 @@ import {Title} from "../../../Components/Atoms/Typography/Title";
 import "./styles.scss"
 import {Card, List} from "antd";
 import {Text} from "../../../Components/Atoms/Typography/Text";
+import {useDataFetching} from "../../../ReactQuery/ApiCrud/useDataFetching";
+import {ServicesNames} from "../../../Constants/servicesNames";
 
 const BestPlaceToWorkSection: React.FC = () => {
+
+    const {data, error, isLoading, isError} = useDataFetching(
+        ServicesNames.HomeBestPlaces,
+    );
+
+    const bestPlacesData: any = data?.data
+
+
     return <div>
         <Title
             className={"best-place-title animate__ animate__fadeInUp animated"}
             typographyFontColor={"#05264E"}
-            typographyType={{type: "bold-bold-bold", size: "36px-20px-20px"}} level={1}>
+            typographyType={{type: "bold-bold-bold", size: "36px-20px-20px"}} level={2}>
             Best Place To Work
         </Title>
         <Text
@@ -26,17 +36,17 @@ const BestPlaceToWorkSection: React.FC = () => {
             md: 1,
             sm: 1,
             xs: 1
-        }} dataSource={[1, 2, 3, 4]} renderItem={(item, index) =>
+        }} dataSource={bestPlacesData} renderItem={(item: any, index) =>
             <List.Item key={index}><Card className={"work-best-card hover-up"} title={<Title
-                typographyType={{type: "semi-bold-semi-bold-semi-bold", size: "16px-14px-14px"}}>Products</Title>}>
+                typographyType={{type: "semi-bold-semi-bold-semi-bold", size: "16px-14px-14px"}}>{item?.name}</Title>}>
                 <List grid={{
                     column: 1
-                }} dataSource={[1, 2, 3, 4]} renderItem={(item, index) =>
+                }} dataSource={item?.activities} renderItem={(item: any, index) =>
                     <List.Item key={index}>
                         <Text
                             typographyType={{type: "regular-regular-regular", size: "14px-14px-14px"}}
                             typographyFontColor={"#4F5E64"}>
-                            example
+                            {item?.name}
                         </Text></List.Item>}/>
             </Card></List.Item>}/>
     </div>

@@ -5,9 +5,12 @@ import React from "react";
 import "../Layouts/SharedLayout/style.scss"
 import GeneralPages from './_generalPages';
 import SystemPages from './_systemPages';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { appWithTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
 
 
-export default function App(appProps: AppProps) {
+function App(appProps: AppProps) {
     let {pageProps} = appProps;
     let pageType = pageProps.pageType ?? "general"
     let statusCode = pageProps.statusCode ?? ""
@@ -15,8 +18,9 @@ export default function App(appProps: AppProps) {
 
     //TODO uncomment this
     // const hidden = useHiddenInspect()
+    const isRTL = useRouter().locale === 'ar';
 
-    return <div className="App">
+    return <div  dir={isRTL ? 'rtl' : 'ltr'} className={`App lang-${useRouter().locale}`}>
         {
             <>
                 {isSystemPages ?
@@ -34,3 +38,13 @@ export default function App(appProps: AppProps) {
         }
     </div>
 }
+export default appWithTranslation(App);
+
+
+export const getStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
+};

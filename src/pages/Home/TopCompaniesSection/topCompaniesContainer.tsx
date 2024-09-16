@@ -6,15 +6,18 @@ import HorizontalScrollList from "../../../Components/Molecules/HorizontalScroll
 import {Card} from "antd";
 import {useAppMediaQuery} from "../../../Hooks/MediaQuery/use-app-media-query";
 import {useDataFetching} from "../../../ReactQuery/ApiCrud/useDataFetching";
+import {ServicesNames} from "../../../Constants/servicesNames";
+import Image from "next/image";
 
 const TopCompaniesSection: React.FC = () => {
     const {isMobileOrTablet} = useAppMediaQuery()
 
     const {data, error, isLoading, isError} = useDataFetching(
-        "home_page/best_place",          // Key and params combined as query key
+        ServicesNames.HomeTopCompany,
     );
 
-    const TopCompaniesData = data?.data
+    const TopCompaniesData:any = data?.data
+
     return <div>
 
         <HorizontalScrollList data={TopCompaniesData}
@@ -36,7 +39,7 @@ const TopCompaniesSection: React.FC = () => {
                               listContainer={TopCompaniesData?.map(
                                   (item, index) => {
                                       return <Card className={"companies-item-logo animate__ animate__fadeIn animated"} key={index}>
-                                          MTN
+                                          <Image width={90} height={90} src={"https://web.syriajob.com/assets/imgs/brands/shoueifat.jpg" ?? item?.logo} alt={item?.name}/>
                                       </Card>
                                   }
                               )}/>
