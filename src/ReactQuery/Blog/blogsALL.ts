@@ -1,7 +1,7 @@
 import {useApiCRUD} from "../ApiCrud/use-api-crud";
-import {IGetAllBlogParams, IGetAllBlogResponse} from "../../API/TenmilApi/Interfaces/Blog/get-all-blogs";
-import {IBlogCategories} from "../../API/TenmilApi/Interfaces/Blog/get-all-blogs-categories";
-import {IBlogDetails} from "../../API/TenmilApi/Interfaces/Blog/get-blog-details";
+import {IGetAllBlogParams, IGetAllBlogResponse} from "../../API/JobApi/Interfaces/Blog/get-all-blogs";
+import {IBlogCategories} from "../../API/JobApi/Interfaces/Blog/get-all-blogs-categories";
+import {IBlogDetails} from "../../API/JobApi/Interfaces/Blog/get-blog-details";
 import {ICrudOptions} from "../ApiCrud/interfaces/apiCrudOptionsInterface";
 
 export const useBlog = (options?: ICrudOptions) => {

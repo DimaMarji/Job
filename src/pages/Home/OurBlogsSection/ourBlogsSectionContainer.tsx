@@ -31,7 +31,7 @@ const OurBlogsSection: React.FC = () => {
                 </Title>
                 {!isMobileOrTablet && <Text typographyFontColor={"#444754"}
                                             typographyType={{size: "16px-16px-16px", type: "regular-regular-regular"}}>
-                    News and Blog
+                   Get the latest news, updates and tips
                 </Text>}
             </div>
             {!isMobileOrTablet && viewAllButton}

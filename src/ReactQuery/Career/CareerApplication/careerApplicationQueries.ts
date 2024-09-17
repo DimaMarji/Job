@@ -1,16 +1,16 @@
 import {useApiCRUD} from "../../ApiCrud/use-api-crud";
 import IGetAllZeroCaseApplication
-    from "../../../API/TenmilApi/Interfaces/CarrerApplication/ZeroCase/IGetAllZeroCaseApplication";
+    from "../../../API/JobApi/Interfaces/CarrerApplication/ZeroCase/IGetAllZeroCaseApplication";
 import ICreateZeroCaseApplication
-    from "../../../API/TenmilApi/Interfaces/CarrerApplication/ZeroCase/ICreateZeroCaseApplication";
+    from "../../../API/JobApi/Interfaces/CarrerApplication/ZeroCase/ICreateZeroCaseApplication";
 import IUpdateZeroCaseApplication
-    from "../../../API/TenmilApi/Interfaces/CarrerApplication/ZeroCase/IUpdateZeroCaseApplication";
+    from "../../../API/JobApi/Interfaces/CarrerApplication/ZeroCase/IUpdateZeroCaseApplication";
 import IGetAllCareerApplication
-    from "../../../API/TenmilApi/Interfaces/CarrerApplication/NormalCase/IGetAllCarrerApplication";
+    from "../../../API/JobApi/Interfaces/CarrerApplication/NormalCase/IGetAllCarrerApplication";
 import ICreateCareerApplication
-    from "../../../API/TenmilApi/Interfaces/CarrerApplication/NormalCase/ICreateCareerApplication";
+    from "../../../API/JobApi/Interfaces/CarrerApplication/NormalCase/ICreateCareerApplication";
 import IUpdateCareerApplication
-    from "../../../API/TenmilApi/Interfaces/CarrerApplication/NormalCase/IUpdateCareerApplication";
+    from "../../../API/JobApi/Interfaces/CarrerApplication/NormalCase/IUpdateCareerApplication";
 import {ICrudOptions} from "../../ApiCrud/interfaces/apiCrudOptionsInterface";
 
 

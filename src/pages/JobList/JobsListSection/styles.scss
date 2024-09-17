@@ -6,3 +6,10 @@
   gap: 24px;
 
 }
+
+.jobs-of-day-list.grid{
+  .job-info{
+    
+    flex-direction: column;
+  }
+}

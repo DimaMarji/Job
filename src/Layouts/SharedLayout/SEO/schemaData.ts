@@ -1,4 +1,4 @@
-import Logo from "../../../public/Assets/Images/Logo/Tenmil-logo.png";
+import Logo from "../../../public/Assets/Images/template/jobhub-logo.png";
 import {facebookLink, instagramLink, linkedinLink} from "../../../Constants";
 import {webSiteURL} from "./webSiteMetas";
 

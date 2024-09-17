@@ -1,5 +1,5 @@
 import {useApiCRUD} from "../ApiCrud/use-api-crud";
-import { IGetAllCareer, IPositionDetails} from "../../API/TenmilApi/Interfaces/Career/career-interface";
+import { IGetAllCareer, IPositionDetails} from "../../API/JobApi/Interfaces/Career/career-interface";
 import {ICrudOptions} from "../ApiCrud/interfaces/apiCrudOptionsInterface";
 
 

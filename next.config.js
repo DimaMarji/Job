@@ -38,6 +38,9 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "web.syriajob.com",
+      }, {
+        protocol: "https",
+        hostname: "test.syriajob.com",
       },
     ],
   },

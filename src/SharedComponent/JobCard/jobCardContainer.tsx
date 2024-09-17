@@ -15,9 +15,15 @@ interface JobCardProps {
 const JobCard: React.FC<JobCardProps> = ({
 data
 }) => {
+
+const jobInfoData=[{label:" Job Id:",value:"66453"},
+    {label:"Job Type:",value:"66453"},
+    {label:"Education Level:",value:"66453"}]
+
+    
     return (
             <Card className={"job-card hover-up"}
-                  title={<div className={"job-card-footer"}><Space>
+                  title={<div className={"job-card-footer"}><Space  className='company-info-space'>
                       <Image alt={"company-logo"}
                              className={"company-logo-image"} src={LogoImage}/>
                       <Space direction={"vertical"} align={"start"}>
@@ -60,45 +66,25 @@ data
                 <Title
                     typographyType={{
                         type: "semi-bold-semi-bold-semi-bold",
-                        size: "18px-16px-16px"
+                        size: "18px-18px-18px"
                     }}>UI Ux Designer</Title>
                 <div className={"job-info"}>
-                    <div>
-                        <Text
-                            typographyType={{type: "semi-bold-semi-bold-semi-bold", size: "12px-12px-12px"}}
-                            typographyFontColor={"#A0ABB8"}>
-                            Job Id:
-                        </Text>
-                        <Text
-                            typographyType={{type: "regular-regular-regular", size: "12px-12px-12px"}}
-                            typographyFontColor={"#A0ABB8"}>
-                            5473
-                        </Text>
-                    </div>
-                    <div>
-                        <Text
-                            typographyType={{type: "semi-bold-semi-bold-semi-bold", size: "12px-12px-12px"}}
-                            typographyFontColor={"#A0ABB8"}>
-                            Job Type:
-                        </Text>
-                        <Text
-                            typographyType={{type: "regular-regular-regular", size: "12px-12px-12px"}}
-                            typographyFontColor={"#A0ABB8"}>
-                            5473
-                        </Text>
-                    </div>
-                    <div>
-                        <Text
-                            typographyType={{type: "semi-bold-semi-bold-semi-bold", size: "12px-12px-12px"}}
-                            typographyFontColor={"#A0ABB8"}>
-                            Education Level:
-                        </Text>
-                        <Text
-                            typographyType={{type: "regular-regular-regular", size: "12px-12px-12px"}}
-                            typographyFontColor={"#A0ABB8"}>
-                            Master Degree
-                        </Text>
-                    </div>
+                  
+            
+                   {jobInfoData?.map((item)=>{
+return <div><Text
+style={{marginRight:"10px"}}
+    typographyType={{type: "bold-bold-bold", size: "12px-12px-12px"}}
+    typographyFontColor={"#A0ABB8"}>
+    {item?.label}
+</Text>
+<Text
+    typographyType={{type: "bold-bold-bold", size: "12px-12px-12px"}}
+    typographyFontColor={"#4F5E64"}>
+    {item?.value}
+</Text>
+</div>
+                   }) }
                 </div>
                 <Divider/>
                 <div className={"job-card-footer"}>
@@ -129,7 +115,7 @@ data
                         </Text>
                     </Space>
                 </Space>
-                    <Button type={"primary"}>
+                    <Button type={"primary"} className="btn-apply-now">
                         Apply now
                     </Button>
                 </div>

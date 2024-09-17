@@ -2,7 +2,7 @@ import {useApiCRUD} from "../ApiCrud/use-api-crud";
 import IProjectRequest, {
     ICreateProject,
     IGetAllProjectScope
-} from "../../API/TenmilApi/Interfaces/ContactUs/IProjectRequest";
+} from "../../API/JobApi/Interfaces/ContactUs/IProjectRequest";
 
 
 export const useContactUs = () => {

@@ -10,6 +10,7 @@ import {Card} from "antd";
 import {Title} from "../../../../Components/Atoms/Typography/Title";
 import { Paragraph } from '../../../../Components/Atoms/Typography/Paragraph';
 import { Text } from '../../../../Components/Atoms/Typography/Text';
+import FakeImage from "../../../../public/Assets/Images/page/homepage1/img-news2.png"
 
 const BlogCard: React.FC<BlogCardProps> = ({
                                                item,
@@ -33,7 +34,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
                 <div className='blog-card-image'>
                     <Image
                         alt={item?.title}
-                        src={item?.lead_img ?? (item as any)?.img?.url}
+                        src={FakeImage ?? item?.image}
                         width={200}
                         height={150}
                         key={item?.id}
@@ -54,7 +55,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
                     {/*{item?.description?.length as number > 105 ?*/}
                     {/*trimString(item?.description as string, 105)*/}
                     {/*+ ".." :*/}
-                    {item?.description ?? item?.summary}
+                    {item?.short_text}
                 </Paragraph>
 
 
@@ -62,7 +63,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
                     <Text typographyType={{size: "14px-12px-12px", type: "semi-bold-semi-bold-semi-bold"}}
                           typographyFontColor={"#1F83F4"}>{!!item?.category ? item?.category : "General"}</Text>
                     <Text typographyType={{size: "14px-12px-12px", type: "regular-regular-regular"}}>
-                        {moment(item?.publishing_date).format("MMMM DD, YYYY")}
+                        {moment(item?.created_at).format("MMMM DD, YYYY")}
                     </Text>
                 </div>
 

@@ -1,5 +1,5 @@
 import {ReactNode} from "react";
-import {IPositionDetails} from "../../API/TenmilApi/Interfaces/Career/career-interface";
+import {IPositionDetails} from "../../API/JobApi/Interfaces/Career/career-interface";
 
 export interface ICareerJobOverviewCardProps {
     data?: IPositionDetails

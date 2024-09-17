@@ -154,7 +154,7 @@ const SharedFooter = () => {
                 </div>
 
                 <div className={"divider-div"}>
-                    <Divider className={"tenmil-footer-divider"}/>
+                    <Divider className={"Job-footer-divider"}/>
                 </div>
                 <div className={"copyright-div"}>
                     <span className={"copyright-span"}>
@@ -162,7 +162,7 @@ const SharedFooter = () => {
                               typographyType={{size: "14px-14px-14px", type: "regular-regular-regular"}}
                               className={"copyright-text"}
                         >
-                            Tenmil@{currentYear} | All rights reserved
+                            Job@{currentYear} | All rights reserved
                         </Text>
                     </span>
                 </div>

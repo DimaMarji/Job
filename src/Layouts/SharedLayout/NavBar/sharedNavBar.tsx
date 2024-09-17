@@ -141,12 +141,12 @@ const SharedNavBar: FunctionComponent<SharedNavBarProps> = ({
         >
           Sign In
         </Button>
-        <Select
+        {/* <Select
         value={locale}
         options={[{ value:"en",label:"English"},{ value:"ar",label:"العربية"}]}
         onSelect={(value) =>switchLanguage(value)}
         style={{ padding: '8px', fontSize: '16px' ,minWidth:"100px"}}
-      />
+      /> */}
        
     </>
   );
