@@ -1,17 +1,38 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import "./styles.scss"
 import {useDataFetching} from "../../ReactQuery/ApiCrud/useDataFetching";
 import {JobsHeroSection} from "./JobsHeroSection";
-import {Col, Row} from "antd";
+import {Col, Divider, Row, Select} from "antd";
 import {JobsListSection} from "./JobsListSection";
-import {Button} from "../../Components/Atoms/Button";
 import FilterBy from "../../SharedComponent/FilterBy/filterByContainer";
+import {ServicesNames} from "../../Constants/servicesNames";
+import {dataToOptions} from "./helper";
+import {Title} from "../../Components/Atoms/Typography/Title";
+import {Text} from "../../Components/Atoms/Typography/Text";
 
 const JobList: React.FC = () => {
 
-    const {data, error, isLoading, isError} = useDataFetching(
+    const [jobListData, setJobListData] = useState<any>()
+
+    const {data, error, isLoading, isError, isSuccess} = useDataFetching(
         "job_list/get_vacancies",
     );
+
+    const {data: industryData} = useDataFetching(
+        ServicesNames.AllIndustry,
+    );
+
+    const {data: educationLevelData} = useDataFetching(
+        ServicesNames.EducationLevel,
+    );
+
+    const {data: jobTypesData} = useDataFetching(
+        ServicesNames.JobTypes,
+    );
+    const {data: locationsData} = useDataFetching(
+        ServicesNames.HomeByCity,
+    );
+
 
     const [filters, setFilters] = useState({
         industry: [],
@@ -32,37 +53,50 @@ const JobList: React.FC = () => {
         }));
     };
 
+    useEffect(() => {
+        setJobListData(data?.data)
+    }, [isSuccess])
+
     return <div className={"job-list-container"}>
         <JobsHeroSection/>
         <Row>
             <Col lg={8}>
-                <div style={{ padding: "20px", maxWidth: "300px" }}>
+                <div style={{padding: "20px", maxWidth: "300px"}}>
+                    <div style={{display:"flex",justifyContent:"space-between"}}>
+                        <Title
+                            typographyFontColor={"#05264E"}
+                            typographyType={{type: "semi-bold-semi-bold-semi-bold", size: "14px-14px-14px"}} level={6}>
+                            Advanced Filter
+                        </Title>
+                        <Text
+                            typographyFontColor={"#66789C"}
+                            typographyType={{type: "regular-regular-regular", size: "14px-14px-14px"}}>
+                            Reset
+                        </Text>
+
+                    </div>
+                    <Divider className={"filter-divider"}/>
+
+                    <Select placeholder={"Location"}
+                            className={"sider-location-select"} options={dataToOptions(locationsData)}/>
                     <FilterBy
                         label="Industry"
-                        options={[
-                            { label: "All", value: "all", count: 180 },
-                            { label: "Software", value: "software", count: 12 },
-                            { label: "Finance", value: "finance", count: 23 },
-                            { label: "Recruiting", value: "recruiting", count: 43 },
-                            { label: "Management", value: "management", count: 65 },
-                            { label: "Advertising", value: "advertising", count: 76 },
-                        ]}
+                        options={dataToOptions(industryData?.data)}
                         onChange={handleIndustryChange}
                     />
 
                     <FilterBy
                         label="Minimum Education Level"
-                        options={[
-                            { label: "Master Degree", value: "master", count: 12 },
-                            { label: "Diploma Degree", value: "diploma", count: 35 },
-                            { label: "Bachelor's Degree", value: "bachelor", count: 56 },
-                        ]}
+                        options={dataToOptions(educationLevelData?.data)}
+                        onChange={handleEducationChange}
+                    />
+                    <FilterBy
+                        label="Job type"
+                        options={dataToOptions(jobTypesData?.data)}
                         onChange={handleEducationChange}
                     />
 
-                    {/* Add more filters as needed */}
-
-                    <div style={{ marginTop: "20px" }}>
+                    <div style={{marginTop: "20px"}}>
                         <h3>Selected Filters:</h3>
                         <pre>{JSON.stringify(filters, null, 2)}</pre>
                     </div>
@@ -71,7 +105,7 @@ const JobList: React.FC = () => {
 
             </Col>
             <Col lg={16}>
-                <JobsListSection  data={data?.data}/>
+                <JobsListSection data={jobListData}/>
             </Col>
         </Row>
     </div>

@@ -1,8 +1,8 @@
 import React from "react";
 import "./styles.scss"
 import BlogListContainer from "../../Blogs/BlogList";
-import {Space} from "antd";
-import ArrowIcon from "../../../public/Assets/Icons/Home/black-right-arrow.png";
+import {Button, Space} from "antd";
+import LoadIcon from "../../../public/Assets/Images/template/icons/icon-load.svg";
 import {useRouter} from "next/router";
 import {useAppMediaQuery} from "../../../Hooks/MediaQuery/use-app-media-query";
 import {Title} from "../../../Components/Atoms/Typography/Title";
@@ -12,14 +12,13 @@ const OurBlogsSection: React.FC = () => {
     const {push} = useRouter()
     const {isMobileOrTablet} = useAppMediaQuery()
 
-    const viewAllButton = <Space className={"our-blogs-button"} onClick={() =>
+    const viewAllButton = <Button className={"our-blogs-button"} onClick={() =>
         push("Blogs")
     }>
-        <Title typographyType={{size: "16px-16px-16px", type: "semi-bold-semi-bold-semi-bold"}}>
-            View All
-        </Title>
-        <Image src={ArrowIcon} alt={"right-arrow"}/>
-    </Space>
+        <Image width={18} src={LoadIcon} alt={"right-arrow"}/>
+            Load More Blogs
+
+    </Button>
 
 
     return <div className={"our-blogs-container"}>
@@ -34,11 +33,11 @@ const OurBlogsSection: React.FC = () => {
                    Get the latest news, updates and tips
                 </Text>}
             </div>
-            {!isMobileOrTablet && viewAllButton}
+            {/*{!isMobileOrTablet && viewAllButton}*/}
         </div>
         <BlogListContainer numOfItems={3}/>
 
-        {isMobileOrTablet && viewAllButton}
+        {viewAllButton}
     </div>
 }
 export default OurBlogsSection

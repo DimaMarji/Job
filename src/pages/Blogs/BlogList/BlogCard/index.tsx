@@ -6,11 +6,12 @@ import {replaceSpacesWithDashes} from "../../../../Helpers";
 import {useRouter} from 'next/router';
 import Image from "next/image"
 import moment from "moment";
-import {Card} from "antd";
+import {Card, Space, Tag} from "antd";
 import {Title} from "../../../../Components/Atoms/Typography/Title";
-import { Paragraph } from '../../../../Components/Atoms/Typography/Paragraph';
-import { Text } from '../../../../Components/Atoms/Typography/Text';
-import FakeImage from "../../../../public/Assets/Images/page/homepage1/img-news2.png"
+import {Paragraph} from '../../../../Components/Atoms/Typography/Paragraph';
+import {Text} from '../../../../Components/Atoms/Typography/Text';
+import {Avatar} from "../../../../Components/Atoms/Avatar";
+import {getUserAvatarColor} from "../../../../Helpers/helpers";
 
 const BlogCard: React.FC<BlogCardProps> = ({
                                                item,
@@ -40,34 +41,48 @@ const BlogCard: React.FC<BlogCardProps> = ({
                         key={item?.id}
                     />
                 </div>
+                <Tag>
+                    {!!item?.category_name ? item?.category_name : "General"}
+                </Tag>
 
                 <Title
                     typographyType={{size: "18px-14px-14px", type: "semi-bold-semi-bold-semi-bold"}}
                     ellipsis
                     className={"blog-title"}>
-                    {/*{item?.title?.length as number > 57 ? trimString(item?.title as string, 57) + ".." : */}
                     {item?.title}
                 </Title>
                 <Paragraph className={"blog-card-description"}
                            ellipsis={{rows: 3}}
                            typographyType={{size: "16px-14px-14px", type: "regular-regular-regular"}}
                 >
-                    {/*{item?.description?.length as number > 105 ?*/}
-                    {/*trimString(item?.description as string, 105)*/}
-                    {/*+ ".." :*/}
                     {item?.short_text}
                 </Paragraph>
 
 
                 <div className={"blog-card-category"}>
-                    <Text typographyType={{size: "14px-12px-12px", type: "semi-bold-semi-bold-semi-bold"}}
-                          typographyFontColor={"#1F83F4"}>{!!item?.category ? item?.category : "General"}</Text>
-                    <Text typographyType={{size: "14px-12px-12px", type: "regular-regular-regular"}}>
-                        {moment(item?.created_at).format("MMMM DD, YYYY")}
+                    <Space className={"user-details-container"}>
+                        <Avatar color={getUserAvatarColor(item.user_id)}
+                                withPreview={true}
+                                userFullName={item?.user_name}
+                                src={item?.user_image}
+                        />
+                        <Space direction={"vertical"}>
+                            <Text typographyFontColor={"#f8c80d"}
+                                  typographyType={{size: "14px-14px-14px", type: "semi-bold-semi-bold-semi-bold"}}>
+                                {item?.user_name}
+                            </Text>
+                            <Text typographyType={{size: "12px-12px-12px", type: "regular-regular-regular"}}>
+                                {moment(item?.created_at).format("MMMM DD, YYYY")}
+                            </Text>
+                        </Space>
+                    </Space>
+                    <Text typographyType={{size: "12px-12px-12px", type: "regular-regular-regular"}}>
+                        {item?.created_at}
                     </Text>
                 </div>
-
             </div>
+
+
         </Card>
     );
 };

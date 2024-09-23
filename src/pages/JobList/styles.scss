@@ -1,3 +1,22 @@
-.job-list-container{
-margin-top: 120px;
+.job-list-container {
+  margin-top: 120px;
+
+  .sider-location-select {
+    width: 100%;
+    text-align: start;
+    margin-bottom: 16px;
+
+    .ant-select-selector {
+
+      height: 50px;
+      border: 1px solid #E0E6F7;
+      border-radius: 4px;
+      padding: 10px 20px;
+    }
+  }
+
+  .filter-divider{
+    background: #B4C0E0;
+    margin-top: 10px !important;
+  }
 }

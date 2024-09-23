@@ -16,13 +16,20 @@
     width: calc(50% + 175px);
     margin-left: auto;
 
-    .our-blogs-button {
-      cursor: pointer;
 
-      img {
-        filter: invert(38%) sepia(43%) saturate(3940%) hue-rotate(199deg) brightness(102%) contrast(91%);
-      }
+  }
+
+  .our-blogs-button {
+    cursor: pointer;
+    padding: 6px 20px;
+    background: #05264E;
+    color: #ffffff;
+    border-radius: 4px;
+    height: 52px !important;
+    img{
+      margin-right: 8px;
     }
+
   }
 }
 
@@ -44,13 +51,6 @@
       margin-left: unset;
     }
 
-    .our-blogs-button {
-      cursor: pointer;
-      height: 54px;
 
-      img {
-        filter: invert(38%) sepia(43%) saturate(3940%) hue-rotate(199deg) brightness(102%) contrast(91%);
-      }
-    }
   }
 }

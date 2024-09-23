@@ -27,7 +27,7 @@ const FilterBy = ({ label, options, onChange }) => {
         {label}
       </Title>
       <Checkbox.Group
-        options={options.map((option) => ({
+        options={options?.map((option) => ({
           label: (
             <>
               <Text

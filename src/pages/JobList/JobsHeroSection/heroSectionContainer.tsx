@@ -8,20 +8,26 @@ import {Input, Select, Space} from "antd";
 
 import SearchIcon from "../../../public/Assets/Images/page/homepage1/search-icon.svg"
 import SearchMenuIcon from "../../../public/Assets/Icons/Home/search-menu.svg"
+import {useDataFetching} from "../../../ReactQuery/ApiCrud/useDataFetching";
+import {ServicesNames} from "../../../Constants/servicesNames";
+import {dataToOptions} from "../helper";
 const {Search} =Input
 
 const JobsHeroSection: React.FC = () => {
     const {isMobileOrTablet} = useAppMediaQuery()
 
+    const {data: industryData} = useDataFetching(
+        ServicesNames.AllIndustry,
+    );
+
+    const {data: locationsData} = useDataFetching(
+        ServicesNames.HomeByCity,
+    );
+
     const handleSearch=(value:string)=>{
 
     }
 
-    const fakeOptions=[{label:"damascus",value:"da,m,ascus"},
-        {label:"damascus",value:"da,m,ascus"},
-        {label:"damascus",value:"da,m,ascus"},
-        {label:"damascus",value:"da,m,ascus"},
-        {label:"damascus",value:"da,m,ascus"},]
 
     return <div className={"job-list-hero-section"}>
         <Title
@@ -39,8 +45,8 @@ const JobsHeroSection: React.FC = () => {
             Lorem ipsum dolor
         </Text>
         <div className={"jobs-search-container"}>
-            <Select placeholder={"Industry"} className={"industry-select"} options={fakeOptions}/>
-            <Select placeholder={"Location"} className={"location-select"} options={fakeOptions}/>
+            <Select placeholder={"Industry"} className={"industry-select"} options={dataToOptions(industryData?.data)}/>
+            <Select placeholder={"Location"} className={"location-select"} options={dataToOptions(locationsData)}/>
         <Search prefix={<Image width={14} alt="search" src={SearchMenuIcon}/>}
                 onSearch={handleSearch}
                 className={"search-input"}

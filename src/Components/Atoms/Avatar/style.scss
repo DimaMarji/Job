@@ -1,0 +1,42 @@
+$default-types: 'blue' #1F83F4 #E2EFFE, 'yellow' #FFBF38 #FFF7E5, 'magenta' #6547FF #EBE7FF;
+
+
+@each $type, $font-color, $background-color in $default-types {
+  .ant-avatar.default-avatar.#{$type} {
+    &.without-profile-image {
+      background-color: $background-color;
+      color: $font-color;
+    }
+
+    &.with-profile-image {
+      background: white;
+    }
+  }
+  .avatar-div {
+    width: fit-content;
+    height: fit-content;
+
+    &.with-border.#{$type} {
+      padding: 2px;
+      border: solid 2px $font-color;
+      border-radius: 50%;
+    }
+
+
+  }
+}
+
+.ant-image:has(.avatar-image-with-preview) {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  img {
+    border-radius: 50%;
+  }
+
+  .ant-image-mask {
+    border-radius: 50%;
+  }
+}
+
