@@ -46,18 +46,18 @@ const TrainingSection: React.FC<IJobsOfTheDayAndTraining> = ({
             md: 3,
             sm: 2,
             xs: 1
-        }} dataSource={TrainingCourseData} renderItem={(item, index) =>
+        }} dataSource={TrainingCourseData} renderItem={(item:any, index) =>
             <List.Item key={index}>
                 <Card className={"jobs-of-day-card hover-up"}
                                          title={<><Space>
                                              <Image alt={"company-logo"}
-                                                    className={"company-logo-image"} src={LogoImage}/>
+                                                    className={"company-logo-image"} width={52} height={52} src={item?.logo}/>
                                              <Space direction={"vertical"} align={"start"}>
                                                  <Title
                                                      typographyType={{
                                                          type: "semi-bold-semi-bold-semi-bold",
                                                          size: "18px-18px-18px"
-                                                     }}>Adobe Illustrator</Title>
+                                                     }}>{item?.title}</Title>
                                                  <Space>
                                                      <Image alt={"location-icon"}
                                                             width={12}
@@ -68,7 +68,7 @@ const TrainingSection: React.FC<IJobsOfTheDayAndTraining> = ({
                                                              size: "12px-12px-12px"
                                                          }}
                                                          typographyFontColor={"#A0ABB8"}>
-                                                         Damascus
+                                                        {`${item?.city}, ${item?.country}`}
                                                      </Text>
                                                  </Space>
                                              </Space>

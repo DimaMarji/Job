@@ -187,7 +187,6 @@ const SharedNavBar: FunctionComponent<SharedNavBarProps> = ({
           >
             <Image
               alt={"job-logo"}
-              width={139}
               className={"logo-image"}
               src={LogoImage}
             />

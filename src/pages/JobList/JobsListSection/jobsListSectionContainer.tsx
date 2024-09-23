@@ -50,13 +50,13 @@ const JobsListSection: React.FC<IJobsListSectionProps> = ({data}) => {
             dataSource={data}
             renderItem={(item, index) => (
                 <List.Item key={index}>
-                    <JobCard data={item}/>
+                    <JobCard viewType={viewType} data={item}/>
                 </List.Item>
             )}
         /> : <Row  className={`jobs-of-day-list ${viewType}`}
                      gutter={24}>{data?.map((item, index) =>
             <Col key={index} span={24}>
-                <JobCard data={item}/>
+                <JobCard viewType={viewType} data={item}/>
             </Col>
         )}
         </Row>}

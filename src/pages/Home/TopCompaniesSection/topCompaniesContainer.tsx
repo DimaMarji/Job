@@ -39,7 +39,7 @@ const TopCompaniesSection: React.FC = () => {
                               listContainer={TopCompaniesData?.map(
                                   (item, index) => {
                                       return <Card className={"companies-item-logo hover-up animate__ animate__fadeIn animated"} key={index}>
-                                          <Image width={90} height={90} src={"https://web.syriajob.com/assets/imgs/brands/shoueifat.jpg" ?? item?.logo} alt={item?.name}/>
+                                          <Image width={90} height={90} src={item?.logo} alt={item?.name}/>
                                       </Card>
                                   }
                               )}/>

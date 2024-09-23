@@ -1,0 +1,17 @@
+.loginContainer {
+    max-width: 400px;
+    margin: 15% auto;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  
+    .ant-form-item {
+      margin-bottom: 20px;
+    }
+  
+    button {
+      width: 100%;
+    }
+  }
+  

@@ -30,37 +30,13 @@ const BlogListContainer: React.FC<IBlogListProps> = ({
 
     const numOfItemsInPage = numOfItems ? 3 : isMobileOrTablet ? 4 : 6
 
-    // const {
-    //     getAllEntities
-    // } = useBlog({
-    //     getAllParams: {
-    //         category: tagSelected,
-    //         num_item_in_page: numOfItemsInPage,
-    //         page: page,
-    //         state: "PUB",
-    //         title: searchKeyword ?? null
-    //     },
-    //     getAllOptions: {
-    //         enabled: !blogsData,
-    //         onSuccess: (data) => {
-    //             setPage(page)
-    //             setTotal(data?.data?.total)
-    //             setTotalPages(data?.data?.total_pages)
-    //         }
-    //     }
-    // })
+    
     const {data, error, isLoading, isError} = useDataFetching(
         "home_page/blogs",          // Key and params combined as query key
     );
 
     let dateFiltered: any | undefined = (data as any)?.data;
-    // if (!!blogsData) {
-    //     dateFiltered = blogsData
-    // } else if (getAllEntities.isSuccess) {
-    //     dateFiltered = getAllEntities?.data?.data?.items
-    // }
-    //
-    // const {isLoading} = getAllEntities
+   
 
     useEffect(() => {
         setPage(1)

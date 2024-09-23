@@ -5,17 +5,23 @@ import SharedFooter from "./Footer";
 import {useRouter} from "next/router";
 import {useAppMediaQuery} from "../../Hooks/MediaQuery/use-app-media-query";
 import {Affix} from "antd";
+import { useCookies } from "react-cookie";
 
 
 const SharedLayout: FunctionComponent<any> = (props) => {
 
     const [toggleMenu, setToggleMenu] = useState<boolean>(false)
     const [isHeaderShadowVisible, setIsHeaderShadowVisible] = useState<boolean>(false)
-    const {asPath, query} = useRouter()
+    const {asPath, query, push} = useRouter()
 
     const{isLargeDesktop}=useAppMediaQuery()
-
-
+    const [cookies, setCookie] = useCookies(['token']);
+useEffect(()=>{
+console.log(cookies)
+if(!cookies?.token){
+    push("/login")
+}
+},[cookies?.token])
     useEffect(() => {
         setIsHeaderShadowVisible(false)
         document.body.style.overflow = 'auto';

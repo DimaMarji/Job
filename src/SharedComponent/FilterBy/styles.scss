@@ -1,0 +1,57 @@
+.filter-by-container {
+    text-align: start;
+    padding-inline: 12px;
+    .ant-checkbox{
+        top: 0 !important;
+        margin: auto;
+    }
+  .ant-checkbox-inner {
+    height: 24px;
+    width: 24px;
+    border: 1px solid #e0e6f7 !important;
+    border-radius: 7px;
+  }
+  .ant-checkbox-checked{ .ant-checkbox-inner {
+    background-color: #3C65F5;
+    &:after {
+        left: 0px;
+        top: -1px;
+        width: 24px;
+        height: 24px;
+        border-radius: 5px;
+        transform: none;
+        background: #3C65F5 url(../../public/Assets/Images/template/icons/tick.svg) no-repeat center;
+    }}
+    &::after{
+        display: none;
+    }
+}
+
+span:has(.ant-tag){
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.ant-tag{
+    padding: 4px 5px;
+    font-size: 12px;
+    line-height: 18px;
+    border-radius: 7px;
+    background: #E0E6F7;
+    color: #3C65F5;
+    margin-right: 0;
+}
+.ant-checkbox-group{
+    gap: 12px;
+    margin-top: 30px;
+}
+.ant-divider{
+    background-color: #E0E6F7;
+}
+.ant-checkbox+span {
+    padding-right: 0;
+}
+.ant-checkbox-group-item {
+    margin-right: 0;
+}
+}

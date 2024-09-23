@@ -1,5 +1,6 @@
 .job-card {
   text-align: left;
+  cursor: pointer;
   border-radius: 8px;
   border: 1px solid #E0E6F7;
   overflow: hidden;
@@ -112,4 +113,28 @@ border: none;
 
     }
   }
+
+  &.grid {
+    .job-info{
+flex-direction: column;
+gap: 12px;
+margin-bottom: 12px;
+  }
+  .job-card-footer {
+    flex-direction: column;
+}
+.btn-apply-now{
+  margin-left: auto;
+}
+
+.tags-container {
+  word-wrap: break-word;
+   width:auto;
+  text-align: start;
+  margin-top: 12px;
+  .ant-tag{
+    margin-bottom: 5px;
+  }
+}
+}
 }

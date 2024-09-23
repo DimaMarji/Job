@@ -26,6 +26,8 @@ export default function GeneralPages({Component, pageProps}: AppProps) {
     const {loading} = usePageState()
     let withLoading = pageProps.withLoading ?? true
 
+    const noLayoutRoutes = ['/Login', '/Register']; 
+
 
     return <div className="App">
 
@@ -43,6 +45,14 @@ export default function GeneralPages({Component, pageProps}: AppProps) {
                             {/* APP */}
                             {
                                 loading ? withLoading && <Loading isLoading={loading} disableScroll={loading}/>
+                                    :
+                                    noLayoutRoutes.includes(pathname)?
+                                    <ErrorBoundary fallback={<Error500 />
+                                    }>
+                                        <Schema schemaData={schemaData}/>
+                                        <SEO webSiteMetas={webSiteMetas}/>
+                                        <Component {...pageProps} />
+                                    </ErrorBoundary>
                                     :
                                     <SharedLayout>
                                                 <ErrorBoundary fallback={<Error500 />

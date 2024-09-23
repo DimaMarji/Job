@@ -34,7 +34,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
                 <div className='blog-card-image'>
                     <Image
                         alt={item?.title}
-                        src={FakeImage ?? item?.image}
+                        src={item?.image}
                         width={200}
                         height={150}
                         key={item?.id}

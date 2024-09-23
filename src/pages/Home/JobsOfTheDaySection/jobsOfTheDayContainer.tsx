@@ -11,11 +11,12 @@ import FlashIcon from "../../../public/Assets/Images/template/icons/flash.svg";
 import {IJobsOfTheDayAndTraining} from "./interface";
 import {useDataFetching} from "../../../ReactQuery/ApiCrud/useDataFetching";
 import {ServicesNames} from "../../../Constants/servicesNames";
+import JobCard from "../../../SharedComponent/JobCard/jobCardContainer";
 
 const JobsOfTheDaySection: React.FC<IJobsOfTheDayAndTraining> = ({title,
                                                                             subTitle,
                                                                             }) => {
-    const {isMobileOrTablet} = useAppMediaQuery()
+    const {isMobile} = useAppMediaQuery()
 
     const {data, error, isLoading, isError} = useDataFetching(
         ServicesNames.HomeTodayJob,
@@ -50,72 +51,8 @@ const JobsOfTheDaySection: React.FC<IJobsOfTheDayAndTraining> = ({title,
         }} dataSource={JobsOfTheDayData} renderItem={(item, index) =>
             <List.Item key={index}>
 
+<JobCard viewType={isMobile?"single":"grid"} data={item}/>
 
-
-
-                <Card className={"jobs-of-day-card hover-up"}
-                                         title={<><Space>
-                                             <Image alt={"company-logo"}
-                                                    className={"company-logo-image"} src={LogoImage}/>
-                                             <Space direction={"vertical"} align={"start"}>
-                                                 <Title
-                                                     typographyType={{
-                                                         type: "semi-bold-semi-bold-semi-bold",
-                                                         size: "18px-18px-18px"
-                                                     }}>Adobe Illustrator</Title>
-                                                 <Space>
-                                                     <Image alt={"location-icon"}
-                                                            width={12}
-                                                            src={LocationIcon}/>
-                                                     <Text
-                                                         typographyType={{
-                                                             type: "regular-regular-regular",
-                                                             size: "12px-12px-12px"
-                                                         }}
-                                                         typographyFontColor={"#A0ABB8"}>
-                                                         Damascus
-                                                     </Text>
-                                                 </Space>
-                                             </Space>
-                                         </Space> <Image alt={"flash-icon"}
-                                                         className={"flash-icon"} src={FlashIcon}/>
-                                         </>}>
-
-                <Title
-                    typographyType={{
-                        type: "semi-bold-semi-bold-semi-bold",
-                        size: "16px-16px-16px"
-                    }}>UI Ux Designer</Title>
-                <div className={"job-info"}>
-                    <Space>
-                        <Image alt={"location-icon"}
-                               width={12}
-                               src={LocationIcon}/>
-                        <Text
-                            typographyType={{type: "regular-regular-regular", size: "12px-12px-12px"}}
-                            typographyFontColor={"#A0ABB8"}>
-                            Damascus
-                        </Text>
-                    </Space>
-                    <Space>
-                        <Image alt={"location-icon"}
-                               width={12}
-                               src={LocationIcon}/>
-                        <Text
-                            typographyType={{type: "regular-regular-regular", size: "12px-12px-12px"}}
-                            typographyFontColor={"#A0ABB8"}>
-                            Damascus
-                        </Text>
-                    </Space>
-                </div>
-                <Text
-                    className={"job-details-text"}
-                    typographyFontColor={"#4F5E64"}
-                    typographyType={{type: "regular-regular-regular", size: "14px-14px-14px"}}>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae architecto eveniet, dolor quo
-                    repellendus pariatur
-                </Text>
-            </Card>
             </List.Item>}/>
 
 

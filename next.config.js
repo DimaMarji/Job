@@ -23,8 +23,8 @@ const nextConfig = {
             destination: "/JobList",
         },
         {
-            source: "/our-process/ui-ux-process",
-            destination: "/OurProcess/UIUXProcess",
+            source: '/login',
+            destination: '/Login',
         },
 
       { source: "/error", destination: "/GeneralError" }
