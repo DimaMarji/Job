@@ -23,16 +23,15 @@ const AlphabetFilter: React.FC<AlphabetFilterProps> = ({ onFilter }) => {
     };
 
     return (
-        <Space>
+        <Space className={styles.alphabetFilter}>
             {alphabet.map((letter) => (
-                <Button
+                <div
                     key={letter}
-                    type={selectedLetter === letter ? 'primary' : 'link'}
                     onClick={() => handleLetterClick(letter)}
-                    className={`${selectedLetter === letter ? "selected":""} ${styles.letterButton}`}
+                    className={`${selectedLetter === letter ? styles.selectedLetter:""} ${styles.letterButton}`}
                 >
                     {letter}
-                </Button>
+                </div>
             ))}
         </Space>
     );

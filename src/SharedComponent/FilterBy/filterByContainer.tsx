@@ -4,11 +4,11 @@ import { Title } from "../../Components/Atoms/Typography/Title";
 import { Text } from "../../Components/Atoms/Typography/Text";
 import "./styles.scss";
 
-const FilterBy = ({ label, options, onChange }) => {
-  const [selectedOptions, setSelectedOptions] = useState([]);
+const FilterBy = ({ label, options, onChange,selectedOptions }) => {
+  // const [selectedOptions, setSelectedOptions] = useState([]);
 
   const handleChange = (checkedValues) => {
-    setSelectedOptions(checkedValues);
+    // setSelectedOptions(checkedValues);
     if (onChange) {
       onChange(checkedValues);
     }

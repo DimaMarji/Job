@@ -15,7 +15,7 @@ const Login = () => {
 
   const {asPath, query, push} = useRouter()
 
-  const mutation = useDataMutation<{ token: string }, { email: string; password: string }>('post', 'user_register/login', {
+  const mutation = useDataMutation<{ token: string }, { email: string; password: string }>('post', 'user_register/login_user', {
     onSuccess: (data) => {
       setCookie('token', data.token, { path: '/' });
       setToken(data.token)

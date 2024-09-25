@@ -1,3 +1,65 @@
 .company-list-container {
   margin-top: 120px;
+
+  .company-list-header {
+
+    padding: 40px 20px 60px 20px;
+    background: #F2F6FD;
+    border-radius: 16px;
+    width: 100%;
+    .title{
+      margin-bottom: 10px;
+    }
+  }
+
+  .company-card-jobs {
+    cursor: pointer;
+    border-radius: 10px;
+    border: 0.88px solid #E0E6F7;
+    overflow: hidden;
+    margin-bottom: 30px;
+    background: #F8FAFF;
+    text-align: center;
+
+    .ant-card-body {
+      padding: 30px !important;
+    }
+
+    img {
+      border-radius: 4px;
+    }
+
+    .company-jobs-button {
+      margin-top: 20px;
+      padding: 10px 21px;
+      gap: 10px;
+      background: #E0E6F7;
+      border-radius: 4px;
+      color: #05264E;
+      font-size: 14px;
+      line-height: 22px;
+      font-weight: 600;
+      &:hover{
+        color: #3C65F5 !important;
+      }
+    }
+
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+
+  .comapny-list{
+    margin-top: 30px;
+  }
+
+  .company-name{
+    &:hover{
+      color: #3C65F5 !important;
+    }
+  }
 }

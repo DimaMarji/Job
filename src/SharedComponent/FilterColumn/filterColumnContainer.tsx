@@ -9,13 +9,13 @@ import {dataToOptions} from "../../pages/CompaniesList/helper";
 import FilterBy from "../FilterBy/filterByContainer";
 import useUrl from "../../Hooks/window/Url";
 
-const FilterColumn = ({ }) => {
 
-    const [filters, setFilters] = useState({
-        industry: [],
-        education: [],
-        job_type:[]
-    });
+interface IFilterColumn{
+    filters:any, setFilters:any
+}
+const FilterColumn:React.FC<IFilterColumn> = ({ filters, setFilters}) => {
+
+
 
     const {updateParams}=useUrl()
 
@@ -40,9 +40,9 @@ const FilterColumn = ({ }) => {
             ...prevFilters,
             [key]: selectedValues,
         }));
-
-        updateParams([{ [key]: selectedValues}],[key])
     };
+
+    console.log(filters)
 
   return (
       <div style={{padding: "20px", maxWidth: "300px"}}>
@@ -53,7 +53,9 @@ const FilterColumn = ({ }) => {
                   Advanced Filter
               </Title>
               <Text
+                  style={{cursor:"pointer"}}
                   typographyFontColor={"#66789C"}
+                  onClick={()=>setFilters(undefined)}
                   typographyType={{type: "regular-regular-regular", size: "14px-14px-14px"}}>
                   Reset
               </Text>
@@ -65,24 +67,27 @@ const FilterColumn = ({ }) => {
                   className={"sider-location-select"} options={dataToOptions(locationsData)}/>
           <FilterBy
               label="Industry"
+              selectedOptions={filters?.job_activity_id}
               options={dataToOptions(industryData?.data)}
               onChange={(values)=>{
-                  handleChange("industry",values)
+                  handleChange("job_activity_id",values)
               }}
           />
 
           <FilterBy
+              selectedOptions={filters?.degree_type_id}
               label="Minimum Education Level"
               options={dataToOptions(educationLevelData?.data)}
               onChange={(values)=>{
-                  handleChange("education",values)
+                  handleChange("degree_type_id",values)
               }}
           />
           <FilterBy
+              selectedOptions={filters?.job_type_id}
               label="Job type"
               options={dataToOptions(jobTypesData?.data)}
               onChange={(values)=>{
-                  handleChange("job_type",values)
+                  handleChange("job_type_id",values)
               }}
           />
 
