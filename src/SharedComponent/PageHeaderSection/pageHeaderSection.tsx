@@ -1,22 +1,35 @@
 import "./styles.scss"
 import {IPageHeaderSection} from "./interface";
-import Image from "next/image";
 import {Breadcrumb} from "antd";
+import {HomeOutlined} from "@ant-design/icons";
+import {Title} from "../../Components/Atoms/Typography/Title";
+import {Text} from "../../Components/Atoms/Typography/Text";
+import React from "react";
 
 const PageHeaderSection: React.FC<IPageHeaderSection> = ({
                                                              image,
-                                                             title
+                                                             title,
+                                                             subTitle
                                                          }) => {
-    return <div style={{backgroundImage:"url(image)"}}
+
+    return <div style={{backgroundImage: `url(${image})`}}
                 className={"page-header-section"}>
-<Breadcrumb>
-    <Breadcrumb.Item href={"/"}>
-        Home
-    </Breadcrumb.Item>
-    <Breadcrumb.Item href={title}>
-        Blogs
-    </Breadcrumb.Item>
-</Breadcrumb>
+        <div className={"page-header-title"}>
+            <Title className={"animate__ animate__fadeInUp animated"}
+                   typographyFontColor={"#05264E"}
+                   typographyType={{type: "bold-semi-bold-semi-bold", size: "32px-24px-24px"}}>{title}</Title>
+            {subTitle && <Text
+                typographyFontColor={"#66789C"}
+                typographyType={{type: "regular-regular-regular", size: "18px-18px-18px"}}> {subTitle}
+            </Text>}</div>
+        <Breadcrumb>
+            <Breadcrumb.Item href={"/"}>
+                <HomeOutlined/> Home
+            </Breadcrumb.Item>
+            <Breadcrumb.Item href={`/${title}`}>
+                {title}
+            </Breadcrumb.Item>
+        </Breadcrumb>
     </div>
 }
 

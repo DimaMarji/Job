@@ -16,7 +16,7 @@ const BlogHeaderContainer: React.FC<IBlogHeaderProps> = () => {
 
     return (
         <div className={"blog-header"}>
-            <PageHeaderSection image={BlogHeaderImage} title={"Blogs"}/>
+            <PageHeaderSection key={"Blogs"} image={BlogHeaderImage?.src} title={"Blogs"} subTitle={"Get the latest news, updates and tips"}/>
 
             <Row justify={"center"}>
                 <Col span={24} className={"blog-header-title"}>

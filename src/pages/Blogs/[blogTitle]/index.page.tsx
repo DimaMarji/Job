@@ -74,7 +74,6 @@ const BlogDetailsContainer = ({data: blogDetailsData, error}:
 
 
 export const getServerSideProps: GetServerSideProps<{ data: any, error: any }> = async ({query, req}) => {
-
     const blogTitle: any = await replaceDashesWithSpaces(String(query.blogTitle)).split(" ").join('%20')
 
     try {
