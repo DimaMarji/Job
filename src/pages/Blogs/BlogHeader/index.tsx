@@ -20,9 +20,9 @@ const BlogHeaderContainer: React.FC<IBlogHeaderProps> = () => {
 
             <Row justify={"center"}>
                 <Col span={24} className={"blog-header-title"}>
-                    <Title className={"animate__ animate__fadeInUp animated"}
+                    <Title className={"animate__ animate__fadeInUp animated latest-title"}
                            typographyFontColor={"#05264E"}
-                           typographyType={{type: "bold-semi-bold-semi-bold", size: "36px-25px-25px"}} level={1}>
+                           typographyType={{type: "bold-semi-bold-semi-bold", size: "32px-24px-24px"}} level={1}>
                         Latest Posts
                     </Title>
                     <Text className={"animate__ animate__fadeInUp animated"}

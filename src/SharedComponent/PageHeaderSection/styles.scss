@@ -1,10 +1,18 @@
 @import "../../Styles/Helpers/mixins";
 .page-header-section{
-  padding: 50px 12%;
+  padding: 50px 11%;
   display: flex;
   justify-content: space-between;
   align-items: end;
-  margin-top: 100px;
+  margin-top: 108px;
+  .title{
+    margin-bottom: 10px !important;
+
+  }
+
+  .anticon-home{
+    margin-right: 3px;
+  }
 @include fullWidthSection();
   .ant-breadcrumb{
     background-color: #ffffff;

@@ -4,8 +4,11 @@ import "./style.scss"
 import SharedFooter from "./Footer";
 import {useRouter} from "next/router";
 import {useAppMediaQuery} from "../../Hooks/MediaQuery/use-app-media-query";
-import {Affix} from "antd";
+import {Affix, BackTop} from "antd";
 import { useCookies } from "react-cookie";
+import Image from "next/image";
+
+import ArrowUpIcon from "../../public/Assets/Images/template/icons/go-top.svg"
 
 
 const SharedLayout: FunctionComponent<any> = (props) => {
@@ -14,7 +17,8 @@ const SharedLayout: FunctionComponent<any> = (props) => {
     const [isHeaderShadowVisible, setIsHeaderShadowVisible] = useState<boolean>(false)
     const {asPath, query, push} = useRouter()
 
-    const{isLargeDesktop}=useAppMediaQuery()
+    const {isMobileOrTablet} = useAppMediaQuery()
+
     const [cookies, setCookie] = useCookies(['token']);
 useEffect(()=>{
 console.log(cookies)
@@ -63,11 +67,22 @@ if(!cookies?.token){
                      style={toggleMenu ? {display: "none"} : {}} className="layout-content">
                     <div className="page-container">
                             {props.children}
+
+                        {!isMobileOrTablet && <BackTop duration={300}>
+                            <div className={"back-top"}>
+                                <Image src={ArrowUpIcon}
+                                       width={24}
+                                       height={24}
+                                       alt={"up-arrow"}/>
+                            </div>
+                        </BackTop>}
                     </div>
                 </div>
                 <div  style={toggleMenu ? {display: "none"} : {}} className="layout-footer">
                     <SharedFooter/>
                 </div>
+
+
             </div>
 
 

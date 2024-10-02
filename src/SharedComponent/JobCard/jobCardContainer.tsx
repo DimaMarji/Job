@@ -8,6 +8,7 @@ import { Text } from "../../Components/Atoms/Typography/Text";
 import LogoImage from "../../public/Assets/Images/template/bg-newsletter.svg";
 import LocationIcon from "../../public/Assets/Images/template/icons/location.svg";
 import moment from "moment";
+import {useRouter} from "next/router";
 
 interface JobCardProps {
   data: any;
@@ -15,6 +16,8 @@ interface JobCardProps {
 }
 
 const JobCard: React.FC<JobCardProps> = ({ data, viewType }) => {
+  const {push}=useRouter()
+
   const jobInfoData = [
     { label: " Job Id:", value: data?.id },
     { label: "Job Type:", value: data?.job_type },
@@ -31,6 +34,9 @@ const JobCard: React.FC<JobCardProps> = ({ data, viewType }) => {
 
   return (
     <Card
+        onClick={()=>{
+        push(`/job-details/${data?.id}`)}
+        }
       className={`job-card hover-up ${viewType}`}
       title={
         <div className={"job-card-footer"}>
