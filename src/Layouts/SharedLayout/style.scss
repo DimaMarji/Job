@@ -18,9 +18,10 @@
   }
 
   @include media-query(laptop) {
-    margin-left: auto !important;
-    margin-right: auto !important;
-    max-width: 1116px;
+    margin-left: 8% !important;
+    margin-right: 8% !important;
+    max-width: unset;
+    // max-width: 1200px;
   }
 
   @include media-query(tablet) {

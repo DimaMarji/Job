@@ -33,6 +33,8 @@ export const fontSizes = [
 
 export const colors = [
     "#42526D",
+    "#6c757d",
+    "#3C65F5",
     "#757575",
     "#FFFFFF",
     "#363E6F",
