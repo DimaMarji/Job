@@ -1,3 +1,17 @@
-.job-details{
+.job-details {
+  margin-top: 114px;
+  text-align: start;
+  .job-details-header {
+    width: 100%;
+    height: auto;
+    margin: 20px 0px 20px 0px;
 
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .job-details-title{
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+  }
 }

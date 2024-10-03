@@ -81,15 +81,19 @@
   }
 
   &:hover {
-    background-color: $button-secondary-background-color-hover;
-    border: 1px solid $button-secondary-border-color-hover;
-    height: fit-content;
-    cursor: pointer;
 
-    .ant-typography {
-      color: $button-secondary-text-color-hover;
-    }
+    transform: translateY(-2px);
+    transition: 0.2s;
+
+  background-color: $button-primary-background-color-hover;
+  border: 1px solid $button-primary-border-color-hover;
+  height: fit-content;
+  cursor: pointer;
+
+  .ant-typography {
+    color: $button-primary-text-color-hover;
   }
+}
 
   &:disabled {
     background-color: $button-secondary-background-color-disabled;
