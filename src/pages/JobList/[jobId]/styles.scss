@@ -10,8 +10,28 @@
     overflow: hidden;
   }
 
+  .employement-info-card{
+    border: thin solid #E0E6F7;
+    border-radius: 8px;
+    padding: 20px 30px 30px 30px;
+    margin-bottom: 50px;
+    .ant-divider{
+      background-color: #dee2e6 ;
+    }
+  }
+
   .job-details-title{
     margin-top: 20px !important;
     margin-bottom: 20px !important;
+  }
+
+  .job-details-actions{
+    display: flex;
+    justify-content: space-between;
+    .ant-btn-primary{
+      *{
+        font-size: 14px !important;
+      }
+    }
   }
 }

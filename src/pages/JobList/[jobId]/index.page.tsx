@@ -18,6 +18,7 @@ import { webSiteURL } from "../../../Layouts/SharedLayout/SEO/webSiteMetas";
 import FacebookIcon from "../../../public/Assets/Images/template/icons/share-fb.svg";
 
 import WhatsAppIcon from "../../../public/Assets/Images/template/icons/share-whatsapp.svg";
+import { employmentData } from "./constants";
 
 
 const JobDetails = ({ data }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
@@ -63,7 +64,7 @@ const JobDetails = ({ data }: InferGetServerSidePropsType<typeof getServerSidePr
               }}
               typographyFontColor={"#A0ABB8"}
             >
-              {data?.hide_company_name ?"Confidential":data?.company_name}
+              {!data?.company_name ?"Confidential":data?.company_name}
             </Text>
           </Space>
           <Space>
@@ -84,7 +85,35 @@ const JobDetails = ({ data }: InferGetServerSidePropsType<typeof getServerSidePr
         <Divider/>
 
         <Row>
-            <Col lg={18}>
+
+        
+            <Col lg={18} style={{paddingRight:"32px"}}>
+            <div className="employement-info-card">
+          <Title 
+        typographyType={{
+                  type: "semi-bold-semi-bold-semi-bold",
+                  size: "18px-16px-16px",
+                }}>
+            Employment Information
+        </Title>
+          <Divider/>
+          <Row gutter={[16, 16]}>
+        {employmentData(data).map((item, index) => (
+          <Col key={index} span={12}>
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <div style={{ marginRight: 10 }}>{item.icon}</div>
+              <div>
+                <strong>{item.title}: </strong>
+                <span>{item.value}</span>
+              </div>
+            </div>
+          </Col>
+        ))}
+      </Row>
+
+
+
+          </div>
             <Title typographyFontColor="#4F5E64"
         className="job-details-title"
         typographyType={{
@@ -139,7 +168,7 @@ className="job-details-title"
                 }}>
             Documents
         </Title>
-        <Space>
+        <Space style={{gap:"15px"}}>
             <Button type="secondary">
             Requirements File
             </Button>
@@ -149,8 +178,8 @@ className="job-details-title"
              
         </Space>
         <Divider/>
-        <div>
-        <Space>
+        <div className="job-details-actions">
+        <Space style={{gap:"15px"}}>
         <Button>
             Apply now
             </Button>
