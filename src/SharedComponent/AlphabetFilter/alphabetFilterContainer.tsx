@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Button, Space } from 'antd'; // or other AntD components
+import { Space } from 'antd';
 import styles from './AlphabetFilter.module.scss';
-import {useRouter} from "next/router"; // if using SCSS modules
+import {useRouter} from "next/router";
+import {Button} from "../../Components/Atoms/Button";
 
 const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
@@ -22,16 +23,15 @@ const AlphabetFilter: React.FC<AlphabetFilterProps> = ({ onFilter }) => {
     };
 
     return (
-        <Space>
+        <Space className={styles.alphabetFilter}>
             {alphabet.map((letter) => (
-                <Button
+                <div
                     key={letter}
-                    type={selectedLetter === letter ? 'primary' : 'default'}
                     onClick={() => handleLetterClick(letter)}
-                    className={styles.letterButton}
+                    className={`${selectedLetter === letter ? styles.selectedLetter:""} ${styles.letterButton}`}
                 >
                     {letter}
-                </Button>
+                </div>
             ))}
         </Space>
     );

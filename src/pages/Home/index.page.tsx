@@ -11,13 +11,11 @@ import {useDataFetching} from "../../ReactQuery/ApiCrud/useDataFetching";
 import {ServicesNames} from "../../Constants/servicesNames";
 import {BackTop} from "antd";
 import {useAppMediaQuery} from "../../Hooks/MediaQuery/use-app-media-query";
-import ArrowUpIcon from "../../public/Assets/Images/template/icons/go-top.svg"
 import Image from "next/image"
 import {JobsOfTheDaySection} from "./JobsOfTheDaySection";
 import {TrainingSection} from "./TrainingSection";
 
 const HomeContainer: React.FC<homeProps> = () => {
-    const {isMobileOrTablet} = useAppMediaQuery()
 
 
     const {data:countryData} = useDataFetching(
@@ -47,14 +45,7 @@ const HomeContainer: React.FC<homeProps> = () => {
                 <OurBlogsSection/>
 
 
-                {!isMobileOrTablet && <BackTop duration={300}>
-                    <div className={"back-top"}>
-                        <Image src={ArrowUpIcon}
-                               width={24}
-                               height={24}
-                               alt={"up-arrow"}/>
-                    </div>
-                </BackTop>}
+
             </div>
         </>
     );

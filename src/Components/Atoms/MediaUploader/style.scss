@@ -1,0 +1,98 @@
+// here your can customization MediaUploader style
+
+
+.ant-upload-picture-card-wrapper {
+}
+
+.ant-upload-list.ant-upload-list-picture-card {
+  display: block;
+  width: 100%;
+}
+
+.ant-upload-list-picture-card-container {
+
+  display: block;
+  width: 100%;
+
+}
+
+
+.ant-upload-list-item.ant-upload-list-item-uploading.ant-upload-list-item-list-type-picture-card {
+  width: 100%;
+  display: block;
+}
+
+.ant-upload-list-item.ant-upload-list-item-success.ant-upload-list-item-list-type-picture-card {
+  width: 100%;
+  display: block;
+}
+
+.ant-upload-list-item.ant-upload-list-item-error.ant-upload-list-item-list-type-picture-card {
+  width: 100%;
+  display: block;
+}
+
+.ant-upload-list-picture-card.ant-upload-list-item-info:before {
+
+}
+
+.anticon.anticon-file {
+
+}
+
+
+.ant-upload-list-item-info {
+
+}
+
+.ant-upload-span {
+
+}
+
+.ant-upload-list-item-thumbnail {
+
+}
+
+
+.ant-upload-list-picture-card.ant-upload-list-item-actions {
+  left: 100% !important;
+
+}
+
+.ant-upload-list-picture-card {
+
+  .ant-upload-list-item-file + .ant-upload-list-item-name {
+    bottom: -3px
+  }
+
+  //.ant-upload-list-item-actions {
+  //  display: none;
+  //}
+
+  //.ant-upload-list-item-info:before {
+  //
+  //  display: none;
+  //}
+  //
+  //.ant-upload-list-item:hover {
+  //  .ant-upload-list-item-info:before {
+  //    display: none;
+  //  }
+  //}
+}
+
+.upload-notification-buttons {
+  .ant-btn {
+    cursor: pointer;
+    padding: 0 !important;
+    height: fit-content;
+
+    .ant-typography {
+      color: #FFFFFF !important;
+      font-size: 14px !important;
+
+    }
+
+  }
+
+}

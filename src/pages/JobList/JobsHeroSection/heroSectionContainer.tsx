@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import "./styles.scss"
 import {useAppMediaQuery} from "../../../Hooks/MediaQuery/use-app-media-query";
 import {Title} from "../../../Components/Atoms/Typography/Title";
@@ -13,8 +13,12 @@ import {ServicesNames} from "../../../Constants/servicesNames";
 import {dataToOptions} from "../helper";
 const {Search} =Input
 
-const JobsHeroSection: React.FC = () => {
+const JobsHeroSection: React.FC<{ onSearch: (searchValue) => void }> = ({onSearch}) => {
     const {isMobileOrTablet} = useAppMediaQuery()
+    const [selectedSearchData, setSelectedSearchData] = useState({
+        job_activity_id: undefined,
+        location_id:undefined
+    });
 
     const {data: industryData} = useDataFetching(
         ServicesNames.AllIndustry,
@@ -25,7 +29,7 @@ const JobsHeroSection: React.FC = () => {
     );
 
     const handleSearch=(value:string)=>{
-
+        onSearch({title:value, ...selectedSearchData})
     }
 
 
@@ -45,8 +49,12 @@ const JobsHeroSection: React.FC = () => {
             Lorem ipsum dolor
         </Text>
         <div className={"jobs-search-container"}>
-            <Select placeholder={"Industry"} className={"industry-select"} options={dataToOptions(industryData?.data)}/>
-            <Select placeholder={"Location"} className={"location-select"} options={dataToOptions(locationsData)}/>
+            <Select placeholder={"Industry"}
+                    onSelect={(value)=>setSelectedSearchData({...selectedSearchData,job_activity_id:value})}
+                    className={"industry-select"} options={dataToOptions(industryData?.data)}/>
+            <Select placeholder={"Location"}
+                    onSelect={(value)=>setSelectedSearchData({...selectedSearchData,location:value})}
+                    className={"location-select"} options={dataToOptions(locationsData)}/>
         <Search prefix={<Image width={14} alt="search" src={SearchMenuIcon}/>}
                 onSearch={handleSearch}
                 className={"search-input"}

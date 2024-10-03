@@ -21,8 +21,8 @@ const BlogListContainer: React.FC<IBlogListProps> = ({
     const {getParam} = useUrl()
 
     const [page, setPage] = useState<number>(1);
-    const [total, setTotal] = useState<number>();
-    const [totalPages, setTotalPages] = useState<number>();
+    const [total, setTotal] = useState<number>(3);
+    const [totalPages, setTotalPages] = useState<number>(5);
 
     const tagSelected = getParam("filter")
     const searchKeyword = getParam("search")

@@ -1,4 +1,8 @@
 .blog-card-skeleton {
+  img{
+    width: 100%;
+    height: auto;
+  }
   .blog-card-footer {
     .ant-skeleton-paragraph {
       display: flex;

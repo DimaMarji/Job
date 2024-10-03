@@ -17,7 +17,7 @@ const BlogCardSkeleton: React.FC = () => {
             />
             <Skeleton title={false} active paragraph={{rows: 3, width: ["92%", "95%", "58%"]}}
             />
-            <Skeleton className={"blog-card-footer"} title={false} active paragraph={{rows: 2, width: ["30%", "35%"]}}
+            <Skeleton avatar className={"blog-card-footer"} title={false} active paragraph={{rows: 2, width: ["30%", "35%"]}}
             />
         </div>
 

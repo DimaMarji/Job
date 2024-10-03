@@ -74,6 +74,8 @@ const useUrl = () => {
     const updateParams = (paramsToAdd, paramsToDelete: string[]) => {
         const params = new URLSearchParams(router.asPath.split("?")[1] || "");
 
+        console.log(paramsToAdd,params)
+
         // Add parameters
         paramsToAdd.forEach((param) => {
             const paramName = Object.keys(param)[0];

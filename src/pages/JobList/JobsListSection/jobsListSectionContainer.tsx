@@ -15,8 +15,6 @@ const JobsListSection: React.FC<IJobsListSectionProps> = ({data}) => {
     const [viewType, setViewType] = useState<"grid" | "single">("single")
 
 
-    console.log(viewType)
-
     return <div className={"job-list"}>
         <div className={"job-list-header"}>
 
@@ -48,6 +46,7 @@ const JobsListSection: React.FC<IJobsListSectionProps> = ({data}) => {
                 xs: 1,
             }}
             dataSource={data}
+
             renderItem={(item, index) => (
                 <List.Item key={index}>
                     <JobCard viewType={viewType} data={item}/>

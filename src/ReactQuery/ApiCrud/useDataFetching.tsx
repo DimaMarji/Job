@@ -5,7 +5,7 @@ export const useDataFetching = (
     serviceName: string,
     params?: any,
     config?: any,
-    key?: string
+    key?: string|string[]
 ) => {
     return useQuery(
         key ?? `${serviceName},${params}`,

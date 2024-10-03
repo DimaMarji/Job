@@ -1,114 +1,97 @@
-import React, {useEffect, useState} from "react";
-import "./styles.scss"
-import {useDataFetching} from "../../ReactQuery/ApiCrud/useDataFetching";
-import {JobsHeroSection} from "./JobsHeroSection";
-import {Col, Divider, Row, Select} from "antd";
-import {JobsListSection} from "./JobsListSection";
-import FilterBy from "../../SharedComponent/FilterBy/filterByContainer";
-import {ServicesNames} from "../../Constants/servicesNames";
-import {dataToOptions} from "./helper";
-import {Title} from "../../Components/Atoms/Typography/Title";
-import {Text} from "../../Components/Atoms/Typography/Text";
+import React, { useEffect, useState, useMemo } from "react";
+import "./styles.scss";
+import { useDataFetching } from "../../ReactQuery/ApiCrud/useDataFetching";
+import { JobsHeroSection } from "./JobsHeroSection";
+import { Col, Row } from "antd";
+import { JobsListSection } from "./JobsListSection";
+import FilterColumn from "../../SharedComponent/FilterColumn/filterColumnContainer";
 
 const JobList: React.FC = () => {
-
-    const [jobListData, setJobListData] = useState<any>()
-
-    const {data, error, isLoading, isError, isSuccess} = useDataFetching(
-        "job_list/get_vacancies",
-    );
-
-    const {data: industryData} = useDataFetching(
-        ServicesNames.AllIndustry,
-    );
-
-    const {data: educationLevelData} = useDataFetching(
-        ServicesNames.EducationLevel,
-    );
-
-    const {data: jobTypesData} = useDataFetching(
-        ServicesNames.JobTypes,
-    );
-    const {data: locationsData} = useDataFetching(
-        ServicesNames.HomeByCity,
-    );
-
+    const [jobListData, setJobListData] = useState<any>([]);
 
     const [filters, setFilters] = useState({
-        industry: [],
-        education: [],
+        job_activity_id: [],
+        degree_type_id: [],
+        job_type_id: [],
     });
 
-    const handleIndustryChange = (selectedValues) => {
-        setFilters((prevFilters) => ({
-            ...prevFilters,
-            industry: selectedValues,
-        }));
+    const [searchValues, setSearchValues] = useState({
+        job_activity_id: undefined,
+        title: undefined,
+        location_id: undefined,
+    });
+
+    // Fetch default job list data
+    const { data, isSuccess: isSuccessJobs, isLoading: isLoadingJobs } = useDataFetching(
+        "job_list/get_vacancies"
+    );
+
+    // Fetch filtered data
+    const { data: filteredData, isSuccess: filteredIsSuccess, isLoading: isLoadingFiltered } = useDataFetching(
+        "job_list/vacancies/filter",
+        filters,
+        {},
+        ["job_list/vacancies/filter", filters]
+    );
+
+    // Fetch search result data
+    const { data: searchResultData, isSuccess: searchIsSuccess, isLoading: isLoadingSearch } = useDataFetching(
+        "job_list/vacancies/search",
+        searchValues,
+        {},
+        ["job_list/vacancies/search", searchValues]
+    );
+
+    // Handle search input and trigger search query
+    const onSearch = (value: any) => {
+        setFilters({
+            job_activity_id: [],
+            degree_type_id: [],
+            job_type_id: [],
+        })
+        setSearchValues(value);
     };
 
-    const handleEducationChange = (selectedValues) => {
-        setFilters((prevFilters) => ({
-            ...prevFilters,
-            education: selectedValues,
-        }));
-    };
+    // Determine the most relevant job list data to display
+    const relevantJobListData = useMemo(() => {
+        if (searchIsSuccess && searchResultData) {
+            // Show search results if available
+            return searchResultData.data;
+        }
+        if (filteredIsSuccess && filteredData) {
+            // Show filtered results if available
+            return filteredData.data;
+        }
+        if (isSuccessJobs && data) {
+            // Show default job list data if no search or filter is applied
+            return data.data;
+        }
+        return [];
+    }, [searchIsSuccess, searchResultData, filteredIsSuccess, filteredData, isSuccessJobs, data]);
 
+    // Update job list data whenever the relevant data changes
     useEffect(() => {
-        setJobListData(data?.data)
-    }, [isSuccess])
+        setJobListData(relevantJobListData);
+    }, [relevantJobListData]);
 
-    return <div className={"job-list-container"}>
-        <JobsHeroSection/>
-        <Row>
-            <Col lg={8}>
-                <div style={{padding: "20px", maxWidth: "300px"}}>
-                    <div style={{display:"flex",justifyContent:"space-between"}}>
-                        <Title
-                            typographyFontColor={"#05264E"}
-                            typographyType={{type: "semi-bold-semi-bold-semi-bold", size: "14px-14px-14px"}} level={6}>
-                            Advanced Filter
-                        </Title>
-                        <Text
-                            typographyFontColor={"#66789C"}
-                            typographyType={{type: "regular-regular-regular", size: "14px-14px-14px"}}>
-                            Reset
-                        </Text>
+    return (
+        <div className="job-list-container">
+            <JobsHeroSection onSearch={onSearch} />
+            <Row>
+                <Col lg={8}>
+                    <FilterColumn filters={filters} setFilters={setFilters} />
+                </Col>
+                <Col lg={16}>
+                    {/* Display a loading indicator when any of the fetches are in progress */}
+                    {isLoadingJobs || isLoadingFiltered || isLoadingSearch ? (
+                        <div>Loading...</div>
+                    ) : (
+                        <JobsListSection data={jobListData} />
+                    )}
+                </Col>
+            </Row>
+        </div>
+    );
+};
 
-                    </div>
-                    <Divider className={"filter-divider"}/>
-
-                    <Select placeholder={"Location"}
-                            className={"sider-location-select"} options={dataToOptions(locationsData)}/>
-                    <FilterBy
-                        label="Industry"
-                        options={dataToOptions(industryData?.data)}
-                        onChange={handleIndustryChange}
-                    />
-
-                    <FilterBy
-                        label="Minimum Education Level"
-                        options={dataToOptions(educationLevelData?.data)}
-                        onChange={handleEducationChange}
-                    />
-                    <FilterBy
-                        label="Job type"
-                        options={dataToOptions(jobTypesData?.data)}
-                        onChange={handleEducationChange}
-                    />
-
-                    <div style={{marginTop: "20px"}}>
-                        <h3>Selected Filters:</h3>
-                        <pre>{JSON.stringify(filters, null, 2)}</pre>
-                    </div>
-                </div>
-
-
-            </Col>
-            <Col lg={16}>
-                <JobsListSection data={jobListData}/>
-            </Col>
-        </Row>
-    </div>
-}
-
-export default JobList
+export default JobList;
