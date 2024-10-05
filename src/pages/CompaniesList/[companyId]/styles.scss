@@ -28,4 +28,17 @@
   .company-jobs-list{
     margin-top: 32px;
   }
+
+  .company-details-info{
+    border: 1px solid #E0E6F7;
+    padding: 25px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    margin-bottom: 40px;
+    .company-card-info-item{
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+  }
 }

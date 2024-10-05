@@ -16,6 +16,42 @@ const CompanyDetails:React.FC= ({ data }: InferGetServerSidePropsType<typeof get
         "job_list/get_vacancies"
     );
 
+    const companyName=  <><Title
+        typographyType={{
+            type: "semi-bold-semi-bold-semi-bold",
+            size: "18px-16px-16px",
+        }}>
+        {data?.company_name ?? "Confidential"}
+    </Title>
+    <Space>
+        <Image alt={"location-icon"} width={12} src={LocationIcon} />
+        <Text
+            typographyType={{
+                type: "regular-regular-regular",
+                size: "12px-12px-12px",
+            }}
+            typographyFontColor={"#A0ABB8"}
+        >
+            {`${data?.address}`}
+        </Text>
+    </Space>
+        </>
+
+    const companyCardData=[{
+        label: "Company field",
+        value: "Accounting / Finance",
+    },{
+        label: "Location",
+        value: "Chicago, US Remote Friendly",
+    },{
+        label: "Member since",
+        value: "Jul 2012",
+    },{
+        label: "Last Jobs Posted",
+        value: "4 days",
+    }]
+
+
     return <div className={"company-details-page"}>
         <Image className="company-details-header" alt="company details" src={CompanyHeaderImage}/>
         <div  className={"company-info"}>
@@ -23,26 +59,8 @@ const CompanyDetails:React.FC= ({ data }: InferGetServerSidePropsType<typeof get
         <Space direction={"vertical"} align="start">
             <Image className="comaony-logo" width={85} height={85} src={data?.logo} alt="logo"/>
             <Space style={{gap:"42px"}}>
-                <Title
-                    typographyType={{
-                        type: "semi-bold-semi-bold-semi-bold",
-                        size: "18px-16px-16px",
-                    }}>
-                    {data?.company_name ?? "Confidential"}
-                </Title>
-                <Space>
-                    <Image alt={"location-icon"} width={12} src={LocationIcon} />
-                    <Text
-                        typographyType={{
-                            type: "regular-regular-regular",
-                            size: "12px-12px-12px",
-                        }}
-                        typographyFontColor={"#A0ABB8"}
-                    >
-                        {`${data?.address}`}
-                    </Text>
-                </Space>
 
+                {companyName}
             </Space>
             <Text
                 typographyType={{
@@ -78,6 +96,39 @@ const CompanyDetails:React.FC= ({ data }: InferGetServerSidePropsType<typeof get
                 </Row>
             </Col>
             <Col lg={6} sm={24} xs={24}>
+                <div className={"company-details-info"}>
+                    <Space direction={"vertical"}>
+                        {companyName}
+                    </Space>
+                    <Divider/>
+                    {companyCardData?.map((item,index)=>{
+                        return <div className={"company-card-info-item"} key={index}>
+                            <Space>
+                                <Image alt={"location-icon"} width={12} src={LocationIcon} />
+                                <Text
+                                    typographyType={{
+                                        type: "regular-regular-regular",
+                                        size: "16px-16px-16px",
+                                    }}
+                                    typographyFontColor={"#66789C"}
+                                >
+                                    {item?.label}
+                                </Text>
+                            </Space>
+                            <Text
+                                typographyType={{
+                                    type: "regular-regular-regular",
+                                    size: "16px-16px-16px",
+                                }}
+                                typographyFontColor={"#66789C"}
+                            >
+                                {item?.value}
+                            </Text>
+
+                        </div>
+                    })}
+
+                </div>
 
             </Col>
 
