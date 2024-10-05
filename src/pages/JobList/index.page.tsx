@@ -21,7 +21,7 @@ const JobList: React.FC = () => {
         location_id: undefined,
     });
 
-    // Fetch default job list data
+    // Fetch job list data
     const { data, isSuccess: isSuccessJobs, isLoading: isLoadingJobs } = useDataFetching(
         "job_list/get_vacancies"
     );
