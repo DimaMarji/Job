@@ -16,11 +16,17 @@ const TopCompaniesSection: React.FC = () => {
         ServicesNames.HomeTopCompany,
     );
 
-    const TopCompaniesData:any = data?.data
+    const TopCompaniesData:any = data?.data ?? []
+    
+    let companyData=[...TopCompaniesData,...TopCompaniesData,...TopCompaniesData,...TopCompaniesData,...TopCompaniesData,
+        ...TopCompaniesData,...TopCompaniesData,...TopCompaniesData,...TopCompaniesData,...TopCompaniesData,
+        ...TopCompaniesData,...TopCompaniesData,...TopCompaniesData,...TopCompaniesData,...TopCompaniesData,
+        ...TopCompaniesData,...TopCompaniesData,...TopCompaniesData,...TopCompaniesData,...TopCompaniesData
+    ]
 
-    return <div>
+    return <div className="top-companies">
 
-        <HorizontalScrollList data={TopCompaniesData}
+        <HorizontalScrollList data={companyData}
                               title={<div className={"companies-title-container"}>
                                   <Title
                                       className={"best-place-title animate__ animate__fadeInUp animated"}
@@ -36,7 +42,7 @@ const TopCompaniesSection: React.FC = () => {
                                       Discover your next career move, freelance gig, or internship
                                   </Text>
                               </div>}
-                              listContainer={TopCompaniesData?.map(
+                              listContainer={companyData?.map(
                                   (item, index) => {
                                       return <Card className={"companies-item-logo hover-up animate__ animate__fadeIn animated"} key={index}>
                                           <Image width={90} height={90} src={item?.logo} alt={item?.name}/>

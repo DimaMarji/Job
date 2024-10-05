@@ -13,6 +13,7 @@ import GridIcon from "../../../public/Assets/Images/template/icons/icon-grid-hov
 const JobsListSection: React.FC<IJobsListSectionProps> = ({data}) => {
     const {isMobileOrTablet} = useAppMediaQuery()
     const [viewType, setViewType] = useState<"grid" | "single">("single")
+    
 
 
     return <div className={"job-list"}>

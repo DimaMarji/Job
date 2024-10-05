@@ -65,7 +65,7 @@ const SharedNavBar: FunctionComponent<SharedNavBarProps> = ({
       key:  "/jobs-list",
       label: "Find a Job",
     }, {
-      key: "/recruiters",
+      key: "/companies-list",
       label: "Recruiters",
     },  {
       key: "/about-us",

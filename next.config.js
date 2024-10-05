@@ -25,7 +25,14 @@ const nextConfig = {
       {
         source: "/job-details/:jobId",
         destination: "/JobList/:jobId",
-      },
+      },    {
+        source: "/companies-list",
+        destination: "/CompaniesList",
+    },
+  {
+    source: "/company-details/:companyId",
+    destination: "/CompaniesList/:companyId",
+  },
         {
             source: '/login',
             destination: '/Login',

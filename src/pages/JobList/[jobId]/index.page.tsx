@@ -19,6 +19,9 @@ import FacebookIcon from "../../../public/Assets/Images/template/icons/share-fb.
 
 import WhatsAppIcon from "../../../public/Assets/Images/template/icons/share-whatsapp.svg";
 import { employmentData } from "./constants";
+import CompanyProfile from "./CompanyProfile/companyProfile";
+import SimilarJobs from "./SimilarJobs/similarJobs";
+import FeaturedJobs from "./FeaturedJobs/featuredJobs";
 
 
 const JobDetails = ({ data }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
@@ -27,7 +30,7 @@ const JobDetails = ({ data }: InferGetServerSidePropsType<typeof getServerSidePr
 
     const shareLink = webSiteURL + asPath
     const shareJobContainer = <Space>
-        <Text>
+        <Text typographyType={{type:"semi-bold-semi-bold-semi-bold",size:"16px-16px-16px"}}>
         Share this
         </Text>
     <FacebookShareButton
@@ -100,12 +103,15 @@ const JobDetails = ({ data }: InferGetServerSidePropsType<typeof getServerSidePr
           <Row gutter={[16, 16]}>
         {employmentData(data).map((item, index) => (
           <Col key={index} span={12}>
-            <div style={{ display: "flex", alignItems: "center" }}>
-              <div style={{ marginRight: 10 }}>{item.icon}</div>
-              <div>
-                <strong>{item.title}: </strong>
-                <span>{item.value}</span>
-              </div>
+             <div className="employer-info-item">
+              <Space align="start">{item.icon}
+            
+              <Text typographyFontColor="#66789C"
+               typographyType={{type:"semi-bold-semi-bold-semi-bold",size:"14px-14px-14px"}}>{item.title}: </Text>
+               </Space>
+                 <Text typographyFontColor="#05264E"
+               typographyType={{type:"regular-regular-regular",size:"14px-14px-14px"}}>{item.value ?? "---"}</Text>
+             
             </div>
           </Col>
         ))}
@@ -160,6 +166,7 @@ className="job-details-title"
         <div dangerouslySetInnerHTML={data ? {__html: data?.benefits} : {__html: ""}}
                 />
 
+{(!data?.requirements_pdf && !data?.requirements_pdf)?<></> :<>
 <Title typographyFontColor="#4F5E64"
                 className="job-details-title"
         typographyType={{
@@ -169,14 +176,15 @@ className="job-details-title"
             Documents
         </Title>
         <Space style={{gap:"15px"}}>
-            <Button type="secondary">
+          {data?.requirements_pdf && <Button type="secondary" target="blank" href={data?.requirements_pdf}>
             Requirements File
-            </Button>
-            <Button type="secondary">
+            </Button>}
+           {data?.details_pdf && <Button type="secondary" target="blank" href={data?.details_pdf}>
             Details File
-                </Button>
+                </Button>}
              
         </Space>
+        </>}
         <Divider/>
         <div className="job-details-actions">
         <Space style={{gap:"15px"}}>
@@ -195,12 +203,11 @@ className="job-details-title"
         </div>
             </Col>
             <Col lg={6}>
+            <CompanyProfile data={data}/>
+            <SimilarJobs/>
             </Col>
         </Row>
-
-       
-
-
+        <FeaturedJobs/>
     </div>;
 };
 

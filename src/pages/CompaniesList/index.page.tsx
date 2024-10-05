@@ -97,7 +97,8 @@ const CompaniesList: React.FC = () => {
 
                     renderItem={(item:any, index) => (
                         <List.Item key={index}>
-                            <Card className={"company-card-jobs hover-up animate__ animate__fadeIn"}>
+                            <Card onClick={()=>push(`/company-details/${item?.id}`)}
+                             className={"company-card-jobs hover-up animate__ animate__fadeIn"}>
                                 <div className={"card-content"}>
                                 <Image width={52} height={52} src={item?.logo} alt={item?.company_name}/>
                                 <Title

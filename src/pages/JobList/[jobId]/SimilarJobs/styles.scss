@@ -1,0 +1,18 @@
+.similar-job-card{
+    border: 1px solid #E0E6F7;
+    padding: 25px;
+    border-radius: 8px;
+    background-color: #ffffff;
+
+    .similar-job-logo{
+        object-fit: cover;
+        border-radius: 8px;
+    }
+    .ant-divider{
+        margin-top: 15px !important;
+        margin-bottom: 20px !important;
+    }
+}
+.similar-job-item{
+    cursor: pointer;
+}

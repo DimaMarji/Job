@@ -14,12 +14,12 @@ export const employmentData =(data)=> [
     {
       icon: <Image src={WorkIcon} alt="field-work" />, 
       title: "Field of Work",
-      value: "Telecommunications - IT Software/IT Security",
+      value: data?.job_activities?.map((item,index)=>`${item?.name}${index!==data?.job_activities?.length -1 ? ", " :""}`),
     },
     {
       icon: <Image src={SalaryIcon} alt="dollar" />, 
       title: "Salary",
-      value: "$800 - $1000",
+      value: data?.salary,
     },
     {
       icon: <Image src={LocationIcon} alt="location" />, 
@@ -58,7 +58,7 @@ export const employmentData =(data)=> [
     {
       icon: <GlobalOutlined style={{color :"#66789C"}} />, 
       title: "CV Language",
-      value: "English",
+      value: data?.resume_lang=="EN"?"English":"Arabic",
     },
     {
       icon: <PictureOutlined style={{color :"#66789C"}} />, 

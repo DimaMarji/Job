@@ -15,6 +15,8 @@ export enum ServicesNames{
     AllIndustry="job_list/get_job_activities",
     EducationLevel="job_list/get_degree_types",
     JobTypes="job_list/get_job_types",
+    SimilarJobs="job_details/get_similar_job",
+    FeaturedJobs="job_details/get_featured_jobs",
 
     //company list
     AllCompanies="recuirter/get_companies",

@@ -1,0 +1,18 @@
+.featured-title{
+    margin-bottom: 10px !important;
+}
+
+.featured-jobs{
+    margin-top: 50px;
+    .list-cards-container{
+        padding-top: 24px;
+        .job-card{
+            min-width: 280px;
+        }
+    }
+
+    .featured-text{
+        display: flex;
+        flex-direction: column;
+    }
+}

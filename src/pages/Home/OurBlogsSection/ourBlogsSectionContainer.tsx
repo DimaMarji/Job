@@ -35,7 +35,7 @@ const OurBlogsSection: React.FC = () => {
             </div>
             {/*{!isMobileOrTablet && viewAllButton}*/}
         </div>
-        <BlogListContainer numOfItems={3}/>
+        <BlogListContainer numOfItems={3}/> 
 
         {viewAllButton}
     </div>
