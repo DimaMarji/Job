@@ -2,14 +2,12 @@ import React, { FunctionComponent, useEffect, useState } from "react";
 import "./styles.scss";
 import { useAppMediaQuery } from "../../../Hooks/MediaQuery/use-app-media-query";
 import { useRouter } from "next/router";
-import Arrow from "../../../public/Assets/Icons/down-arrow.svg";
 import Image from "next/image";
 import MenuIcon from "../../../public/Assets/Icons/General/menu-icon.png";
 import CloseIcon from "../../../public/Assets/Icons/General/close-icon.png";
 import LogoImage from "../../../public/Assets/Images/template/jobhub-logo.svg";
 import { Button } from "../../../Components/Atoms/Button";
 import { Text } from "../../../Components/Atoms/Typography/Text";
-import { Dropdown, Select, Space } from "antd";
 import { Layout } from "antd";
 import { useTranslation } from "next-i18next";
 

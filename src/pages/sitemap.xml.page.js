@@ -30,13 +30,10 @@ function SiteMap({data}) {
 
 export async function getServerSideProps({res}) {
     const staticUrls = [
-        {loc: 'https://www.zcoderz.com/', priority: 1.0},
-        {loc: 'https://www.zcoderz.com/contact-us/', priority: 0.8},
-        {loc: 'https://www.zcoderz.com/about-us/', priority: 0.8},
-        {loc: 'https://www.zcoderz.com/careers/', priority: 0.7},
-        {loc: 'https://www.zcoderz.com/blogs/', priority: 0.8},
-        {loc: 'https://www.zcoderz.com/our-process/agile-development/', priority: 0.8},
-        {loc: 'https://www.zcoderz.com/our-process/ui-ux-process/', priority: 0.8},
+        {loc: 'https://www.jobs.com/', priority: 1.0},
+        {loc: 'https://www.jobs.com/contact-us/', priority: 0.8},
+        {loc: 'https://www.jobs.com/about-us/', priority: 0.8},
+        {loc: 'https://www.jobs.com/blogs/', priority: 0.8},
     ];
 
 
@@ -52,20 +49,12 @@ export async function getServerSideProps({res}) {
 
         const blogsTitles = blogsData?.data?.items?.map((item) => replaceDashesWithSpaces(String(item?.title)))
         const blogsUrls = blogsTitles?.map((blog) => {
-            return {loc: `https://www.zcoderz.com/blogs/${blog}/`, priority: 0.8}
+            return {loc: `https://www.jobs.com/blogs/${blog}/`, priority: 0.8}
         })
 
-        const careerParams = new URLSearchParams({
-            fields: "position,id",
-        });
-        const careersResult = await fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}career/website/position-details?${careerParams.toString()}`);
 
-        const careersData = await careersResult.json()
-        const careersUrls = careersData?.data?.items?.map((career) => {
-            return {loc: `https://www.zcoderz.com/careers/${replaceSpacesWithDashes(career?.position?.title)}/${career?.id}/overview/`, priority: 0.8}
-        })
 
-        const urls = [...staticUrls, ...blogsUrls,...careersUrls
+        const urls = [...staticUrls, ...blogsUrls
         ];
 
         const sitemap = generateSiteMap(urls);
