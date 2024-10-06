@@ -12,10 +12,6 @@ const nextConfig = {
       { source: "/", destination: "/Home" },
         { source: "/about-us", destination: "/AboutUs" },
         { source: "/blogs", destination: "/Blogs" },
-        {
-            source: "/services/:serviceName/:subServiceName",
-            destination: "/Services/:serviceName/:subServiceName",
-        },
         { source: "/contact-us", destination: "/ContactUs" },
         {
             source: "/jobs-list",
@@ -33,11 +29,10 @@ const nextConfig = {
     destination: "/CompaniesList/:companyId",
   },
         {
-            source: '/login',
-            destination: '/Login',
+            source: "/login",
+            destination: "/Login",
         },
 
-      { source: "/error", destination: "/GeneralError" }
     ];
   },
   devIndicators: {
