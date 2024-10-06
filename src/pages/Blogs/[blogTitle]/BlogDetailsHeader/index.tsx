@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Col, Image, Row, Space, Text, Title} from "../../../../Components";
+import {Col, Image, Row, Space} from "antd";
 import "./style.scss"
 import CalendarIcon from "../../../../public/Assets/Icons/Blogs/calendar2.svg"
 import TimeIcon from "../../../../public/Assets/Icons/Blogs/timer1.svg"
@@ -8,6 +8,8 @@ import BackIcon from "../../../../public/Assets/Icons/Blogs/arrow_back.svg"
 import moment from 'moment';
 import {useAppMediaQuery} from "../../../../Hooks/MediaQuery/use-app-media-query";
 import {useRouter} from "next/router";
+import {Text} from "../../../../Components/Atoms/Typography/Text";
+import {Title} from "../../../../Components/Atoms/Typography/Title";
 
 
 const BlogDetailsHeaderContainer: React.FC<any> = ({

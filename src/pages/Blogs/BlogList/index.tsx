@@ -4,13 +4,10 @@ import {List} from 'antd';
 import {IBlogListProps} from './interface';
 import BlogCard from './BlogCard';
 import useUrl from "../../../Hooks/window/Url";
-import {checkIfArrayEmpty} from "../../../Helpers";
-import {BlogSearchNotFoundContainer} from "../BlogSearchNotFound";
 import BlogCardSkeleton from "./BlogCardSkeleton/blogCardSkeletonContainer";
 import {useAppMediaQuery} from "../../../Hooks/MediaQuery/use-app-media-query";
 import {paginationObject} from "../../../Constants/paginationObject";
 import {generateEmptyArray} from "../../../Helpers/arrays/arrayHeleprs";
-import {noBlogsInCategory} from "../BlogSearchNotFound/emptyCategoryContainer";
 import {useDataFetching} from "../../../ReactQuery/ApiCrud/useDataFetching";
 
 
@@ -68,7 +65,6 @@ const BlogListContainer: React.FC<IBlogListProps> = ({
                         xs: 1
                     }}
                     size="default"
-                    locale={{emptyText: noBlogsInCategory(tagSelected)}}
                     dataSource={isLoading ? emptyArray : dateFiltered}
                     renderItem={(item: any) => (
                         <List.Item> {isLoading ? <BlogCardSkeleton/>

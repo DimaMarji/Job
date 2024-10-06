@@ -1,11 +1,10 @@
-import {MetaProps} from '../../Atoms/Meta';
 import React, {FunctionComponent} from 'react';
 import {useRouter} from 'next/router';
 import {NextSeo} from "next-seo";
 
 interface SEOProps {
     webSiteMetas?: any,
-    metaInfo?: MetaProps
+    metaInfo?: any
 }
 
 const SEO: FunctionComponent<SEOProps> = ({webSiteMetas, metaInfo}) => {

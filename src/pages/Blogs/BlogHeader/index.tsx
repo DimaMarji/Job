@@ -28,7 +28,7 @@ const BlogHeaderContainer: React.FC<IBlogHeaderProps> = () => {
                     <Text className={"animate__ animate__fadeInUp animated"}
                           typographyFontColor={"#66789C"}
                           typographyType={{type: "regular-regular-regular", size: "18px-18px-18px"}} >
-                        Don't miss the trending news
+                        Don&apos;t miss the trending news
                     </Text>
                 </Col>
             </Row>

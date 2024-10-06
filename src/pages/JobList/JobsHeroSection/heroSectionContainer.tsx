@@ -53,7 +53,7 @@ const JobsHeroSection: React.FC<{ onSearch: (searchValue) => void }> = ({onSearc
                     onSelect={(value)=>setSelectedSearchData({...selectedSearchData,job_activity_id:value})}
                     className={"industry-select"} options={dataToOptions(industryData?.data)}/>
             <Select placeholder={"Location"}
-                    onSelect={(value)=>setSelectedSearchData({...selectedSearchData,location:value})}
+                    onSelect={(value:string)=>setSelectedSearchData({...selectedSearchData,location_id:value})}
                     className={"location-select"} options={dataToOptions(locationsData)}/>
         <Search prefix={<Image width={14} alt="search" src={SearchMenuIcon}/>}
                 onSearch={handleSearch}

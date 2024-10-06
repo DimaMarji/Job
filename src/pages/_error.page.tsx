@@ -4,7 +4,7 @@ import {Error404} from "./Error404";
 function Error({statusCode}) {
 
     return <div className="error-container">
-        <Error404 pageType={"system"}/>
+        <Error404 />
     </div>;
 }
 

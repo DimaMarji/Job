@@ -1,9 +1,8 @@
 import {AvatarProps} from "antd";
-import {defaultColors} from "../../../Constants/colors";
 import {TooltipPlacement} from "antd/lib/tooltip";
 
 export interface IAvatarProps extends AvatarProps {
-    color?: defaultColors
+    color?: string
     userFullName?: string
     withColorizedBorder?: boolean,
     toolTipPlacement?: TooltipPlacement

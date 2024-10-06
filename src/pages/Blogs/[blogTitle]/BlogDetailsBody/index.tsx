@@ -1,14 +1,15 @@
 import React, {useState} from 'react';
 import "./style.scss"
-import {Button, Col, Image, Row, Space, Text} from "../../../../Components";
+import {Col, Image, Row, Space} from "antd";
 import {useAppMediaQuery} from "../../../../Hooks/MediaQuery/use-app-media-query";
 import {BackTop} from "antd";
 import ArrowUp from "../../../../public/Assets/Icons/Blogs/arrow-up.svg"
-import {AffixCard} from "../../../../SharedComponent/AffixCard";
 import {copyToClipboard} from "../../../../Helpers/TextOperation";
 import {webSiteURL} from "../../../../Layouts/SharedLayout/SEO/webSiteMetas";
 import {useRouter} from "next/router";
 import {CheckCircleOutlined, CloseCircleOutlined} from "@ant-design/icons";
+import {Button} from "../../../../Components/Atoms/Button";
+import {Text} from "../../../../Components/Atoms/Typography/Text";
 
 const BlogDetailsBodyContainer: React.FC<any> = ({
                                                      itemData,
@@ -45,20 +46,7 @@ const BlogDetailsBodyContainer: React.FC<any> = ({
                      dangerouslySetInnerHTML={itemData ? {__html: itemData?.detailed_description} : {__html: ""}}
                 />
             </Col>
-            <Col sm={24} xs={24} lg={{span: 8, offset: 1}} xl={{span: 7, offset: 1}}>
-                <AffixCard type={"share"}
-                           applyButton={<div>
-                               {openMessage && messageContainer(openMessage)}
-                               <Button onClick={() => {
-                                   copyToClipboard(shareLink, () => {
-                                       setOpenMessage("success")
-                                       closeMessage()
-                                   }, () => {
-                                       setOpenMessage("error")
-                                       closeMessage()
-                                   })
-                               }}>Copy link</Button></div>}/>
-            </Col>
+
             {!isMobileOrTablet && <BackTop duration={300}>
                 <div className={"blog-back-top"}>
                     <Image src={ArrowUp}

@@ -5,25 +5,22 @@ import BlogDetailsHeaderContainer from './BlogDetailsHeader';
 import BlogDetailsBodyContainer from './BlogDetailsBody';
 import {GetServerSideProps, InferGetServerSidePropsType} from 'next';
 import {isEmpty} from 'lodash';
-import {UseHandle} from '../../../Hooks/ReactQuery/use-handle-response';
 import {useRouter} from 'next/router';
 import {usePageState} from "../../../Hooks/window/pageState/use-page-state";
 import BlogDetailsSkeleton from "./BlogDetailsSkeleton/blogDetailsSkeletonContainer";
-import BlogRelatedBlogsSection from "./BlogRelatedBlogsSection/blogRelatedBlogsContainer";
-import {Divider} from "../../../Components";
+import {Divider} from "antd";
 import {useAppMediaQuery} from "../../../Hooks/MediaQuery/use-app-media-query";
 import {NextSeo} from "next-seo";
 import {webSiteURL} from "../../../Layouts/SharedLayout/SEO/webSiteMetas";
 
 const BlogDetailsContainer = ({data: blogDetailsData, error}:
                                   InferGetServerSidePropsType<typeof getServerSideProps>) => {
-    const {handleError} = UseHandle()
+
     const {push} = useRouter()
     const {isMobileOrTablet} = useAppMediaQuery()
 
     const {loading} = usePageState()
 
-    error && handleError(error)
 
     useEffect(() => {
         isEmpty(blogDetailsData) && push("/Error404")
@@ -34,7 +31,7 @@ const BlogDetailsContainer = ({data: blogDetailsData, error}:
         description: blogDetailsData?.summary ?? blogDetailsData?.description,
         openGraph: {
             url: `${webSiteURL}/blogs/${replaceSpacesWithDashes(blogDetailsData?.title)}`,
-            title: `${blogDetailsData?.title ?? "blogs"} | Zcoderz`,
+            title: `${blogDetailsData?.title ?? "blogs"} | job`,
             description: blogDetailsData?.summary ?? blogDetailsData?.description,
             images: [{url: blogDetailsData?.meta_img ?? blogDetailsData?.lead_img}],
         },
@@ -60,8 +57,6 @@ const BlogDetailsContainer = ({data: blogDetailsData, error}:
                         <BlogDetailsHeaderContainer itemData={blogDetailsData}/>
                         <Divider className={"blog-divider"}/>
                         <BlogDetailsBodyContainer itemData={blogDetailsData}/>
-                        {!isMobileOrTablet && !isEmpty(blogDetailsData) &&
-                        <BlogRelatedBlogsSection blogId={blogDetailsData?.id}/>}
                     </>
 
                     }

@@ -126,7 +126,7 @@ const Login = () => {
               size: "14px-14px-14px",
             }}
           >
-            Don't have an Account?
+            Don&apos;t have an Account?
           </Text>
 
           <Text

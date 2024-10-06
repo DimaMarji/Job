@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, Checkbox, Col, Form, Input, Row, Tooltip } from 'antd';
-import styles from './EmployerRegister.module.scss';
+import styles from './JobseekerRegister.module.scss';
 
 import { Title } from "../../Components/Atoms/Typography/Title";
 import { Text } from "../../Components/Atoms/Typography/Text";

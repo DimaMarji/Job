@@ -1,5 +1,5 @@
 import React from "react";
-import {Col, Image, Row, Skeleton} from "../../../../Components";
+import {Col, Image, Row, Skeleton} from "antd";
 import FallbackImage from "../../../../public/Assets/Images/General/transparent-box.svg"
 import "./styles.scss"
 
