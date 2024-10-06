@@ -50,7 +50,7 @@ const nextConfig = {
     ],
   },
   pageExtensions: ['page.tsx', 'page.ts', 'page.jsx', 'page.js'],
-  experimental: { appDir: true },
+  // experimental: { appDir: true },
 
   webpack(config) {
     config.module.rules.forEach((rule) => {
