@@ -35,9 +35,9 @@ const nextConfig = {
 
     ];
   },
-  devIndicators: {
-    buildActivity: false,
-  },
+  // devIndicators: {
+  //   buildActivity: false,
+  // },
   images: {
     remotePatterns: [
       {
