@@ -14,7 +14,7 @@ const PageHeaderSection: React.FC<IPageHeaderSection> = ({
                                                              subTitle
                                                          }) => {
 
-    return <div style={{backgroundImage: `url(${image})`}}
+    return <div style={{background: `url(${image}) `}}
                 className={"page-header-section"}>
         <div className={"page-header-title"}>
             <Title className={"animate__ animate__fadeInUp animated title"}

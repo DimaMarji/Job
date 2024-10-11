@@ -1,0 +1,44 @@
+.about-us-page{
+    .page-header-title{
+        position: relative;
+        *{
+            color: #FFF !important;
+        }
+    }
+    .page-header-section{
+        position: relative;
+        &::before {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 0;
+        height: 100%;
+        width: 100%;
+        background: url(../../public/Assets/Images/page/about/bg-black-trans.png) repeat-x bottom left;
+    }}
+
+    .about-us-row{
+        text-align: start;
+        margin-top: 70px;
+        *{
+            white-space: break-spaces;
+        }
+        img{
+            width: 96%;
+            height: auto;
+        }
+        .what-title{
+            margin-top: 15px;
+            margin-bottom: 20px;
+        }
+
+        .read-more{
+            margin-top: 30px !important;
+        }
+    }
+    .our-company-section{
+        width: 50%;
+        margin-inline: auto;
+    }
+}

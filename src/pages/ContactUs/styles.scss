@@ -1,0 +1,26 @@
+.contact-us-page{
+    .page-header-title{
+        position: relative;
+        *{
+            color: #FFF !important;
+        }
+    }
+    .page-header-section{
+        min-height: 181px;
+        position: relative;
+        align-items: start;
+        &::before {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 0;
+        height: 100%;
+        width: 100%;
+        background: url(../../public/Assets/Images/page/about/bg-black-trans.png) repeat-x bottom left;
+    }}
+
+    .contact-us-row{
+        margin-top: 80px;
+    }
+}
