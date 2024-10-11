@@ -28,7 +28,7 @@ const AboutUs: React.FC = () => {
                         </Title> 
                         <Title 
                    typographyFontColor={"#05264E"}
-                   className='animate__ animate__fadeInUp animated'
+                   className='animate__ animate__fadeInUp our-company-title animated'
                    typographyType={{type: "bold-semi-bold-semi-bold", size: "32px-24px-24px"}}>
                         About Our Company
                         </Title> 

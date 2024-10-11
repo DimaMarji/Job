@@ -18,6 +18,11 @@
         background: url(../../public/Assets/Images/page/about/bg-black-trans.png) repeat-x bottom left;
     }}
 
+.our-company-title{
+    margin-bottom: 10px !important;
+    margin-top: 0px !important;
+}
+
     .about-us-row{
         text-align: start;
         margin-top: 70px;
@@ -40,5 +45,12 @@
     .our-company-section{
         width: 50%;
         margin-inline: auto;
+        margin-top: 50px;
+    }
+    .our-blogs-header{
+        margin-left: 0;
+    }
+    .our-blogs-title{
+        text-align: start;
     }
 }

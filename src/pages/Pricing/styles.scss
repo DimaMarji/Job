@@ -1,0 +1,25 @@
+.pricing-page{
+    .page-header-section{
+        align-items: start;
+
+        .ant-breadcrumb{
+            align-self: end;
+        }
+    }
+    .pricing-us-row{
+        text-align: start;
+        margin-top: 70px;
+        .what-title{
+            margin-bottom: 10px !important;
+            font-size: 32px !important;
+        }
+        img{
+            width: 95%;
+            height: auto;
+        }
+        button{
+            margin-top: 50px !important;
+            display: block;
+        }
+    }
+}

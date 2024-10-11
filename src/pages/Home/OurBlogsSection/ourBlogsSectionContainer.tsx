@@ -24,7 +24,7 @@ const OurBlogsSection: React.FC = () => {
     return <div className={"our-blogs-container"}>
         <div className={"our-blogs-header"}>
             <div className={"our-blogs-title"}>
-                <Title typographyType={{size: "40px-24px-24px", type: "bold-semi-bold-semi-bold"}}
+                <Title typographyType={{size: "32px-24px-24px", type: "bold-semi-bold-semi-bold"}}
                        className={"card-title"}>
                     News and Blog
                 </Title>

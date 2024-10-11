@@ -23,4 +23,71 @@
     .contact-us-row{
         margin-top: 80px;
     }
+
+    .contact-second{
+        margin-top: 110px;
+        width: 50%;
+        margin-inline: auto;
+        .animated{
+            margin-bottom: 10px !important;
+        }
+    }
+
+    iframe{
+        border: none;
+        height: 400px;
+        width: 100%;
+    }
+    .contact-us-row{
+        text-align: start;
+    }
+    textarea {
+        border: 1px solid #E0E6F6;
+        border-radius: 10px;
+        box-shadow: none;
+        padding: 10px 10px 10px 20px;
+        font-size: 16px;
+        width: 100%;
+        color: #66789C;
+    }
+    form{
+        text-align: start;
+        margin-top: 40px;
+        margin-left: 0 !important;
+        width: 95%;
+        .ant-select-selector{
+            border: 1px solid #E0E6F7 !important;
+            border-radius: 4px!important;
+            background-color: #ffffff!important;
+            padding: 7px 15px !important;
+            width: 100%!important;
+            color: #A0ABB8!important;
+            height: 48px !important;
+            input{
+                height: auto !important;
+            }
+        }
+    }
+    .contact-info{
+        margin-top: 50px !important;
+        margin-bottom: 70px;
+    }
+    .ant-form-item input {
+        border: 1px solid #E0E6F7;
+    border-radius: 4px;
+    background-color: #ffffff;
+    padding: 11px 15px 13px 15px;
+    width: 100%;
+    color: #A0ABB8;
+    }
+    .btn-send-message.ant-btn.ant-btn-primary {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        color: #ffffff;
+        padding: 15px 28px 15px 60px;
+       border-radius: 4px;
+       background: #3C65F5 url(../../public//Assets/Images/page/company/icon-email.svg) no-repeat 25px 15px;
+       border-color: #3C65F5 ;
+    }
 }
