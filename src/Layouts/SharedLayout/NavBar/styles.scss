@@ -15,6 +15,15 @@
   transform-origin: center;
   transition: transform 0.5s ease-out;
 }
+.header-container{
+  .login-link{
+    color: #05264E !important;
+    text-decoration: underline;
+    &:hover {
+      color: #3C65F5;
+  }
+  }
+}
 .layout-header-parent-container {
   background-color: $app-navbar-background-color;
   position: sticky;

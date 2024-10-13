@@ -1,25 +1,61 @@
-.pricing-page{
-    .page-header-section{
-        align-items: start;
+.pricing-page {
+  .page-header-section {
+    align-items: start;
 
-        .ant-breadcrumb{
-            align-self: end;
+    .ant-breadcrumb {
+      align-self: end;
+    }
+  }
+  .pricing-us-row {
+    text-align: start;
+    margin-top: 70px;
+    .what-title {
+      margin-bottom: 10px !important;
+      font-size: 32px !important;
+    }
+    img {
+      width: 95%;
+      height: auto;
+    }
+    button {
+      margin-top: 50px !important;
+      display: block;
+    }
+  }
+}
+.pricing-card {
+    text-align: left;
+    box-shadow: 0px 10px 20px -5px rgba(10, 42, 105, 0.06);
+    // padding: 25px;
+    border: 1px solid #E0E6F7;
+    border-radius: 8px;
+    button{
+        width: 100% !important;
+        border: 1px solid #3C65F5 !important;
+        *{
+            color: #3C65F5 !important;
+        }
+        &:hover{
+            background-color: #3C65F5 !important;
+            *{
+                color: #ffffff !important;
+            }
         }
     }
-    .pricing-us-row{
-        text-align: start;
-        margin-top: 70px;
-        .what-title{
-            margin-bottom: 10px !important;
-            font-size: 32px !important;
-        }
-        img{
-            width: 95%;
-            height: auto;
-        }
-        button{
-            margin-top: 50px !important;
-            display: block;
-        }
-    }
+.pricing-title{
+    margin-bottom: 28px !important;
+}
+}
+
+.pricing-list {
+  display: grid;
+  margin-inline:auto ;
+  width: 84%;
+  gap: 24px;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  grid-template-columns:  repeat(2, minmax(0, 1fr));
+}
+.pricing-table-text{
+    margin-top: 90px;
+    margin-bottom: 70px;
 }

@@ -1,93 +1,129 @@
-.contact-us-page{
-    .page-header-title{
-        position: relative;
-        *{
-            color: #FFF !important;
-        }
+.contact-us-page {
+  .page-header-title {
+    position: relative;
+    * {
+      color: #fff !important;
     }
-    .page-header-section{
-        min-height: 181px;
-        position: relative;
-        align-items: start;
-        &::before {
-        content: "";
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        z-index: 0;
-        height: 100%;
-        width: 100%;
-        background: url(../../public/Assets/Images/page/about/bg-black-trans.png) repeat-x bottom left;
-    }}
+  }
+  .page-header-section {
+    min-height: 181px;
+    position: relative;
+    align-items: start;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      z-index: 0;
+      height: 100%;
+      width: 100%;
+      background: url(../../public/Assets/Images/page/about/bg-black-trans.png)
+        repeat-x bottom left;
+    }
+  }
 
-    .contact-us-row{
-        margin-top: 80px;
-    }
+  .contact-us-row {
+    margin-top: 80px;
+  }
 
-    .contact-second{
-        margin-top: 110px;
-        width: 50%;
-        margin-inline: auto;
-        .animated{
-            margin-bottom: 10px !important;
-        }
+  .contact-second {
+    margin-top: 110px;
+    width: 50%;
+    margin-inline: auto;
+    .animated {
+      margin-bottom: 10px !important;
     }
+  }
 
-    iframe{
-        border: none;
-        height: 400px;
-        width: 100%;
+  iframe {
+    border: none;
+    height: 400px;
+    width: 100%;
+  }
+  .contact-us-row {
+    text-align: start;
+  }
+  textarea {
+    border: 1px solid #e0e6f6;
+    border-radius: 10px;
+    box-shadow: none;
+    padding: 10px 10px 10px 20px;
+    font-size: 16px;
+    width: 100%;
+    color: #66789c;
+  }
+  form {
+    text-align: start;
+    margin-top: 40px;
+    margin-left: 0 !important;
+    width: 95%;
+    .ant-select-selector {
+      border: 1px solid #e0e6f7 !important;
+      border-radius: 4px !important;
+      background-color: #ffffff !important;
+      padding: 7px 15px !important;
+      width: 100% !important;
+      color: #a0abb8 !important;
+      height: 48px !important;
+      input {
+        height: auto !important;
+      }
     }
-    .contact-us-row{
-        text-align: start;
-    }
-    textarea {
-        border: 1px solid #E0E6F6;
-        border-radius: 10px;
-        box-shadow: none;
-        padding: 10px 10px 10px 20px;
-        font-size: 16px;
-        width: 100%;
-        color: #66789C;
-    }
-    form{
-        text-align: start;
-        margin-top: 40px;
-        margin-left: 0 !important;
-        width: 95%;
-        .ant-select-selector{
-            border: 1px solid #E0E6F7 !important;
-            border-radius: 4px!important;
-            background-color: #ffffff!important;
-            padding: 7px 15px !important;
-            width: 100%!important;
-            color: #A0ABB8!important;
-            height: 48px !important;
-            input{
-                height: auto !important;
-            }
-        }
-    }
-    .contact-info{
-        margin-top: 50px !important;
-        margin-bottom: 70px;
-    }
-    .ant-form-item input {
-        border: 1px solid #E0E6F7;
+  }
+  .contact-info {
+    margin-top: 50px !important;
+    margin-bottom: 70px;
+  }
+  .ant-form-item input {
+    border: 1px solid #e0e6f7;
     border-radius: 4px;
     background-color: #ffffff;
     padding: 11px 15px 13px 15px;
     width: 100%;
-    color: #A0ABB8;
-    }
-    .btn-send-message.ant-btn.ant-btn-primary {
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 24px;
-        color: #ffffff;
-        padding: 15px 28px 15px 60px;
-       border-radius: 4px;
-       background: #3C65F5 url(../../public//Assets/Images/page/company/icon-email.svg) no-repeat 25px 15px;
-       border-color: #3C65F5 ;
-    }
+    color: #a0abb8;
+  }
+  .btn-send-message.ant-btn.ant-btn-primary {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #ffffff;
+    padding: 15px 28px 15px 60px;
+    border-radius: 4px;
+    background: #3c65f5
+      url(../../public//Assets/Images/page/company/icon-email.svg) no-repeat
+      25px 15px;
+    border-color: #3c65f5;
+  }
+
+
+
+
 }
+.react-tel-input .country-list .search-box{
+    border: 1px solid #e0e6f7;
+    border-radius: 4px;
+    background-color: #ffffff;
+    padding: 8px 12px !important;
+    width: 100%;
+    color: #a0abb8;
+}
+.search-emoji {
+  display: none;
+}
+
+.form-control {
+
+    border: 1px solid #e0e6f7;
+    border-radius: 4px;
+    background-color: #ffffff;
+    padding: 8px 12px !important;
+    
+    padding-left: 50px !important;
+    width: 100%;
+    color: #a0abb8;
+    height: 48px !important;
+  }
+
+  .react-tel-input .selected-flag {
+    width: 43px !important;
+  }

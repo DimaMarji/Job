@@ -7,6 +7,10 @@ import { MailOutlined } from "@ant-design/icons";
 
 import { Title } from "../../Components/Atoms/Typography/Title";
 import { Text } from "../../Components/Atoms/Typography/Text";
+import PhoneInput from 'react-phone-input-2'
+import 'react-phone-input-2/lib/style.css'
+
+
 
 const { Option } = Select;
 const { TextArea } = Input;
@@ -134,12 +138,26 @@ const ContactUs: React.FC = () => {
             <Row gutter={24}>
             <Col md={12}>
             <Form.Item name="mobileNumber" >
-              <Input placeholder="Mobile Number" />
+            <PhoneInput
+            placeholder="Mobile Number"
+              enableSearch
+  country={'us'}
+  // value={this.state.phone}
+  // onChange={phone => this.setState({ phone })}
+/>
             </Form.Item>
             </Col>
             <Col md={12}>
             <Form.Item name="phoneNumber" >
-              <Input placeholder="Phone Number" />
+              {/* <Input placeholder="Phone Number" /> */}
+
+              <PhoneInput
+               placeholder="Phone Number" 
+              enableSearch
+  country={'us'}
+  // value={this.state.phone}
+  // onChange={phone => this.setState({ phone })}
+/>
             </Form.Item>
             </Col>
             </Row>

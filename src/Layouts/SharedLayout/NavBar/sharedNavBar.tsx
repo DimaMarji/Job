@@ -10,6 +10,7 @@ import { Button } from "../../../Components/Atoms/Button";
 import { Text } from "../../../Components/Atoms/Typography/Text";
 import { Layout } from "antd";
 import { useTranslation } from "next-i18next";
+import Link from "next/link";
 
 interface SharedNavBarProps {
   setToggleMenu?: any;
@@ -119,7 +120,12 @@ const SharedNavBar: FunctionComponent<SharedNavBarProps> = ({
   const menu = (
     <>
       <div className={"header-space"}>{menuItems}</div>
-      <Button
+     
+            <Link className="login-link hover-up" href={""}>New Employer</Link>
+            <span>|</span>
+            <Link className="login-link  hover-up" href={""}>New Jobseeker</Link>
+         
+      {/* <Button
           type={"link"}
           className={"register-button"}
           onClick={(event) => {
@@ -128,7 +134,7 @@ const SharedNavBar: FunctionComponent<SharedNavBarProps> = ({
           }}
         >
           Register
-        </Button>
+        </Button> */}
         <Button
           type={"primary"}
           className={"sign-in-button"}
