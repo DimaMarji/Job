@@ -9,9 +9,11 @@ import { useCookies } from "react-cookie";
 import Image from "next/image";
 
 import ArrowUpIcon from "../../public/Assets/Images/template/icons/go-top.svg"
+import {useUser} from "../../Context/User/userContext";
 
 
 const SharedLayout: FunctionComponent<any> = (props) => {
+    const { role, token } = useUser();
 
     const [toggleMenu, setToggleMenu] = useState<boolean>(false)
     const [isHeaderShadowVisible, setIsHeaderShadowVisible] = useState<boolean>(false)

@@ -133,7 +133,7 @@ const SharedNavBar: FunctionComponent<SharedNavBarProps> = ({
           type={"primary"}
           className={"sign-in-button"}
           onClick={(event) => {
-            push("/ContactUs", "/contact-us", { shallow: true });
+            push("/Login", "/login", { shallow: true });
             toggleNav(false, event);
           }}
         >
