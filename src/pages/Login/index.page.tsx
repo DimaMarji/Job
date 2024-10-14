@@ -12,6 +12,9 @@ import Link from "next/link";
 import LoginImage1 from "../../public/Assets/Images/page/login-register/img-4.svg";
 import LoginImage2 from "../../public/Assets/Images/page/login-register/img-3.svg";
 import Image from "next/image";
+import {AuthData} from "./authData";
+import {useUser} from "../../Context/User/userContext";
+import {TotpInput} from "../../Components/Atoms/TotpInput";
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
@@ -19,12 +22,14 @@ const Login = () => {
 
   const [token, setToken] = useState(cookies?.token);
 
-  const { asPath, query, push } = useRouter();
+  const { asPath, query, push,pathname } = useRouter();
+  const { setToken:setContextToken } = useUser();
 
   const mutation = useDataMutation<{ token: string }, { email: string; password: string }>('post', 'user_register/login_user', {
     onSuccess: (data) => {
       setCookie("token", data.token, { path: "/" });
       setToken(data.token);
+      setContextToken(data.token)
       message.success("Login successful");
       setLoading(false);
     },
@@ -46,8 +51,13 @@ const Login = () => {
     }
   }, [cookies?.token]);
 
+
+  console.log(pathname,asPath?.replaceAll("/",""))
+
+  const pathKey=asPath?.replaceAll("/","")
+
   return (
-    <div className={"loginContainer"}>
+    <div className={`loginContainer ${pathKey}`}>
       <Col lg={7}>
         <Text
           typographyFontColor={"#3C65F5"}
@@ -56,16 +66,16 @@ const Login = () => {
             size: "14px-14px-14px",
           }}
         >
-          Welcome back!
+          {AuthData?.[pathKey]?.tag}
         </Text>
         <Title
           className="login-title"
           typographyType={{
             type: "semi-bold-semi-bold-semi-bold",
-            size: "32px-32px-32px",
+            size: "32px-24px-24px",
           }}
         >
-          Member Login
+          {AuthData?.[pathKey]?.title}
         </Title>
         <Text
           typographyFontColor={"#6c757d"}
@@ -74,12 +84,12 @@ const Login = () => {
             size: "14px-14px-14px",
           }}
         >
-          Access to all features. No credit card required.
+          {AuthData?.[pathKey]?.subtitle}
         </Text>
         <Form name="login" onFinish={onFinish} layout="vertical">
           <Form.Item
             requiredMark={false}
-            label="Username or Email address *"
+            label={ pathKey=="login"?"Username or Email address *":"Email address *"}
             name="login"
             rules={[
               {
@@ -90,13 +100,13 @@ const Login = () => {
           >
             <Input placeholder="Steven Job" />
           </Form.Item>
-          <Form.Item
-            requiredMark={false}
-            label="Password *"
-            name="password"
-            rules={[{ required: true, message: "Please input your password!" }]}
+          {pathKey=="login" && <><Form.Item
+              requiredMark={false}
+              label="Password *"
+              name="password"
+              rules={[{required: true, message: "Please input your password!"}]}
           >
-            <Input.Password placeholder="************" />
+            <Input.Password placeholder="************"/>
           </Form.Item>
           <div className="remember-container">
             <Form.Item
@@ -106,16 +116,29 @@ const Login = () => {
             >
               <Checkbox defaultChecked>Remember me</Checkbox>
             </Form.Item>
-            <Link className="login-link" href={""}>Forget Password</Link>
-          </div>
+            <Link className="login-link" href={"reset-password"}>Forget Password</Link>
+          </div>  </>
+          }
           <Form.Item>
+
+            <TotpInput
+                digitCount={6}
+                groupItems={3}
+                separator={<div style={{width: "20px", display: "inline-flex"}}/>}
+                onSubmit={()=>{}}
+                // errorMessage={(error as string) ?? "error"}
+                // isLoading={isLoading}
+                // isError={isError}
+                withButton
+            />
+
             <Button
               type="primary"
               htmlType="submit"
               className="login-button"
               loading={loading}
             >
-              Login
+              {AuthData?.[pathKey]?.buttonText}
             </Button>
           </Form.Item>
         </Form>
@@ -142,7 +165,7 @@ const Login = () => {
           </Text>
         </div>
       </Col>
-      <Image className="login-image1" alt="login" src={LoginImage1} />
+      <Image className="login-image1" alt="login" src={AuthData?.[pathKey]?.image} />
       <Image className="login-image2" alt="login" src={LoginImage2} />
     </div>
   );

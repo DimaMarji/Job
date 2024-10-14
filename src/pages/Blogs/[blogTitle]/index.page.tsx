@@ -71,6 +71,8 @@ const BlogDetailsContainer = ({data: blogDetailsData, error}:
 export const getServerSideProps: GetServerSideProps<{ data: any, error: any }> = async ({query, req}) => {
     const blogTitle: any = await replaceDashesWithSpaces(String(query.blogTitle)).split(" ").join('%20')
 
+    console.log()
+
     try {
         const _res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}blogs/website/articles?title=${blogTitle}`);
 

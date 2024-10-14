@@ -32,6 +32,12 @@ const nextConfig = {
             source: "/login",
             destination: "/Login",
         }, {
+            source: "/reset-password",
+            destination: "/Login",
+        },{
+        source: "/verify-code",
+        destination: "/Login",
+      }, {
           source: "/pricing",
           destination: "/Pricing",
       },
