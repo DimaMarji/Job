@@ -36,10 +36,10 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
             setToken(storedToken);
 
             // Decode the JWT to get the role
-            const decodedToken: { role?: string } = jwtDecode(storedToken);
-            if (decodedToken && decodedToken.role) {
-                setRole(decodedToken.role);
-            }
+            // const decodedToken: { role?: string } = jwtDecode(storedToken);
+            // if (decodedToken && decodedToken.role) {
+            //     setRole(decodedToken.role);
+            // }
         }
     }, [cookies]);
 
@@ -49,10 +49,10 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
         setCookie('token', newToken, { path: '/' });
 
         // Decode and set role
-        const decodedToken: { role?: string } = jwtDecode(newToken);
-        if (decodedToken && decodedToken.role) {
-            setRole(decodedToken.role);
-        }
+        // const decodedToken: { role?: string } = jwtDecode(newToken);
+        // if (decodedToken && decodedToken.role) {
+            // setRole(decodedToken.role);
+        // }
     };
 
     return (

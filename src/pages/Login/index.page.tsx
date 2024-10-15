@@ -86,6 +86,17 @@ const Login = () => {
         >
           {AuthData?.[pathKey]?.subtitle}
         </Text>
+
+        {pathKey =="verify-code"? <TotpInput
+                digitCount={6}
+                groupItems={3}
+                separator={<div style={{width: "20px", display: "inline-flex"}}/>}
+                onSubmit={()=>{}}
+                // errorMessage={(error as string) ?? "error"}
+                // isLoading={isLoading}
+                // isError={isError}
+                withButton
+            />:
         <Form name="login" onFinish={onFinish} layout="vertical">
           <Form.Item
             requiredMark={false}
@@ -121,16 +132,7 @@ const Login = () => {
           }
           <Form.Item>
 
-            <TotpInput
-                digitCount={6}
-                groupItems={3}
-                separator={<div style={{width: "20px", display: "inline-flex"}}/>}
-                onSubmit={()=>{}}
-                // errorMessage={(error as string) ?? "error"}
-                // isLoading={isLoading}
-                // isError={isError}
-                withButton
-            />
+         
 
             <Button
               type="primary"
@@ -141,7 +143,7 @@ const Login = () => {
               {AuthData?.[pathKey]?.buttonText}
             </Button>
           </Form.Item>
-        </Form>
+        </Form>}
         <div className="login-footer">
           <Text
             typographyType={{

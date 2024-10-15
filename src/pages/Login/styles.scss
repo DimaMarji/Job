@@ -4,12 +4,13 @@
   // margin: 15% auto;
   text-align: center;
 
-  padding: 17vh 40px;
+  padding: 10vh 40px;
   overflow: hidden;
   background-color: #fff;
   border-radius: 8px;
   z-index: 2;
   position: relative;
+  min-height: 90vh;
 
   @include media-query(tablet-and-mobile){
    padding-top: 15vh;
@@ -158,9 +159,14 @@
     }
     .totp-input-container{
       width: 100%;
+      margin-top: 32px;
+      button{
+        margin-bottom: 16px !important;
+      }
       &>div{
         width: fit-content;
-        margin: auto;
+        margin: 12px auto;
+        
 
       }
       .totp-digit-input {
