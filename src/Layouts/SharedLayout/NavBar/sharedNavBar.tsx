@@ -121,9 +121,9 @@ const SharedNavBar: FunctionComponent<SharedNavBarProps> = ({
     <>
       <div className={"header-space"}>{menuItems}</div>
      
-            <Link className="login-link hover-up" href={""}>New Employer</Link>
+            <Link className="login-link hover-up" href={"/new-employer"}>New Employer</Link>
             <span>|</span>
-            <Link className="login-link  hover-up" href={""}>New Jobseeker</Link>
+            <Link className="login-link  hover-up" href={"/new-jobseeker"}>New Jobseeker</Link>
          
       {/* <Button
           type={"link"}

@@ -1,10 +1,11 @@
 import React from 'react'
 import { Button, Checkbox, Col, Form, Input, Row, Tooltip } from 'antd';
-import styles from './EmployerRegister.module.scss';
+import './styles.scss';
 
 import { Title } from "../../Components/Atoms/Typography/Title";
 import { Text } from "../../Components/Atoms/Typography/Text";
 import { InfoCircleOutlined } from '@ant-design/icons';
+import Link from 'next/link';
 
 interface FormField {
   name: string;
@@ -59,7 +60,7 @@ const EmployerRegister: React.FC = () => {
   
     const renderFormItems = (fields: FormField[], cols: number) =>
       fields.map((field) => (
-        <Col key={field.name} span={cols}>
+        <Col key={field.name} xs={24} sm={24} lg={cols}>
           <Form.Item
             label={
               <span>
@@ -88,41 +89,84 @@ const EmployerRegister: React.FC = () => {
       ));
   
     return (
-      <div className={styles.employerRegister}>
+      <div className={"employerRegister"}>
+         <Text
+          typographyFontColor={"#3C65F5"}
+          typographyType={{
+            type: "regular-regular-regular",
+            size: "14px-14px-14px",
+          }}
+        >
+          Start for free Today
+        </Text>
+        <Title
+          className="login-title"
+          typographyType={{
+            type: "semi-bold-semi-bold-semi-bold",
+            size: "32px-24px-24px",
+          }}
+        >
+          New Employer
+        </Title>
+        <Text
+          typographyFontColor={"#6c757d"}
+          typographyType={{
+            type: "regular-regular-regular",
+            size: "14px-14px-14px",
+          }}
+        >
+         Employer (Company) registration is free of charge, Job vacancy posting is paid, Pick up a resume from data base is paid, Job Classifieds posting is paid, Courses posting is paid</Text>
+<Link className='about-us-link'  href={"/about-us"}>
+        <Text
+          typographyFontColor={"#6c757d"}
+          typographyType={{
+            type: "regular-regular-regular",
+            size: "14px-14px-14px",
+          }}
+        >
+        Companies registration Instructions and Benefits  </Text>
+        </Link>
         <Form
           form={form}
           layout="vertical"
           onFinish={handleSubmit}
-          className={styles.formContainer}
+          className={"formContainer"}
         >
+ {/* Company Account Information */}
+ <Section title="Company Account Information">
+            <Row gutter={16}>
+              {renderFormItems(contactInfo, 11)}
+            </Row>
+          </Section>
+
           {/* Contact Information */}
           <Section title="Contact Information">
             <Row gutter={16}>
-              {renderFormItems(contactInfo, 12)}
+              {renderFormItems(contactInfo, 11)}
             </Row>
           </Section>
   
           {/* Contact Person */}
           <Section title="Contact Person">
             <Row gutter={16}>
-              {renderFormItems(contactPersonInfo, 12)}
+              {renderFormItems(contactPersonInfo, 11)}
             </Row>
           </Section>
   
           {/* Terms and Submit */}
-          <Form.Item className={styles.termsContainer}>
+          <Form.Item className={"termsContainer"}>
             <Checkbox>
               Agree to our terms and policy
             </Checkbox>
           </Form.Item>
   
-          <Form.Item className={styles.submitButton}>
+          <Form.Item className={"submitButton"}>
             <Button type="primary" htmlType="submit">
               Submit & Register
             </Button>
           </Form.Item>
   
-          <div className={styles.signInLink}>
+          <div className={"signInLink"}>
             Already have an account? <a href="/login">Sign in</a>
           </div>
         </Form>
@@ -130,11 +174,13 @@ const EmployerRegister: React.FC = () => {
     );
   };
   
-  const Section: React.FC<{ title: string,children:any }> = ({ title, children }) => (
-    <div className={styles.section}>
+
+  
+  export default EmployerRegister;
+
+  export const Section: React.FC<{ title: string,children:any }> = ({ title, children }) => (
+    <div className={"section"}>
       <h3>{title}</h3>
       {children}
     </div>
   );
-  
-  export default EmployerRegister;

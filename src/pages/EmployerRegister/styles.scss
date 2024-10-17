@@ -2,12 +2,29 @@
     max-width: 900px;
     margin: 0 auto;
     padding: 2rem;
+    padding-top: 120px;
+
+    .login-title{
+      margin-bottom: 5px !important;
+      margin-top: 10px !important;
+    }
+
+    .about-us-link{
+      display: block;
+      margin-top: 30px !important;
+      margin-bottom: 20px !important;
+      *{
+        color: #6c757d !important;}
+      
+    }
   
-    .formContainer {
+    .formContainer .section {
       background: #fff;
-      padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      text-align: start;
+      padding: 30px;
+      border-radius: 16px;
+      margin-bottom: 30px;
+      border: 1px solid #E0E6F7;
     }
   
     .section {

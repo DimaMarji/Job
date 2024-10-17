@@ -161,9 +161,9 @@ const Login = () => {
               size: "14px-14px-14px",
             }}
           >
-            <Link className="login-link" href={""}>New Employer</Link>
+            <Link className="login-link" href={"new-employer"}>New Employer</Link>
             <span>|</span>
-            <Link className="login-link" href={""}>New Jobseeker</Link>
+            <Link className="login-link" href={"/new-jobseeker"}>New Jobseeker</Link>
           </Text>
         </div>
       </Col>

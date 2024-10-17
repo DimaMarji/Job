@@ -19,9 +19,11 @@
   .login-link{
     color: #05264E !important;
     text-decoration: underline;
-    &:hover {
-      color: #3C65F5;
-  }
+    &.hover-up:hover {
+      color: #3C65F5 !important;
+      box-shadow: none !important;
+    }
+
   }
 }
 .layout-header-parent-container {

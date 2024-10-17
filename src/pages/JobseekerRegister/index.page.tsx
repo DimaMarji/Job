@@ -89,6 +89,43 @@ const EmployerRegister: React.FC = () => {
   
     return (
       <div className={styles.employerRegister}>
+   <Text
+          typographyFontColor={"#3C65F5"}
+          typographyType={{
+            type: "regular-regular-regular",
+            size: "14px-14px-14px",
+          }}
+        >
+          Start for free Today
+        </Text>
+        <Title
+          className="login-title"
+          typographyType={{
+            type: "semi-bold-semi-bold-semi-bold",
+            size: "32px-24px-24px",
+          }}
+        >
+          New Jobseeker
+        </Title>
+        <Text
+          typographyFontColor={"#6c757d"}
+          typographyType={{
+            type: "regular-regular-regular",
+            size: "14px-14px-14px",
+          }}
+        >
+         Jobseekers registration, building resumes and applying to vacancies is totally free of charge and no employment commission is required from our website.
+        </Text>
+
+        <Text
+          typographyFontColor={"#6c757d"}
+          typographyType={{
+            type: "regular-regular-regular",
+            size: "14px-14px-14px",
+          }}
+        >
+        Candidates registration instructions and benefits   </Text>
+
         <Form
           form={form}
           layout="vertical"
