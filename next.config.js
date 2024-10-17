@@ -1,11 +1,12 @@
 const path = require("path");
-
 const { i18n } = require("./next-i18next.config");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: false,
   i18n, // Add i18n configuration here
+  useFileSystemPublicRoutes: true, // Ensure Next.js uses the filesystem routing
+  
   async rewrites() {
     return [
       // Rewrites
@@ -55,9 +56,7 @@ const nextConfig = {
       },
     ];
   },
-  // devIndicators: {
-  //   buildActivity: false,
-  // },
+
   images: {
     remotePatterns: [
       {
@@ -71,7 +70,6 @@ const nextConfig = {
     ],
   },
   pageExtensions: ["page.tsx", "page.ts", "page.jsx", "page.js"],
-  // experimental: { appDir: true },
 
   webpack(config) {
     config.module.rules.forEach((rule) => {
