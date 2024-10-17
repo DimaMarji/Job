@@ -25,14 +25,15 @@ const JobCard: React.FC<JobCardProps> = ({ data, viewType }) => {
 
   const FieldsOfWorkElement = (
     <div className={"tags-container"}>
-      {data?.job_activities?.map((tag) => {
-        return <Tag>{tag?.name}</Tag>;
+      {data?.job_activities?.map((tag:any,index:number) => {
+        return <Tag key={index}>{tag?.name}</Tag>;
       })}
     </div>
   );
 
   return (
     <Card
+    key={data?.id}
         onClick={()=>{
         push(`/job-details/${data?.id}`)}
         }
@@ -85,9 +86,9 @@ const JobCard: React.FC<JobCardProps> = ({ data, viewType }) => {
       </Title>
       {viewType == "grid" && <Divider />}
       <div className={"job-info"}>
-        {jobInfoData?.map((item) => {
+        {jobInfoData?.map((item,index) => {
           return (
-            <div>
+            <div key={index}>
               <Text
                 style={{ marginRight: "10px" }}
                 typographyType={{

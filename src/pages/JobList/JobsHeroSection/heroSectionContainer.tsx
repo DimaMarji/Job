@@ -12,9 +12,9 @@ import {ServicesNames} from "../../../Constants/servicesNames";
 import {dataToOptions} from "../helper";
 const {Search} =Input
 
-const JobsHeroSection: React.FC<{ onSearch: (searchValue) => void }> = ({onSearch}) => {
+const JobsHeroSection: React.FC<{ onSearch: (searchValue:any) => void }> = ({onSearch}) => {
     const {isMobileOrTablet} = useAppMediaQuery()
-    const [selectedSearchData, setSelectedSearchData] = useState({
+    const [selectedSearchData, setSelectedSearchData] = useState<any>({
         job_activity_id: undefined,
         location_id:undefined
     });

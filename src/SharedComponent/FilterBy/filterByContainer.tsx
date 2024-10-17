@@ -3,10 +3,10 @@ import { useState } from "react";
 import { Title } from "../../Components/Atoms/Typography/Title";
 import { Text } from "../../Components/Atoms/Typography/Text";
 
-const FilterBy = ({ label, options, onChange,selectedOptions }) => {
+const FilterBy = ({ label, options, onChange,selectedOptions }:any) => {
   // const [selectedOptions, setSelectedOptions] = useState([]);
 
-  const handleChange = (checkedValues) => {
+  const handleChange = (checkedValues:any) => {
     // setSelectedOptions(checkedValues);
     if (onChange) {
       onChange(checkedValues);
@@ -26,7 +26,7 @@ const FilterBy = ({ label, options, onChange,selectedOptions }) => {
         {label}
       </Title>
       <Checkbox.Group
-        options={options?.map((option) => ({
+        options={options?.map((option:any) => ({
           label: (
             <>
               <Text

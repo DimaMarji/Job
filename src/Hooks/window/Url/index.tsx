@@ -5,7 +5,7 @@ const useUrl = () => {
 
     const getAllParams = () => {
         const params = new URLSearchParams(window.location.search);
-        const paramsObj = {};
+        const paramsObj:any = {};
 
         params.forEach((value, key) => {
             paramsObj[key] = value;
@@ -14,7 +14,7 @@ const useUrl = () => {
         return paramsObj;
     };
 
-    const getParam = (paramName) => {
+    const getParam = (paramName:any) => {
         const params = new URLSearchParams(router.asPath.split("?")[1] || "");
         const param = params.get(paramName);
         if (param) {
@@ -28,13 +28,13 @@ const useUrl = () => {
         }
     };
 
-    const addParam = (param) => {
+    const addParam = (param:any) => {
         const params = {...getAllParams(), ...param};
         const queryString = new URLSearchParams(params).toString();
         router.push(`?${queryString}`);
     };
 
-    const addParamTOTable = (params) => {
+    const addParamTOTable = (params:any) => {
         const url = new URL(window.location.href);
         const paramsIns = new URLSearchParams(url.search);
         const queryString = JSON.stringify(params);
@@ -43,7 +43,7 @@ const useUrl = () => {
         window.history.pushState({}, "", url.toString());
     };
 
-    const removeParam = (paramName) => {
+    const removeParam = (paramName:any) => {
         const params = new URLSearchParams(router.asPath.split("?")[1] || "");
         params.delete(paramName);
         const queryString = params.toString();
@@ -58,9 +58,9 @@ const useUrl = () => {
         }
     };
 
-    const removeParams = (paramsNames) => {
+    const removeParams = (paramsNames:any) => {
         const params = new URLSearchParams(router.asPath.split("?")[1] || "");
-        paramsNames.forEach((paramName) => {
+        paramsNames.forEach((paramName:any) => {
             params.delete(paramName);
         });
         const queryString = params.toString();
@@ -71,20 +71,20 @@ const useUrl = () => {
         router.push(router.pathname);
     };
 
-    const updateParams = (paramsToAdd, paramsToDelete: string[]) => {
+    const updateParams = (paramsToAdd:any, paramsToDelete: string[]) => {
         const params = new URLSearchParams(router.asPath.split("?")[1] || "");
 
         console.log(paramsToAdd,params)
 
         // Add parameters
-        paramsToAdd.forEach((param) => {
+        paramsToAdd.forEach((param:any) => {
             const paramName = Object.keys(param)[0];
             const paramValue = param[paramName];
             params.set(paramName, paramValue);
         });
 
         // Delete parameters
-        paramsToDelete.forEach((paramName) => {
+        paramsToDelete.forEach((paramName:any) => {
             params.delete(paramName);
         });
 

@@ -53,7 +53,7 @@ const JobsListSection: React.FC<IJobsListSectionProps> = ({data}) => {
                 </List.Item>
             )}
         /> : <Row className={`jobs-of-day-list ${viewType}`}
-                  gutter={24}>{data?.map((item, index) =>
+                  gutter={24}>{data?.map((item:any, index:number) =>
             <Col key={index} span={24}>
                 <JobCard viewType={viewType} data={item}/>
             </Col>

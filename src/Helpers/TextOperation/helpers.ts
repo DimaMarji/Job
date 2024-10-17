@@ -1,4 +1,4 @@
-export const copyToClipboard = (string, onSuccess?:()=>void, onError?:(error:any)=>void) => {
+export const copyToClipboard = (string:string, onSuccess?:()=>void, onError?:(error:any)=>void) => {
     if (navigator?.clipboard && navigator?.clipboard.writeText) {
         navigator.clipboard
             .writeText(string)

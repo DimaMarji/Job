@@ -87,7 +87,7 @@ const CompanyDetails:React.FC= ({ data }: InferGetServerSidePropsType<typeof get
                     Latest Jobs
                 </Title>
                 <Row className={`company-jobs-list`}
-                     gutter={24}>{latestJobsData?.data?.map((item, index) =>
+                     gutter={24}>{latestJobsData?.data?.map((item:any, index:number) =>
                     <Col key={index} span={24}>
                         <JobCard viewType={"single"} data={item}/>
                     </Col>
@@ -138,7 +138,7 @@ const CompanyDetails:React.FC= ({ data }: InferGetServerSidePropsType<typeof get
 }
 
 
-export const getServerSideProps: GetServerSideProps<{ data: any, error?: any }> = async ({ query }) => {
+export const getServerSideProps: GetServerSideProps<{ data?: any, error?: any }> = async ({ query }) => {
     const companyId: any = query?.companyId;
 
     try {

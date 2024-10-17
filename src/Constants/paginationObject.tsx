@@ -4,13 +4,13 @@ import ArrowIcon from "../public/Assets/Icons/left-arrow.svg"
 import {Space} from "antd";
 import {Text} from "../Components/Atoms/Typography/Text"
 
-interface IPaginationObject {
-    current: number;
-    itemRender: (pageNumber: number, type: string, originalElement: JSX.Element) => JSX.Element | null;
-    pageSize: number;
-    total: number;
-    onChange: (page: number) => void;
-}
+// interface IPaginationObject {
+//     current: number;
+//     itemRender: (pageNumber: number, type: string, originalElement: JSX.Element) => JSX.Element | null;
+//     pageSize: number;
+//     total: number;
+//     onChange: (page: number) => void;
+// }
 
 
 const paginationConfig :any= {
@@ -24,10 +24,10 @@ const paginationConfig :any= {
     },
 };
 
-export const paginationObject = (numItemInPage: number, page: number, setPage: (page: number) => void, total?: number,isMobileOrTablet?:boolean): IPaginationObject => {
+export const paginationObject = (numItemInPage: number, page: any, setPage: any, total?: number,isMobileOrTablet?:boolean): any => {
     return {
         current: page,
-        itemRender: (_, type, originalElement) => {
+        itemRender: (_:any, type:any, originalElement:any) => {
             if (paginationConfig[type]) {
                 const { text, iconStyle } = paginationConfig[type];
                 return (
@@ -59,7 +59,7 @@ export const paginationObject = (numItemInPage: number, page: number, setPage: (
         },
         pageSize: numItemInPage,
         total: total ?? 0,
-        onChange: (page) => {
+        onChange: (page:any) => {
             setPage(page)
             document.documentElement.scrollTop = 0;
         },

@@ -34,7 +34,7 @@ const CompaniesList: React.FC = () => {
     }, [isSuccess])
 
 
-    const filteredData = (data) => data?.filter((item) =>
+    const filteredData = (data:any) => data?.filter((item:any) =>
         selectedLetter ? item.name.startsWith(selectedLetter) : true
     );
 

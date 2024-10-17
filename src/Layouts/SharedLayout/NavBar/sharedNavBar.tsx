@@ -24,7 +24,7 @@ const SharedNavBar: FunctionComponent<SharedNavBarProps> = ({
   const { push, asPath: selected ,locale} = useRouter();
   const { t } = useTranslation('common');
 
-  const switchLanguage = (lang) => {
+  const switchLanguage = (lang:any) => {
     router.push(router.pathname, router.asPath, { locale: lang });
   };
 

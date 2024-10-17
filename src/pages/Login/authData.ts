@@ -2,7 +2,7 @@
 import LoginImage1 from "../../public/Assets/Images/page/login-register/img-4.svg";
 import ResetImage from "../../public/Assets/Images/page/login-register/img-5.svg";
 
-export const AuthData={
+export const AuthData:any={
     "login":{
         title:"Member Login",
         tag:"Welcome back!",

@@ -163,9 +163,7 @@ export const webSiteMetas: IwebSiteMetas = {
             url: 'https://www.Job.com/Services/application-integration/SaaS-integration',
             title: 'SaaS Integration Services | Job ',
             description: "Job offers advanced SaaS integration services to streamline your business operations & maximize the effectiveness of your SaaS applications. Let's connect!",
-            site_name: 'Job',
-            type: 'website',
-            locale: 'en_US',
+           
             ...defaultOgData
         },
     },

@@ -34,8 +34,8 @@ const FilterColumn:React.FC<IFilterColumn> = ({ filters, setFilters}) => {
         ServicesNames.HomeByCity,
     );
 
-    const handleChange = (key:string,selectedValues) => {
-        setFilters((prevFilters) => ({
+    const handleChange = (key:string,selectedValues:any) => {
+        setFilters((prevFilters:any) => ({
             ...prevFilters,
             [key]: selectedValues,
         }));
@@ -68,7 +68,7 @@ const FilterColumn:React.FC<IFilterColumn> = ({ filters, setFilters}) => {
               label="Industry"
               selectedOptions={filters?.job_activity_id}
               options={dataToOptions(industryData?.data)}
-              onChange={(values)=>{
+              onChange={(values:any)=>{
                   handleChange("job_activity_id",values)
               }}
           />
@@ -77,7 +77,7 @@ const FilterColumn:React.FC<IFilterColumn> = ({ filters, setFilters}) => {
               selectedOptions={filters?.degree_type_id}
               label="Minimum Education Level"
               options={dataToOptions(educationLevelData?.data)}
-              onChange={(values)=>{
+              onChange={(values:any)=>{
                   handleChange("degree_type_id",values)
               }}
           />
@@ -85,7 +85,7 @@ const FilterColumn:React.FC<IFilterColumn> = ({ filters, setFilters}) => {
               selectedOptions={filters?.job_type_id}
               label="Job type"
               options={dataToOptions(jobTypesData?.data)}
-              onChange={(values)=>{
+              onChange={(values:any)=>{
                   handleChange("job_type_id",values)
               }}
           />

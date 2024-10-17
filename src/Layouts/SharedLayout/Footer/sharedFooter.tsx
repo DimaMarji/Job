@@ -50,11 +50,11 @@ const SharedFooter = () => {
         </Text>
     </div>
 
-    const isSelected = (item) => {
+    const isSelected = (item:any) => {
         return item.key === '/'
             ? asPath === item.key
             : Array.isArray(item.key)
-                ? item.key.some(key => asPath.startsWith(key))
+                ? item.key.some((key:any) => asPath.startsWith(key))
                 : asPath.startsWith(item.key)
     }
 

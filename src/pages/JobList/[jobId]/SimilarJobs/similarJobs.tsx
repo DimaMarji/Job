@@ -28,7 +28,7 @@ const SimilarJobs:React.FC=()=>{
           Similar Jobs
         </Title>
         <Divider/>
-        {similarJobsData?.map((item,index)=>{
+        {similarJobsData?.map((item:any,index:number)=>{
             return <div key={index} onClick={()=>push(`/job-details/${item?.id}`)}
              className="hover-up similar-job-item"><Space align="start">
             <Image className="similar-job-logo" width={48} height={48} src={item?.logo} alt="logo"/>

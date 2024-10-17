@@ -10,11 +10,11 @@ import JobTypeIcon from "../../../public/Assets/Images/page/job-single/job-type.
 import ClockIcon from "../../../public/Assets/Images/page/job-single/updated.svg"
 import { GlobalOutlined, PictureOutlined, TeamOutlined } from "@ant-design/icons"
 
-export const employmentData =(data)=> [
+export const employmentData =(data:any)=> [
     {
       icon: <Image src={WorkIcon} alt="field-work" />, 
       title: "Field of Work",
-      value: data?.job_activities?.map((item,index)=>`${item?.name}${index!==data?.job_activities?.length -1 ? ", " :""}`),
+      value: data?.job_activities?.map((item:any,index:number)=>`${item?.name}${index!==data?.job_activities?.length -1 ? ", " :""}`),
     },
     {
       icon: <Image src={SalaryIcon} alt="dollar" />, 
