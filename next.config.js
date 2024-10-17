@@ -3,8 +3,11 @@ const { i18n } = require("./next-i18next.config");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: false,
-  i18n, // Add i18n configuration here
+  i18n,
+  trailingSlash: true,
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'styles')],
+  },
   
   async rewrites() {
     return [
