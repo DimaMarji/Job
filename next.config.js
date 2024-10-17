@@ -5,7 +5,6 @@ const { i18n } = require("./next-i18next.config");
 const nextConfig = {
   reactStrictMode: false,
   i18n, // Add i18n configuration here
-  useFileSystemPublicRoutes: true, // Ensure Next.js uses the filesystem routing
   
   async rewrites() {
     return [
