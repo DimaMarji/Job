@@ -63,3 +63,48 @@
     }
   }
 }
+
+.company-details-page{
+  margin-top: 114px;
+  text-align: start;
+  .company-details-header{
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+
+    border-radius: 16px;
+    overflow: hidden;
+  }
+.company-description{
+  text-align: start;
+  margin-top: 40px;
+}
+  .company-info{
+    margin-top: -74px;
+    text-align: start;
+    max-width: 90%;
+    margin-inline: auto;
+
+    .comaony-logo{
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 12px;
+    }
+  }
+  .company-jobs-list{
+    margin-top: 32px;
+  }
+
+  .company-details-info{
+    border: 1px solid #E0E6F7;
+    padding: 25px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    margin-bottom: 40px;
+    .company-card-info-item{
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+  }
+}

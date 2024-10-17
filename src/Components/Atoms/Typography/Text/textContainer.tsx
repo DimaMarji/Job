@@ -1,4 +1,3 @@
-import "./style.scss";
 import {Typography} from 'antd';
 import {ITextProps} from "./interfaces";
 import {DefaultFontFamily, DefaultSize, DefaultType} from "../constants";

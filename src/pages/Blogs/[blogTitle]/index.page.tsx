@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react';
-import "./style.scss"
 import {replaceDashesWithSpaces, replaceSpacesWithDashes} from "../../../Helpers/String/helpers";
 import BlogDetailsHeaderContainer from './BlogDetailsHeader';
 import BlogDetailsBodyContainer from './BlogDetailsBody';

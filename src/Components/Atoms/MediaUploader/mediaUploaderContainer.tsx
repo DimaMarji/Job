@@ -1,7 +1,6 @@
 import {message, Upload} from "antd";
 import {IMediaUploaderProps} from "./interfaces";
 import {MakeCustomRequest} from "./helper";
-import './style.scss'
 import {useState} from "react";
 import {documentTypes} from "../../../Constants/Files/filesTypes";
 

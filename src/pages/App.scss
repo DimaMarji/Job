@@ -2,6 +2,48 @@
 @use "../Styles/main" as *;
 @use "../Styles/Helpers/mixins";
 @import "../Styles/Variables/_fonts.module.scss";
+@import '../Components/Atoms/Button/style.scss';
+@import '../Components/Atoms/Loading/style.scss';
+
+@import '../Components/Atoms/Avatar/style.scss';
+
+@import '../Components/Atoms/MediaUploader/style.scss';
+@import '../Components/Atoms/TotpInput/styles.scss';
+@import '../Components/Atoms/Typography/Title/style.scss';
+
+@import '../Components/Atoms/Typography/Link/style.scss';
+
+@import '../Components/Atoms/Typography/Text/style.scss';
+
+@import '../Components/Atoms/Typography/Paragraph/style.scss';
+
+@import '../Components/Skeleton/style.scss';
+@import '../Layouts/SharedLayout/style.scss';
+
+@import '../Layouts/SharedLayout/Footer/style.scss';
+
+@import '../Layouts/SharedLayout/NavBar/styles.scss';
+
+
+@import '../SharedComponent/FilterBy/styles.scss';
+@import '../SharedComponent/FilterColumn/styles.scss';
+@import '../SharedComponent/PageHeaderSection/styles.scss';
+
+@import '../SharedComponent/JobCard/styles.scss';
+@import 'react-phone-input-2/lib/style.css';
+
+@import '../pages/AboutUs/styles.scss';
+@import '../pages/Blogs/style.scss';
+@import '../pages/Home/style.scss';
+@import '../pages/CompaniesList/styles.scss';
+@import '../pages/ContactUs/styles.scss';
+@import '../pages/EmployerRegister/styles.scss';
+@import '../pages/Pricing/styles.scss';
+@import '../pages/Login/styles.scss';
+@import '../pages/Loading/style.scss';
+@import '../pages/JobList/styles.scss';
+
+@import "antd/dist/antd.min.css";
 
 .App {
   text-align: center;

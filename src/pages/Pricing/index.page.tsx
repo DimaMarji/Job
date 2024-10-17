@@ -1,5 +1,4 @@
 import PageHeaderSection from "../../SharedComponent/PageHeaderSection/pageHeaderSection"
-import "./styles.scss"
 
 import BlogHeaderImage from "../../public/Assets/Images/page/blog/bg-breadcrumb.png"
 import { Title } from "../../Components/Atoms/Typography/Title";

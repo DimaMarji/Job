@@ -1,5 +1,4 @@
 import React from 'react';
-import "./style.scss"
 import {IBlogHeaderProps} from "./interface";
 import {useAppMediaQuery} from "../../../Hooks/MediaQuery/use-app-media-query";
 import {Title} from "../../../Components/Atoms/Typography/Title";

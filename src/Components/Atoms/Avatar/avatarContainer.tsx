@@ -1,6 +1,5 @@
 import {Avatar as AntdAvatar, Image, Tooltip} from 'antd';
 import {IAvatarProps} from "./interfaces";
-import './style.scss'
 import {EyeOutlined} from "@ant-design/icons";
 import {getFirstLetterOfFirstAndLastWord} from "../../../Helpers/helpers";
 

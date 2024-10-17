@@ -1,5 +1,4 @@
 import React from "react";
-import "./style.scss"
 import {Button as AntdButton} from "antd";
 import {IButtonProps} from "./interface";
 import {Text} from "../Typography/Text"

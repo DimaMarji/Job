@@ -1,7 +1,6 @@
 import React from 'react';
 import {homeProps} from "./interface";
 import HeroSection from "./HeroSection/heroSectionContainer";
-import "./style.scss"
 import {BestPlaceToWorkSection} from "./BestPlaceToWorkSection";
 import {TopCompanies} from "./TopCompaniesSection";
 import {BrowseByCategorySection} from "./BrowseByCategorySection";

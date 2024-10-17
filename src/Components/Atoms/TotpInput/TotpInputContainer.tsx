@@ -1,7 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {Input} from 'antd';
 import {Button} from "../Button";
-import "./styles.scss"
 import {ITotpInputProps} from "./interface";
 
 

@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import "./styles.scss"
 import {Title} from "../../../Components/Atoms/Typography/Title";
 import {Col, Input, Row, Space} from "antd";
 import {useAppMediaQuery} from "../../../Hooks/MediaQuery/use-app-media-query";

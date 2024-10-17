@@ -1,6 +1,5 @@
 import React from "react";
 import { Button, Checkbox, Col, Form, Input, Row, Select, Space, Tooltip } from "antd";
-import "./styles.scss";
 import PageHeaderSection from "../../SharedComponent/PageHeaderSection/pageHeaderSection";
 import AboutHeaderImage from "../../public/Assets/Images/page/about/img-about.png";
 import { MailOutlined } from "@ant-design/icons";
@@ -8,7 +7,6 @@ import { MailOutlined } from "@ant-design/icons";
 import { Title } from "../../Components/Atoms/Typography/Title";
 import { Text } from "../../Components/Atoms/Typography/Text";
 import PhoneInput from 'react-phone-input-2'
-import 'react-phone-input-2/lib/style.css'
 
 
 

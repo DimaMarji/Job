@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import "./styles.scss";
 import Arrow from "../../../public/Assets/Icons/right-arrow.svg";
 import { IHorizontalScrollList } from "./interface";
 import Image from "next/image";

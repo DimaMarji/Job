@@ -1,6 +1,5 @@
 import React, {FunctionComponent, useEffect, useState} from "react";
 import SharedNavBar from "./NavBar";
-import "./style.scss"
 import SharedFooter from "./Footer";
 import {useRouter} from "next/router";
 import {useAppMediaQuery} from "../../Hooks/MediaQuery/use-app-media-query";

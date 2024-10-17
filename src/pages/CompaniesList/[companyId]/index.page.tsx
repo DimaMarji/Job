@@ -1,5 +1,4 @@
 import React from "react";
-import "./styles.scss"
 import {GetServerSideProps, InferGetServerSidePropsType} from "next";
 import Image from "next/image";
 import CompanyHeaderImage from "../../../public/Assets/Images/page/company/img.png"

@@ -1,6 +1,5 @@
 import React from 'react'
 import { Button, Checkbox, Col, Form, Input, Row, Tooltip } from 'antd';
-import styles from './JobseekerRegister.module.scss';
 
 import { Title } from "../../Components/Atoms/Typography/Title";
 import { Text } from "../../Components/Atoms/Typography/Text";
@@ -88,7 +87,7 @@ const EmployerRegister: React.FC = () => {
       ));
   
     return (
-      <div className={styles.employerRegister}>
+      <div className={"employerRegister"}>
    <Text
           typographyFontColor={"#3C65F5"}
           typographyType={{
@@ -130,7 +129,7 @@ const EmployerRegister: React.FC = () => {
           form={form}
           layout="vertical"
           onFinish={handleSubmit}
-          className={styles.formContainer}
+          className={"formContainer"}
         >
           {/* Contact Information */}
           <Section title="Contact Information">
@@ -147,19 +146,19 @@ const EmployerRegister: React.FC = () => {
           </Section>
   
           {/* Terms and Submit */}
-          <Form.Item className={styles.termsContainer}>
+          <Form.Item className={"termsContainer"}>
             <Checkbox>
               Agree to our terms and policy
             </Checkbox>
           </Form.Item>
   
-          <Form.Item className={styles.submitButton}>
+          <Form.Item className={"submitButton"}>
             <Button type="primary" htmlType="submit">
               Submit & Register
             </Button>
           </Form.Item>
   
-          <div className={styles.signInLink}>
+          <div className={"signInLink"}>
             Already have an account? <a href="/login">Sign in</a>
           </div>
         </Form>
@@ -168,7 +167,7 @@ const EmployerRegister: React.FC = () => {
   };
   
   const Section: React.FC<{ title: string,children:any }> = ({ title, children }) => (
-    <div className={styles.section}>
+    <div className={"section"}>
       <h3>{title}</h3>
       {children}
     </div>

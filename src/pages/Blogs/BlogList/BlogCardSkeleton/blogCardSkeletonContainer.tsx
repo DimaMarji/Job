@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import FallbackImage from "../../../../public/Assets/Images/General/fallback-image.svg";
-import "./styles.scss"
 import {Card} from "antd";
 import {Skeleton} from "../../../../Components/Skeleton";
 

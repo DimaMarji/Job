@@ -1,5 +1,4 @@
 import React from 'react';
-import "./style.scss"
 import BlogListContainer from './BlogList';
 import BlogHeaderContainer from './BlogHeader';
 

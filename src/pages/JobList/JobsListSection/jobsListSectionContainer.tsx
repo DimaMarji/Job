@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import "./styles.scss"
 import {useAppMediaQuery} from "../../../Hooks/MediaQuery/use-app-media-query";
 import {Col, List, Row, Space} from "antd";
 import {IJobsListSectionProps} from "./interface";

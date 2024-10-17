@@ -1,5 +1,4 @@
 import React, { FunctionComponent, useEffect, useState } from "react";
-import "./styles.scss";
 import { useAppMediaQuery } from "../../../Hooks/MediaQuery/use-app-media-query";
 import { useRouter } from "next/router";
 import Image from "next/image";

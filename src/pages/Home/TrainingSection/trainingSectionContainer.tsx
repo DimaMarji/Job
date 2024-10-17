@@ -1,5 +1,4 @@
 import React from "react";
-import "./styles.scss"
 import {Title} from "../../../Components/Atoms/Typography/Title";
 import {Text} from "../../../Components/Atoms/Typography/Text";
 import {Card, List, Space} from "antd";

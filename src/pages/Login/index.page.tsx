@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Checkbox, Col, Form, Input, message } from "antd";
 import { useCookies } from "react-cookie";
-import "./styles.scss";
 import { useDataMutation } from "../../ReactQuery/ApiCrud/useDataMutation";
 import Button from "../../Components/Atoms/Button/buttonContainer";
 import { useRouter } from "next/router";

@@ -1,5 +1,4 @@
 import {useNavigate} from "react-router-dom"
-import "./styles.scss"
 import {Button} from "../../Components/Atoms/Button";
 
 import error500Image from "../../public/Assets/Images/Error/error-500.png";

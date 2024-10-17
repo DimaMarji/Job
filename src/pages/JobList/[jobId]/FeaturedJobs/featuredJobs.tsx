@@ -5,7 +5,6 @@ import { Text } from "../../../../Components/Atoms/Typography/Text"
 import { useDataFetching } from "../../../../ReactQuery/ApiCrud/useDataFetching"
 import { useRouter } from "next/router"
 import { ServicesNames } from "../../../../Constants/servicesNames"
-import "./styles.scss"
 
 const FeaturedJobs:React.FC=()=>{
 

@@ -1,4 +1,3 @@
-import "./styles.scss";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import { replaceDashesWithSpaces } from "../../../Helpers/String/helpers";
 import { isEmpty } from "lodash";

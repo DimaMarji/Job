@@ -1,6 +1,5 @@
 import {Typography} from "antd";
 import {ITitleProps} from "./interfaces";
-import './style.scss'
 import {DefaultFontFamily, DefaultSize, DefaultType} from "../constants";
 
 const Title = ({

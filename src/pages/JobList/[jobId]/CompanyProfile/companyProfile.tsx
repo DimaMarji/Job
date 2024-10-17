@@ -2,7 +2,6 @@ import { Divider, Space } from "antd"
 import Image from "next/image"
 import { Title } from "../../../../Components/Atoms/Typography/Title"
 import { Text } from "../../../../Components/Atoms/Typography/Text"
-import "./styles.scss"
 
 import LocationIcon from "../../../../public/Assets/Images/template/icons/location.svg";
 

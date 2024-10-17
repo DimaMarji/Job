@@ -1,5 +1,4 @@
 import React from "react";
-import "./styles.scss"
 import BlogListContainer from "../../Blogs/BlogList";
 import {Button, Space} from "antd";
 import LoadIcon from "../../../public/Assets/Images/template/icons/icon-load.svg";

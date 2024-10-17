@@ -1,7 +1,6 @@
 import React, {useEffect} from 'react';
 import {disableBodyScroll} from '../../Helpers/ScrollHandler/scrollLock';
 import LoadingProps from "./interface";
-import "./style.scss";
 import {LoadingIndicator} from "../../Components/Atoms/Loading";
 
 let gIsPartial: boolean = false;

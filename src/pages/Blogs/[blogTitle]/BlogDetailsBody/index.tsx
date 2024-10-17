@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import "./style.scss"
 import {Col, Image, Row, Space} from "antd";
 import {useAppMediaQuery} from "../../../../Hooks/MediaQuery/use-app-media-query";
 import {BackTop} from "antd";

@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import "./styles.scss"
 import {useAppMediaQuery} from "../../../Hooks/MediaQuery/use-app-media-query";
 import {Title} from "../../../Components/Atoms/Typography/Title";
 import {Text} from "../../../Components/Atoms/Typography/Text";

@@ -1,6 +1,5 @@
 import React from "react";
 import {Title} from "../../../Components/Atoms/Typography/Title";
-import "./styles.scss"
 import {Card, List} from "antd";
 import {Text} from "../../../Components/Atoms/Typography/Text";
 import {useDataFetching} from "../../../ReactQuery/ApiCrud/useDataFetching";

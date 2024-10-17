@@ -1,10 +1,7 @@
 import {AppContextsContextProvider} from '../Context/appContexts'
 import type {AppProps} from 'next/app'
-import './App.scss';
-import "antd/dist/antd.min.css";
 import {QueryClientProvider,} from 'react-query'
 import React from "react";
-import "../Layouts/SharedLayout/style.scss"
 import {useRouter} from 'next/router';
 import {ErrorBoundary} from "react-error-boundary";
 import {usePageState} from '../Hooks/window/pageState/use-page-state';

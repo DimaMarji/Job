@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-import "./styles.scss"
 import {useDataFetching} from "../../ReactQuery/ApiCrud/useDataFetching";
 import {Card, Col, Divider, List, Row, Space} from "antd";
 import {ServicesNames} from "../../Constants/servicesNames";

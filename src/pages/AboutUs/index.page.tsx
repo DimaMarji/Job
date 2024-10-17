@@ -5,7 +5,6 @@ import { Title } from "../../Components/Atoms/Typography/Title";
 import { Text } from "../../Components/Atoms/Typography/Text";
 import PageHeaderSection from '../../SharedComponent/PageHeaderSection/pageHeaderSection';
 import AboutHeaderImage from "../../public/Assets/Images/page/about/img-about.png"
-import "./styles.scss"
 import Image from "next/image"
 import AboutImage from "../../public/Assets/Images/page/about/img-about2.png"
 import { AboutUsData } from './aboutUsData';

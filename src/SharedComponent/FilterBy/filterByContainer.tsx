@@ -2,7 +2,6 @@ import { Checkbox, Divider, Tag } from "antd";
 import { useState } from "react";
 import { Title } from "../../Components/Atoms/Typography/Title";
 import { Text } from "../../Components/Atoms/Typography/Text";
-import "./styles.scss";
 
 const FilterBy = ({ label, options, onChange,selectedOptions }) => {
   // const [selectedOptions, setSelectedOptions] = useState([]);

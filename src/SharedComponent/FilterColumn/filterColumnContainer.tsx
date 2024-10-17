@@ -2,7 +2,6 @@ import {Checkbox, Divider, Select, Tag} from "antd";
 import React, { useState } from "react";
 import { Title } from "../../Components/Atoms/Typography/Title";
 import { Text } from "../../Components/Atoms/Typography/Text";
-import "./styles.scss";
 import {useDataFetching} from "../../ReactQuery/ApiCrud/useDataFetching";
 import {ServicesNames} from "../../Constants/servicesNames";
 import {dataToOptions} from "../../pages/CompaniesList/helper";

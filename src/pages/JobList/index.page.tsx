@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useMemo } from "react";
-import "./styles.scss";
 import { useDataFetching } from "../../ReactQuery/ApiCrud/useDataFetching";
 import { JobsHeroSection } from "./JobsHeroSection";
 import { Col, Row } from "antd";

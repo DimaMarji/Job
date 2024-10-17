@@ -1,6 +1,5 @@
 import React from 'react';
 import {LoadingProps} from "./interface";
-import "./style.scss";
 import Image from "next/image";
 import LoadingGIF from "../../../public/Assets/Images/template/loading.gif";
 

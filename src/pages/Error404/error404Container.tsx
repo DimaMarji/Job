@@ -1,4 +1,3 @@
-import "./styles.scss"
 import {Button} from "../../Components/Atoms/Button";
 
 import error404Image from "../../public/Assets/Images/Error/error-404.png"

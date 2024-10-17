@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import './style.scss'
 import {List} from 'antd';
 import {IBlogListProps} from './interface';
 import BlogCard from './BlogCard';

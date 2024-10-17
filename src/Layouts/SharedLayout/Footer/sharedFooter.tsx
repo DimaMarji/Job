@@ -1,5 +1,4 @@
 import React from 'react';
-import "./style.scss"
 import LogoImage from "../../../public/Assets/Images/template/jobhub-logo.svg";
 
 import Image from 'next/image'

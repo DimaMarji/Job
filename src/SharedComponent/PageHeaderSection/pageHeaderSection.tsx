@@ -1,4 +1,3 @@
-import "./styles.scss"
 import {IPageHeaderSection} from "./interface";
 import {Breadcrumb} from "antd";
 import {HomeOutlined} from "@ant-design/icons";

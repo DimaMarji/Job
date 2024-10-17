@@ -1,7 +1,6 @@
 import React from "react";
 import { Card, Tag, Button, Row, Col, Space, Divider } from "antd";
 import { CalendarOutlined, EyeOutlined } from "@ant-design/icons";
-import "./styles.scss";
 import Image from "next/image";
 import { Title } from "../../Components/Atoms/Typography/Title";
 import { Text } from "../../Components/Atoms/Typography/Text";

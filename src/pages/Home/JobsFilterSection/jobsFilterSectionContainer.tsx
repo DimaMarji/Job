@@ -1,5 +1,4 @@
 import React from "react";
-import "./styles.scss"
 import {IJobsFilterSection} from "./interface";
 import {Title} from "../../../Components/Atoms/Typography/Title";
 import {Text} from "../../../Components/Atoms/Typography/Text";

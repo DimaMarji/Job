@@ -1,6 +1,5 @@
 import React from 'react';
 import {BlogCardProps} from "./interface";
-import "./style.scss"
 import {replaceSpacesWithDashes} from "../../../../Helpers";
 
 import {useRouter} from 'next/router';
