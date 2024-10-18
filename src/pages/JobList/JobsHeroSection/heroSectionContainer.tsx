@@ -36,7 +36,7 @@ const JobsHeroSection: React.FC<{ onSearch: (searchValue:any) => void }> = ({onS
         <Title
             className={"animate__ animate__fadeInUp animated"}
             typographyFontColor={"#05264E"}
-            typographyType={{type: "semi-bold-semi-bold-semi-bold", size: "24px-18px-18px"}} level={1}>
+            typographyType={{type: "semi-bold-semi-bold-semi-bold", size: "24px-26px-26px"}} level={1}>
             <span
                 className="color-brand-2">22 Jobs</span> Available Now
         </Title>

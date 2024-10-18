@@ -124,3 +124,32 @@
     }
   }
 }
+
+@include media-query(tablet-and-mobile){
+  .jobs-search-container{
+    flex-direction: column;
+    text-align: start;
+    gap: 8px;
+
+
+  .ant-select-selector:before {
+     left:7px !important;
+  }
+  .search-input{
+
+   .ant-input-affix-wrapper {
+    gap: 7px;
+    &:before {
+      display: none;
+    }
+}}
+
+.ant-input-group-addon{
+  display: block;
+  margin-top: 24px;
+  button{
+  padding: 9px 24px !important;
+  border-radius: 8px !important;}
+}
+  }
+}

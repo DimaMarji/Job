@@ -44,7 +44,7 @@ const FilterColumn:React.FC<IFilterColumn> = ({ filters, setFilters}) => {
     console.log(filters)
 
   return (
-      <div style={{padding: "20px", maxWidth: "300px"}}>
+      <div className="filter-column">
           <div style={{display: "flex", justifyContent: "space-between"}}>
               <Title
                   typographyFontColor={"#05264E"}
@@ -90,10 +90,10 @@ const FilterColumn:React.FC<IFilterColumn> = ({ filters, setFilters}) => {
               }}
           />
 
-          <div style={{marginTop: "20px"}}>
+          {/* <div style={{marginTop: "20px"}}>
               <h3>Selected Filters:</h3>
               <pre>{JSON.stringify(filters, null, 2)}</pre>
-          </div>
+          </div> */}
       </div>
   );
 };

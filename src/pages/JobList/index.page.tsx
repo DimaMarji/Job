@@ -77,10 +77,10 @@ const JobList: React.FC = () => {
         <div className="job-list-container">
             <JobsHeroSection onSearch={onSearch} />
             <Row>
-                <Col lg={8}>
+                <Col lg={8} sm={{span:24,order:2}} xs={{span:24,order:2}}>
                     <FilterColumn filters={filters} setFilters={setFilters} />
                 </Col>
-                <Col lg={16}>
+                <Col lg={16} sm={{span:24,order:2}} xs={{span:24,order:1}}>
                     {/* Display a loading indicator when any of the fetches are in progress */}
                     {isLoadingJobs || isLoadingFiltered || isLoadingSearch ? (
                         <div>Loading...</div>
