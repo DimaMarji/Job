@@ -1,90 +1,91 @@
-import React from 'react'
-import { Button, Checkbox, Col, Form, Input, Row, Tooltip } from 'antd';
+import React, { useState } from 'react'
+import { Button, Checkbox, Col, Form, Input, Row, Select, Tooltip } from 'antd';
 
 import { Title } from "../../Components/Atoms/Typography/Title";
 import { Text } from "../../Components/Atoms/Typography/Text";
 import { InfoCircleOutlined } from '@ant-design/icons';
+import { FormCardSection } from '../EmployerRegister/index.page';
+import { jobseekerAccountInfo, targetedJob } from './constant';
+import { useDataFetching } from '../../ReactQuery/ApiCrud/useDataFetching';
+import { ServicesNames } from '../../Constants/servicesNames';
+import PhoneInput from 'react-phone-input-2';
+import { FormField } from '../EmployerRegister/interface';
+import { dataToOptions } from '../EmployerRegister/helper';
+import Image from 'next/image';
+import FormVector from "../../public/Assets/Images/page/login-register/img-2.svg"
+import Link from 'next/link';
 
-interface FormField {
-  name: string;
-  label: string;
-  type?: string;
-  required?: boolean;
-  tooltip?: string;
-}
-
-const contactInfo: FormField[] = [
-    { name: 'url', label: 'URL', tooltip: 'Website URL' },
-    { name: 'poBox', label: 'P.O.Box', tooltip: 'P.O.Box' },
-    { name: 'country', label: 'Residence Country', required: true, tooltip: 'Country of residence' },
-    { name: 'city', label: 'Residence City', required: true, tooltip: 'City of residence' },
-    { name: 'address', label: 'Address', tooltip: 'Company address' },
-    { name: 'phone', label: 'Phone', required: true, tooltip: 'Phone number' },
-    { name: 'mobile', label: 'Mobile', required: true, tooltip: 'Mobile number' },
-  ];
-  
-  const contactPersonInfo: FormField[] = [
-    { name: 'title', label: 'Title', required: true, tooltip: 'Title (e.g., Mr./Mrs.)' },
-    { name: 'fullName', label: 'Full Name', required: true, tooltip: 'Full Name' },
-    { name: 'position', label: 'Position', required: true, tooltip: 'Job Position' },
-    { name: 'email', label: 'Email', required: true, type: 'email', tooltip: 'Contact Email' },
-    { name: 'phone', label: 'Phone', required: true, tooltip: 'Phone number' },
-    { name: 'mobile', label: 'Mobile', required: true, tooltip: 'Mobile number' },
-  ];
-
-const companyAccountInfo: FormField[] = [
-  { name: 'username', label: 'User Name' },
-  { name: 'email', label: 'Email', type: 'email' },
-  { name: 'password', label: 'Password', type: 'password' },
-];
-
-const companyNameInfo: FormField[] = [
-  { name: 'arabicName', label: 'Arabic Name' },
-  { name: 'englishName', label: 'English Name' },
-];
-
-
-const companyActivityInfo: FormField[] = [
-  { name: 'activityField', label: 'Activity Field' },
-];
 
 
 const EmployerRegister: React.FC = () => {
     const [form] = Form.useForm();
+    const [countryId, setCountryId] = useState<number | string>();
 
+    const getAllCountry = useDataFetching(ServicesNames.AllCountries);
+    const getAllCity = useDataFetching(`${ServicesNames.AllCities}${countryId}`);
+    const getAllTitles = useDataFetching(ServicesNames.AllTitles);
+    
+  
+    console.log("process.env.NEXT_PUBLIC_BASE_API_URL",process.env.NEXT_PUBLIC_BASE_API_URL);
+  
     const handleSubmit = (values: any) => {
-      console.log('Form values:', values);
+      console.log("Form values:", values);
+    };
+  
+    const onSelect = (selected: string, name: string) => {
+      if (name == "country") {
+        setCountryId(selected)
+      }
     };
   
     const renderFormItems = (fields: FormField[], cols: number) =>
-      fields.map((field) => (
-        <Col key={field.name} span={cols}>
-          <Form.Item
-            label={
-              <span>
-                {field.label}{' '}
-                {field.tooltip && (
-                  <Tooltip title={field.tooltip}>
-                    <InfoCircleOutlined />
-                  </Tooltip>
-                )}
-              </span>
-            }
-            name={field.name}
-            rules={[
-              { required: field.required, message: `${field.label} is required` },
-            ]}
-          >
-            {field.type === 'email' ? (
-              <Input type="email" />
-            ) : field.type === 'password' ? (
-              <Input.Password />
-            ) : (
-              <Input />
-            )}
-          </Form.Item>
-        </Col>
-      ));
+      fields.map((field) => {
+        const selectData=field?.name=="country"?getAllCountry?.data?.data :field?.name=="city"?getAllCity?.data?.data:getAllTitles?.data?.da
+       
+        return (
+          <Col key={field.name} xs={24} sm={24} lg={cols}>
+            <Form.Item
+              label={
+                <span>
+                  {field.label}{" "}
+                  {field.tooltip && (
+                    <Tooltip title={field.tooltip}>
+                      <InfoCircleOutlined />
+                    </Tooltip>
+                  )}
+                </span>
+              }
+              name={field.name}
+              rules={[
+                {
+                  required: field.required,
+                  message: `${field.label} is required`,
+                },
+              ]}
+            >
+              {field.type == "phone" ? (
+                <PhoneInput
+                  placeholder={field.placeholder}
+                  enableSearch
+                  country={"us"}
+                  // value={this.state.phone}
+                  // onChange={phone => this.setState({ phone })}
+                />
+              ) : field.type === "email" ? (
+                <Input placeholder={field.placeholder} type="email" />
+              ) : field.type === "password" ? (
+                <Input.Password placeholder={field.placeholder} />
+              ) : field.type === "select" ? (
+                <>
+                  <Select options={dataToOptions(selectData)} onSelect={(selected:any)=>onSelect(selected,field?.name)} />
+                </>
+              ) : (
+                <Input placeholder={field.placeholder} />
+              )}
+            </Form.Item>
+          </Col>
+        );
+      });
   
     return (
       <div className={"employerRegister"}>
@@ -116,6 +117,7 @@ const EmployerRegister: React.FC = () => {
          Jobseekers registration, building resumes and applying to vacancies is totally free of charge and no employment commission is required from our website.
         </Text>
 
+        <Link className="about-us-link" href={"/about-us"}>
         <Text
           typographyFontColor={"#6c757d"}
           typographyType={{
@@ -123,7 +125,9 @@ const EmployerRegister: React.FC = () => {
             size: "14px-14px-14px",
           }}
         >
-        Candidates registration instructions and benefits   </Text>
+          Companies registration Instructions and Benefits
+        </Text>
+      </Link>
 
         <Form
           form={form}
@@ -131,19 +135,19 @@ const EmployerRegister: React.FC = () => {
           onFinish={handleSubmit}
           className={"formContainer"}
         >
-          {/* Contact Information */}
-          <Section title="Contact Information">
+          {/* Personal Account Information */}
+          <FormCardSection title="Personal Account Information">
             <Row gutter={16}>
-              {renderFormItems(contactInfo, 12)}
+              {renderFormItems(jobseekerAccountInfo, 12)}
             </Row>
-          </Section>
+          </FormCardSection>
   
-          {/* Contact Person */}
-          <Section title="Contact Person">
+          {/* Targeted Job */}
+          <FormCardSection title="Targeted Job">
             <Row gutter={16}>
-              {renderFormItems(contactPersonInfo, 12)}
+              {renderFormItems(targetedJob, 24)}
             </Row>
-          </Section>
+          </FormCardSection>
   
           {/* Terms and Submit */}
           <Form.Item className={"termsContainer"}>
@@ -153,7 +157,7 @@ const EmployerRegister: React.FC = () => {
           </Form.Item>
   
           <Form.Item className={"submitButton"}>
-            <Button type="primary" htmlType="submit">
+          <Button className="btn-brand-1 hover-up" type="primary" htmlType="submit">
               Submit & Register
             </Button>
           </Form.Item>
@@ -162,15 +166,12 @@ const EmployerRegister: React.FC = () => {
             Already have an account? <a href="/login">Sign in</a>
           </div>
         </Form>
+
+        <Image className='footer-image' src={FormVector} alt="register"/>
       </div>
     );
   };
   
-  const Section: React.FC<{ title: string,children:any }> = ({ title, children }) => (
-    <div className={"section"}>
-      <h3>{title}</h3>
-      {children}
-    </div>
-  );
+
   
   export default EmployerRegister;

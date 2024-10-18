@@ -1,84 +1,107 @@
 .employerRegister {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 2rem;
-    padding-top: 120px;
+  max-width: 900px;
+  margin: 0 auto;
+  // padding: 2rem;
+  padding-top: 120px;
 
-    .login-title{
-      margin-bottom: 5px !important;
-      margin-top: 10px !important;
-    }
 
-    .about-us-link{
-      display: block;
-      margin-top: 30px !important;
-      margin-bottom: 20px !important;
-      *{
-        color: #6c757d !important;}
-      
-    }
-  
-    .formContainer .section {
-      background: #fff;
-      text-align: start;
-      padding: 30px;
-      border-radius: 16px;
-      margin-bottom: 30px;
-      border: 1px solid #E0E6F7;
-    }
-  
-    .section {
-      margin-bottom: 2rem;
-  
-      h3 {
-        font-size: 1.2rem;
-        margin-bottom: 1rem;
-        font-weight: 600;
-        color: #1a1a1a;
-      }
-    }
-  
-    .termsContainer {
-      margin-bottom: 1.5rem;
-    }
-  
-    .submitButton {
-      display: flex;
-      justify-content: center;
-      margin-top: 1rem;
-  
-      button {
-        width: 100%;
-        max-width: 300px;
-        background-color: #001f3f;
-        border: none;
-        color: white;
-      }
-    }
-  
-    .signInLink {
-      text-align: center;
-      margin-top: 1.5rem;
-  
-      a {
-        color: #001f3f;
-        text-decoration: underline;
-      }
-    }
-  
-    .ant-input {
-      border-radius: 4px;
-    }
-  
-    .ant-form-item-label > label {
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-  
-    .ant-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
+  .login-title {
+    margin-bottom: 5px !important;
+    margin-top: 10px !important;
+  }
+
+  .about-us-link {
+    display: block;
+    margin-top: 30px !important;
+    margin-bottom: 20px !important;
+    * {
+      color: #6c757d !important;
     }
   }
-  
+
+  .formContainer .section {
+    background: #fff;
+    text-align: start;
+    padding: 30px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    border: 1px solid #e0e6f7;
+
+    .ant-form-item {
+      margin-bottom: 16px !important;
+    }
+  }
+
+  .section {
+    // margin-bottom: 2rem;
+    .form-card-title {
+      margin-bottom: 30px !important;
+    }
+  }
+
+  .termsContainer {
+    margin-bottom: 1.5rem;
+    text-align: start;
+  }
+
+  .submitButton {
+    // display: flex;
+    // justify-content: center;
+    // margin-top: 1rem;
+
+    button {
+      width: 100%;
+      // max-width: 300px;
+      background-color: #001f3f;
+      &:hover {
+        background: $button-primary-background-color !important;
+        transform: translateY(-2px) !important;
+        transition: 0.2s;
+      }
+    }
+  }
+
+  .signInLink {
+    text-align: center;
+    margin-top: 1.5rem;
+
+    a {
+      color: #001f3f;
+      text-decoration: underline;
+    }
+  }
+
+  .ant-form-item-control-input-content > .ant-input,.ant-input-affix-wrapper,.ant-form-item-control-input-content .react-tel-input input,.ant-select-selector {
+    background: #fff;
+    border: 1px solid #e0e6f6;
+    height: 53px !important;
+    box-shadow: none;
+    padding-left: 20px;
+    font-size: 16px;
+    width: 100%;
+    line-height: 53px;
+    font-size: 14px;
+    border-radius: 4px;
+  }
+  .ant-select-selector{
+    *{
+      line-height: unset !important;
+    }
+  }
+
+  .ant-form-item-label > label {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .ant-row {
+    // display: flex;
+    // flex-wrap: wrap;
+    // gap: 16px;
+  }
+
+  .footer-image{
+    margin-right: auto;
+    display: block;
+  }
+}

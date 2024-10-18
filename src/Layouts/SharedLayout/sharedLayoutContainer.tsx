@@ -21,12 +21,12 @@ const SharedLayout: FunctionComponent<any> = (props) => {
     const {isMobileOrTablet} = useAppMediaQuery()
 
     const [cookies, setCookie] = useCookies(['token']);
-useEffect(()=>{
-console.log(cookies)
-if(!cookies?.token){
-    push("/login")
-}
-},[cookies?.token])
+// useEffect(()=>{
+// console.log(cookies)
+// if(!cookies?.token){
+//     push("/login")
+// }
+// },[cookies?.token])
     useEffect(() => {
         setIsHeaderShadowVisible(false)
         document.body.style.overflow = 'auto';

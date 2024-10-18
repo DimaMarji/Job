@@ -7,7 +7,7 @@ import CloseIcon from "../../../public/Assets/Icons/General/close-icon.png";
 import LogoImage from "../../../public/Assets/Images/template/jobhub-logo.svg";
 import { Button } from "../../../Components/Atoms/Button";
 import { Text } from "../../../Components/Atoms/Typography/Text";
-import { Layout } from "antd";
+import { Layout, Space } from "antd";
 import { useTranslation } from "next-i18next";
 import Link from "next/link";
 
@@ -119,10 +119,11 @@ const SharedNavBar: FunctionComponent<SharedNavBarProps> = ({
   const menu = (
     <>
       <div className={"header-space"}>{menuItems}</div>
-     
+     <Space>
             <Link className="login-link hover-up" href={"/new-employer"}>New Employer</Link>
             <span>|</span>
             <Link className="login-link  hover-up" href={"/new-jobseeker"}>New Jobseeker</Link>
+            </Space>
          
       {/* <Button
           type={"link"}

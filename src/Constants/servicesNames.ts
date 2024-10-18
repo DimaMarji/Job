@@ -21,6 +21,10 @@ export enum ServicesNames{
     //company list
     AllCompanies="recuirter/get_companies",
 
+    AllCountries="job_seeker_resume/get_country",
+    AllCities="job_seeker_resume/get_city/",
+    AllTitles="titles"
+
 
 
 
