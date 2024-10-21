@@ -51,7 +51,7 @@
 
   }
 
-  .blogs-container {
+  .blogs-column {
     grid-area: blogs;
     text-align: left;
 
@@ -68,7 +68,7 @@
     min-width: 162px;
   }
 
-  .reports-container {
+  .reports-column {
     white-space: nowrap;
     grid-area: reports;
     text-align: start;
@@ -87,7 +87,7 @@
   }
 
 
-  .contact-container {
+  .contact-column {
     grid-area: about;
     text-align: start;
 
@@ -146,7 +146,7 @@
     align-items: center;
   }
 
-  .pages-container {
+  .pages-column {
     text-align: left;
 
     grid-area: pages;

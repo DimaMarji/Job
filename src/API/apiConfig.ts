@@ -6,8 +6,6 @@ const cookies = new Cookies();  // Initialize cookies
 // Base URL from environment variables
 const baseUrl = process.env.NEXT_PUBLIC_BASE_API_URL;
 
-console.log(baseUrl)
-
 // Base Axios instance with default configurations
 const axiosInstance = axios.create({
     baseURL: baseUrl, // Base URL for all requests

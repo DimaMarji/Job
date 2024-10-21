@@ -66,7 +66,7 @@ const SharedFooter = () => {
         items: pagesFooterItemsData
     },]
     const FooterList = footerColumns?.map((item, key) => {
-        return <div key={key} className={`${item?.title?.toLowerCase()}-container`}>
+        return <div key={key} className={`${item?.title?.toLowerCase()}-column`}>
             <Title typographyType={{size: "16px-16px-16px", type: "semi-bold-semi-bold-semi-bold"}}
                    className={"title-text"}
                    level={3}>
