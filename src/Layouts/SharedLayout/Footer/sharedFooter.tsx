@@ -134,7 +134,7 @@ const SharedFooter = () => {
                     {FooterList}
 
 
-                    <div className={"contact-container"}>
+                    <div className={"contact-column"}>
                         <Title typographyType={{size: "16px-16px-16px", type: "semi-bold-semi-bold-semi-bold"}}
                                className={"title-text"}
                                level={3}
