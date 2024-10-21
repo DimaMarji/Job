@@ -157,7 +157,7 @@
       text-align: left;
     }
 
-    .contact-container .footer-icons-div > * {
+    .contact-column .footer-icons-div > * {
       min-width: fit-content;
       padding: 0;
       line-height: 0;
@@ -255,7 +255,7 @@
 
 
 
-      .contact-container,.pages-container {
+      .contact-column,.pages-column {
         padding-top: 48px;
 
         .info-div > *,
@@ -280,7 +280,7 @@
       }
     }
 
-    .blogs-container {
+    .blogs-column {
       text-align: left;
       padding-top: 48px;
     }
@@ -323,14 +323,14 @@
       height: auto !important;
     }
 
-    .pages-container, .blogs-container, .contact-container {
+    .pages-column, .blogs-column, .contact-column {
       padding-top: 32px;
     }
 
 
 
 
-    .contact-container {
+    .contact-column {
       .footer-icons-div {
         margin-top: 16px;
       }
