@@ -11,6 +11,7 @@ import {Paragraph} from '../../../../Components/Atoms/Typography/Paragraph';
 import {Text} from '../../../../Components/Atoms/Typography/Text';
 import {Avatar} from "../../../../Components/Atoms/Avatar";
 import {getUserAvatarColor} from "../../../../Helpers/helpers";
+import FallbackImage from "../../../../public/Assets/Images/General/fallback-image.svg";
 
 const BlogCard: React.FC<BlogCardProps> = ({
                                                item,
@@ -22,6 +23,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
         router.push(`/blogs/${replaceSpacesWithDashes(blogTitle)}`)
     }
 
+    console.log(item?.image)
     return (
         <Card
             {...props}
@@ -34,7 +36,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
                 <div className='blog-card-image'>
                     <Image
                         alt={item?.title}
-                        src={item?.image}
+                        src={item?.image ?? FallbackImage}
                         width={200}
                         height={150}
                         key={item?.id}

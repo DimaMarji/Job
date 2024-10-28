@@ -55,6 +55,9 @@ const nextConfig = {
       {
         source: "/pricing",
         destination: "/Pricing",
+      }, {
+        source: "/Dashboard",
+        destination: "/",
       },
     ];
   },

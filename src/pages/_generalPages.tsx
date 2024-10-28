@@ -14,16 +14,21 @@ import SEO from "../Components/Molecules/Seo/seoConainer";
 import {Loading} from "./Loading";
 import {Error500} from "./Error500";
 import {SharedLayout} from "../Layouts/SharedLayout";
+import DashboardLayout from '../Layouts/DashboardLayout/dashboardLayout';
 
 
 export default function GeneralPages({Component, pageProps}: AppProps) {
 
-    const {pathname} = useRouter()
+    const {pathname,asPath} = useRouter()
 
     const {loading} = usePageState()
     let withLoading = pageProps.withLoading ?? true
 
     const noLayoutRoutes = ['/Login', '/Register']; 
+
+    const dasboardRoutes=["/Dashboard/"]
+
+    console.log(pathname,asPath,dasboardRoutes?.includes(asPath))
 
 
     return <div className="App">
@@ -50,6 +55,10 @@ export default function GeneralPages({Component, pageProps}: AppProps) {
                                         <SEO webSiteMetas={webSiteMetas}/>
                                         <Component {...pageProps} />
                                     </ErrorBoundary>
+                                    :
+                                    dasboardRoutes?.includes(asPath)?
+<DashboardLayout></DashboardLayout>
+
                                     :
                                     <SharedLayout>
                                                 <ErrorBoundary fallback={<Error500 />

@@ -23,7 +23,9 @@ export enum ServicesNames{
 
     AllCountries="job_seeker_resume/get_country",
     AllCities="job_seeker_resume/get_city/",
-    AllTitles="titles"
+    AllTitles="titles",
+   RegisterCompany ="user_register/company",
+   RegisterJobseeker ="user_register/jobseeker",
 
 
 
